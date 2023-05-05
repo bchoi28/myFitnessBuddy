@@ -18,7 +18,7 @@ In addition, this project will include:
 
 ## Main Wireframe
 
-![myFitnessBuddy_wireframe]
+![myFitnessBuddy_wireframe](/Users/brandonchoi/Desktop/aA_projects/js_project/myFitnessBuddy/myFitnessBuddy_wireframe.png)
 
 ## Technologies Used
 

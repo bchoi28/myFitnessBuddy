@@ -1,0 +1,23 @@
+@import './styles/body.css';
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+h1.main-title {
+    text-align: center;
+    color: blue;
+    text-shadow: 1px 1px 3px beige;
+}
+
+.containers {
+    display: flex;
+}
+
+.body-container {
+    width: 60%;
+}
+
+.gif-container {
+    width: 40%;
+}

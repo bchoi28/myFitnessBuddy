@@ -1,6 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('hello word');
+import MuscleMap from './scripts/muscle_map';
+import GifContainer from './scripts/gif_area';
 
-    const main = document.getElementById('main');
-    new Example(main);
-})
+document.addEventListener('DOMContentLoaded', () => {
+    const bodyContainer = document.querySelector('.body-container');
+    new MuscleMap(bodyContainer);
+
+    const gifContainer = document.querySelector('.gif-container');
+    new GifContainer(gifContainer);
+});

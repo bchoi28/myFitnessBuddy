@@ -36,12 +36,25 @@ function generateExercise(muscleBlock) {
     const exerciseInfoContainer = document.querySelector('.exercise-info-container');
     exerciseTitle.textContent = exercise.name;
 
-    const primaryMusclesTitle = document.createElement('h2');
-    primaryMusclesTitle.innerText = 'Primary Muscles';
+    const exerciseInfoNum = document.createElement('h2');
+    exerciseInfoNum.classList.add('exercise-info-num');
+    exerciseInfoNum.innerText = 'Exercise 1';
+
+    const exerciseInfo = document.createElement('div');
+    exerciseInfo.classList.add('exercise-info');
+
+    const primaryMusclesTitle = document.createElement('div');
+    exerciseInfo.classList.add('primary-muscles-title');
+    exerciseInfo.innerText = 'Primary Muscles';
+
     const primaryMuscles = document.createElement('div');
+    primaryMuscles.classList.add('primary-muscles');
     primaryMuscles.innerText = `${exercise.primaryMuscles}`;
 
-    exerciseInfoContainer.append(primaryMusclesTitle, primaryMuscles);
+    exerciseInfoContainer.append(exerciseInfoNum);
+    exerciseInfoNum.append(exerciseInfo);
+    exerciseInfo.append(primaryMusclesTitle);
+    exerciseInfo.append(primaryMuscles);
 }
 
 export default generateExercise;

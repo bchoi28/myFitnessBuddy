@@ -16,6 +16,8 @@ body {
     grid-template-rows: repeat(15, 1fr);
     grid-gap: 5px;
     position: relative;
+    left: 10px;
+    top: 30px;
     width: 300px;
     height: 500px;
     background-color: white;
@@ -44,7 +46,8 @@ body {
     grid-row: 4 / 5;
     border-radius: 25%;
     height: 110%;
-    /* box-shadow: 0 0 4px #000; */
+    position: relative;
+    top: -5px;
 }
 
 .left-bicep {
@@ -53,11 +56,31 @@ body {
     border-radius: 15%;
 }
 
+.left-forearm {
+    grid-column: 2 / 4;
+    grid-row: 7 / 9;
+    border-radius: 15%;
+    width: 75%;
+    justify-self: center;
+}
+
+.left-hand {
+    grid-column: 2 / 4;
+    grid-row: 9 / 10;
+    border-radius: 50%;
+    width: 60%;
+    justify-self: center;
+    position: relative;
+    top: -3px;
+}
+
 .right-shoulder {
     grid-column: 8 / 10;
     grid-row: 4 / 5;
     border-radius: 25%;
     height: 110%;
+    position: relative;
+    top: -5px;
 }
 
 .right-bicep {
@@ -66,12 +89,31 @@ body {
     border-radius: 15%;
 }
 
+.right-forearm {
+    grid-column: 8 / 10;
+    grid-row: 7 / 9;
+    border-radius: 15%;
+    width: 75%;
+    justify-self: center;
+}
+
+.right-hand {
+    grid-column: 8 / 10;
+    grid-row: 9 / 10;
+    border-radius: 50%;
+    width: 60%;
+    justify-self: center;
+    position: relative;
+    top: -3px;
+}
+
 .abs {
     grid-column: 4 / 8;
     grid-row: 7 / 9;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: transparent;
 }
 
 .abs div {
@@ -80,4 +122,81 @@ body {
     margin-bottom: 2px;
     margin-right: 5px;
     border-radius: 10px;
+    z-index: 1;
+}
+
+.left-glute {
+    grid-column: 4 / 6;
+    grid-row: 8 / 10;
+    border-radius: 25%;
+    position: relative;
+    top: 30px;
+    right: 8px;
+    height: 90%;
+    width: 110%;
+    z-index: 0;
+}
+
+.left-quad {
+    grid-column: 4 / 6;
+    grid-row: 11 / 13;
+    border-radius: 15%;
+    width: 115%;
+    height: 115%;
+    position: relative;
+    top: -10px;
+    right: 10px;
+}
+
+.left-calf {
+    grid-column: 4 / 6;
+    grid-row: 13 / 15;
+    border-radius: 15%;
+    width: 80%;
+}
+
+.left-foot {
+    grid-column: 4 / 6;
+    grid-row: 15 / 16;
+    border-radius: 50%;
+    width: 75%;
+}
+
+.right-glute {
+    grid-column: 6 / 8;
+    grid-row: 9 / 11;
+    border-radius: 25%;
+    position: relative;
+    top: -5px;
+    right: 5px;
+    height: 90%;
+    width: 110%;
+    z-index: 0;
+}
+
+.right-quad {
+    grid-column: 6 / 8;
+    grid-row: 11 / 13;
+    border-radius: 15%;
+    width: 115%;
+    height: 115%;
+    position: relative;
+    top: -10px;
+    right: 5px;
+}
+
+.right-calf {
+    grid-column: 6 / 8;
+    grid-row: 13 / 15;
+    border-radius: 15%;
+    width: 80%;
+    justify-self: center;
+}
+
+.right-foot {
+    grid-column: 6 / 8;
+    grid-row: 15 / 16;
+    border-radius: 50%;
+    width: 75%;
+    justify-self: center;
 }

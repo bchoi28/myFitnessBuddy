@@ -1,0 +1,25 @@
+.exercise-info-container {
+    border: 2px solid black;
+    height: 300px;
+    width: 100%;
+    border-radius: 10%;
+    position: relative;
+    right: 30px;
+    top: 10px;
+    display: flex;
+}
+
+.exercise-info-container h2 {
+    text-align: center;
+    font-size: 18px;
+    padding: 3px;
+    display: inline-block;
+    justify-content: center;
+    border: 3px solid var(--cornflower-blue);
+
+}
+
+.exercise-info-container div {
+    text-align: center;
+    font-size: 14px;
+}

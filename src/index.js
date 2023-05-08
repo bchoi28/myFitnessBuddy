@@ -1,5 +1,5 @@
-import MuscleMap from './scripts/muscle_map';
-import GifContainer from './scripts/gif_area';
+import MuscleMap from './scripts/muscleMap';
+import GifContainer from './scripts/gifContainer';
 
 document.addEventListener('DOMContentLoaded', () => {
     const bodyContainer = document.querySelector('.body-container');

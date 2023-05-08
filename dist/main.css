@@ -19,6 +19,8 @@ body {
     grid-template-rows: repeat(15, 1fr);
     grid-gap: 5px;
     position: relative;
+    left: 10px;
+    top: 30px;
     width: 300px;
     height: 500px;
     background-color: white;
@@ -47,7 +49,8 @@ body {
     grid-row: 4 / 5;
     border-radius: 25%;
     height: 110%;
-    /* box-shadow: 0 0 4px #000; */
+    position: relative;
+    top: -5px;
 }
 
 .left-bicep {
@@ -56,11 +59,31 @@ body {
     border-radius: 15%;
 }
 
+.left-forearm {
+    grid-column: 2 / 4;
+    grid-row: 7 / 9;
+    border-radius: 15%;
+    width: 75%;
+    justify-self: center;
+}
+
+.left-hand {
+    grid-column: 2 / 4;
+    grid-row: 9 / 10;
+    border-radius: 50%;
+    width: 60%;
+    justify-self: center;
+    position: relative;
+    top: -3px;
+}
+
 .right-shoulder {
     grid-column: 8 / 10;
     grid-row: 4 / 5;
     border-radius: 25%;
     height: 110%;
+    position: relative;
+    top: -5px;
 }
 
 .right-bicep {
@@ -69,12 +92,31 @@ body {
     border-radius: 15%;
 }
 
+.right-forearm {
+    grid-column: 8 / 10;
+    grid-row: 7 / 9;
+    border-radius: 15%;
+    width: 75%;
+    justify-self: center;
+}
+
+.right-hand {
+    grid-column: 8 / 10;
+    grid-row: 9 / 10;
+    border-radius: 50%;
+    width: 60%;
+    justify-self: center;
+    position: relative;
+    top: -3px;
+}
+
 .abs {
     grid-column: 4 / 8;
     grid-row: 7 / 9;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: transparent;
 }
 
 .abs div {
@@ -83,28 +125,197 @@ body {
     margin-bottom: 2px;
     margin-right: 5px;
     border-radius: 10px;
+    z-index: 1;
+}
+
+.left-glute {
+    grid-column: 4 / 6;
+    grid-row: 8 / 10;
+    border-radius: 25%;
+    position: relative;
+    top: 30px;
+    right: 8px;
+    height: 90%;
+    width: 110%;
+    z-index: 0;
+}
+
+.left-quad {
+    grid-column: 4 / 6;
+    grid-row: 11 / 13;
+    border-radius: 15%;
+    width: 115%;
+    height: 115%;
+    position: relative;
+    top: -10px;
+    right: 10px;
+}
+
+.left-calf {
+    grid-column: 4 / 6;
+    grid-row: 13 / 15;
+    border-radius: 15%;
+    width: 80%;
+}
+
+.left-foot {
+    grid-column: 4 / 6;
+    grid-row: 15 / 16;
+    border-radius: 50%;
+    width: 75%;
+}
+
+.right-glute {
+    grid-column: 6 / 8;
+    grid-row: 9 / 11;
+    border-radius: 25%;
+    position: relative;
+    top: -5px;
+    right: 5px;
+    height: 90%;
+    width: 110%;
+    z-index: 0;
+}
+
+.right-quad {
+    grid-column: 6 / 8;
+    grid-row: 11 / 13;
+    border-radius: 15%;
+    width: 115%;
+    height: 115%;
+    position: relative;
+    top: -10px;
+    right: 5px;
+}
+
+.right-calf {
+    grid-column: 6 / 8;
+    grid-row: 13 / 15;
+    border-radius: 15%;
+    width: 80%;
+    justify-self: center;
+}
+
+.right-foot {
+    grid-column: 6 / 8;
+    grid-row: 15 / 16;
+    border-radius: 50%;
+    width: 75%;
+    justify-self: center;
+}
+/*!************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/gif-container.css ***!
+  \************************************************************************************************************/
+.gif-container {
+    width: 100%;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 25%;
+    position: relative;
+    right: 30px;
+}
+
+.exercise-title {
+    text-align: center;
+    margin-top: 10px;
+}
+/*!**********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/exercise-info-container.css ***!
+  \**********************************************************************************************************************/
+.exercise-info-container {
+    border: 2px solid black;
+    height: 300px;
+    width: 100%;
+    border-radius: 10%;
+    position: relative;
+    right: 30px;
+    top: 10px;
+    display: flex;
+}
+
+.exercise-info-container h2 {
+    text-align: center;
+    font-size: 18px;
+    padding: 3px;
+    display: inline-block;
+    justify-content: center;
+    border: 3px solid var(--cornflower-blue);
+
+}
+
+.exercise-info-container div {
+    text-align: center;
+    font-size: 14px;
 }
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
+:root {
+  --navy-blue: #003366;
+  --deep-sky-blue: #0077b3;
+  --light-blue: #3399ff;
+  --steel-blue: #6699cc;
+  --baby-blue: #99ccff;
+  --royal-blue: #4169E1;
+  --cornflower-blue: #6495ED;
+  --turquoise-blue: #00CED1;
+  --powder-blue: #B0E0E6;
+  --midnight-blue: #191970;
+}
+
 body {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 h1.main-title {
   text-align: center;
-  color: blue;
-  text-shadow: 1px 1px 3px beige;
+  font-family: Montserrat, sans-serif;
+  color: var(--cornflower-blue);
+  text-shadow: 1px 1px 1px var(--navy-blue);
 }
 
 .containers {
   display: flex;
+  justify-content: space-between;
 }
 
 .body-container {
   width: 60%;
 }
 
-.gif-container {
+.gif-exercise-container {
   width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  cursor: help;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  width: 200px;
+  max-height: 100px;
+  overflow-y: auto;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }

@@ -242,6 +242,18 @@ body {
     text-align: center;
 }
 
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: var(--navy-blue);
+    cursor: pointer;
+}
+
 .exercise-info {
     border: 3px solid var(--cornflower-blue);
     border-radius: 15%;

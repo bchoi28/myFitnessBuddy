@@ -6,6 +6,8 @@ class MuscleMap {
         this.render()
         // this.handleclick = this.handleclick.bind(this);
         this.bindEvents();
+        this.exerciseCount = 0;
+        this.addExerciseListener = this.addExerciseListener.bind(this);
     };
 
     render() {
@@ -136,10 +138,16 @@ class MuscleMap {
     addExerciseListener() {
         const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div)'));
         muscleBlocks.forEach(muscleBlock => {
-            muscleBlock.addEventListener('click', () => generateExercise(muscleBlock));
+            muscleBlock.addEventListener('click', () => {
+                if (this.exerciseCount < 3) {
+                    generateExercise(muscleBlock, this.exerciseCount + 1, this);
+                    this.exerciseCount++;
+                }
+                else {
+                    muscleBlock.removeEventListener('click', () => { });
+                }
+            });
         });
-
     }
 }
-
 export default MuscleMap;

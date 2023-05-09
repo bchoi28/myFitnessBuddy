@@ -28,7 +28,7 @@ const exercises = {
     // Add more muscle block keys and exercises as needed
 };
 
-function generateExercise(muscleBlock) {
+const generateExercise = (muscleBlock, exerciseCount, muscleMapInstance) => {
     const exercisesByMuscleBlock = exercises[muscleBlock.classList[0]]; // Get exercises for the muscle block class
     const randomIndex = Math.floor(Math.random() * exercisesByMuscleBlock.length); // Get a random index from the exercises array
     const exercise = exercisesByMuscleBlock[randomIndex]; // Get the exercise at the random index
@@ -38,7 +38,17 @@ function generateExercise(muscleBlock) {
 
     const exerciseInfoNum = document.createElement('h2');
     exerciseInfoNum.classList.add('exercise-info-num');
-    exerciseInfoNum.innerText = 'Exercise 1';
+    exerciseInfoNum.innerText = `Exercise ${exerciseCount}`;
+
+    const closeButton = document.createElement('button');
+    closeButton.classList.add('close-button');
+    closeButton.innerText = 'X';
+    closeButton.addEventListener('click', () => {
+        exerciseInfoNum.remove();
+        muscleMapInstance.exerciseCount--;
+    });
+
+    exerciseInfoNum.append(closeButton);
 
     const exerciseInfo = document.createElement('div');
     exerciseInfo.classList.add('exercise-info');

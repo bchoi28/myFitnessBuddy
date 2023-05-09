@@ -141,7 +141,7 @@ class MuscleMap {
         const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div)'));
         muscleBlocks.forEach(muscleBlock => {
             muscleBlock.addEventListener('click', () => {
-                if (this.exerciseCount < 3) {
+                if (this.exerciseCount < 4) {
                     generateExercise(muscleBlock, this, myCarousel);
                     this.exerciseCount++;
                 }

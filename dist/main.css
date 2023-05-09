@@ -395,6 +395,22 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 24px;
+    position: relative;
+}
+
+.carousel-item h3 {
+    font-size: 20px;
+}
+
+.carousel-item-close-button {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!

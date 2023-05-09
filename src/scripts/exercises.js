@@ -164,6 +164,12 @@ const generateExercise = (muscleBlock, muscleMapInstance, carouselInstance) => {
     secondaryMuscles.innerText = `${exercise.secondaryMuscles.join(", ")}`;
 
     exerciseInfoContainer.append(exerciseDisplay);
+
+    const numExercises = exerciseInfoContainer.children.length;
+    if (numExercises > 1) {
+        exerciseInfoContainer.removeChild(exerciseInfoContainer.children[0]);
+    }
+
     exerciseDisplay.append(exerciseInfo);
     exerciseInfo.append(primaryMusclesTitle);
     exerciseInfo.append(primaryMuscles);

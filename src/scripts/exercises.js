@@ -38,7 +38,7 @@ const generateExercise = (muscleBlock, exerciseCount, muscleMapInstance) => {
 
     const exerciseInfoNum = document.createElement('h2');
     exerciseInfoNum.classList.add('exercise-info-num');
-    exerciseInfoNum.innerText = `Exercise ${exerciseCount}`;
+    exerciseInfoNum.innerText = exercise.name;
 
     const closeButton = document.createElement('button');
     closeButton.classList.add('close-button');

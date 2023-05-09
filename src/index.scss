@@ -1,9 +1,13 @@
 @import './styles/body.css';
 @import './styles/gif-container.css';
 @import './styles/exercise-info-container.css';
+@import './styles/carousel.css';
 
 :root {
     --branding-color: #0066EE;
+    // --background-color: hsl(214 100% 97% / 1);
+    --background-color: #f8ffff;
+    --block-color: #A9F9FF;
     --navy-blue: #003366;
     --deep-sky-blue: #0077b3;
     --light-blue: #3399ff;
@@ -14,12 +18,11 @@
     --turquoise-blue: #00CED1;
     --powder-blue: #B0E0E6;
     --midnight-blue: #191970;
-    --background-color: hsl(214 100% 95% / 1);
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: hsl(214 100% 95% / 1);
+    background-color: var(--background-color);
     color: var(--royal-blue);
 }
 
@@ -36,8 +39,21 @@ h1.main-title {
     justify-content: space-between;
 }
 
-.body-container {
+.left {
+    display: flex;
+    flex-direction: column;
     width: 40%;
+}
+
+.body-container {
+    display: flex;
+}
+
+.carousel-container {
+    border: 1px solid var(--midnight-blue);
+    border-radius: 25%;
+    padding: 25px;
+    margin: 50px auto 0 20px;
 }
 
 .gif-exercise-container {

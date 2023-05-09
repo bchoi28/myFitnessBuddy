@@ -1,29 +1,34 @@
 const shoulderExercises = [
     {
+        type: 'SHOULDERS',
         name: 'Seated Dumbbell Press',
         primaryMuscles: ['Anterior Deltoids'],
         secondaryMuscles: ['Lateral Deltoids', 'Triceps'],
         suggestedRepRange: '8-12 reps'
     },
     {
+        type: 'SHOULDERS',
         name: 'Arnold Press',
         primaryMuscles: ['Anterior and Lateral Deltoids'],
         secondaryMuscles: ['Triceps'],
         suggestedRepRange: '10-15 reps'
     },
     {
+        type: 'SHOULDERS',
         name: 'Dumbbell Lateral Raise',
         primaryMuscles: ['Lateral Deltoids'],
         secondaryMuscles: ['Anterior and Posterior Deltoids'],
         suggestedRepRange: '12-15 reps'
     },
     {
+        type: 'SHOULDERS',
         name: 'Front Dumbbell Raise',
         primaryMuscles: ['Anterior Deltoids'],
         secondaryMuscles: ['Lateral Deltoids'],
         suggestedRepRange: '8-12 reps'
     },
     {
+        type: 'SHOULDERS',
         name: 'Reverse Fly',
         primaryMuscles: ['Posterior Deltoids'],
         secondaryMuscles: ['Trapezius', 'Rhomboids'],
@@ -33,30 +38,35 @@ const shoulderExercises = [
 
 const chestExercises = [
     {
+        type: 'CHEST',
         name: 'Bench Press',
         primaryMuscles: ['Pectoralis Major'],
         secondaryMuscles: ['Triceps', 'Deltoids'],
         suggestedRepRange: '8-12 reps'
     },
     {
+        type: 'CHEST',
         name: 'Push-Ups',
         primaryMuscles: ['Pectoralis Major'],
         secondaryMuscles: ['Triceps', 'Deltoids'],
         suggestedRepRange: '10-15 reps'
     },
     {
+        type: 'CHEST',
         name: 'Dumbbell Fly',
         primaryMuscles: ['Pectoralis Major'],
         secondaryMuscles: ['Anterior Deltoids', 'Triceps'],
         suggestedRepRange: '12-15 reps'
     },
     {
+        type: 'CHEST',
         name: 'Incline Bench Press',
         primaryMuscles: ['Upper Pectoralis Major'],
         secondaryMuscles: ['Anterior Deltoids', 'Triceps'],
         suggestedRepRange: '8-12 reps'
     },
     {
+        type: 'CHEST',
         name: 'Cable Crossover',
         primaryMuscles: ['Pectoralis Major'],
         secondaryMuscles: ['Anterior Deltoids', 'Triceps'],
@@ -66,30 +76,35 @@ const chestExercises = [
 
 const bicepExercises = [
     {
+        type: 'ARMS',
         name: 'Barbell Curl',
         primaryMuscles: ['Biceps'],
         secondaryMuscles: ['Forearms'],
         suggestedRepRange: '8-12 reps'
     },
     {
+        type: 'ARMS',
         name: 'Dumbbell Curl',
         primaryMuscles: ['Biceps'],
         secondaryMuscles: ['Forearms'],
         suggestedRepRange: '10-15 reps'
     },
     {
+        type: 'ARMS',
         name: 'Preacher Curl',
         primaryMuscles: ['Biceps'],
         secondaryMuscles: ['Forearms'],
         suggestedRepRange: '10-12 reps'
     },
     {
+        type: 'ARMS',
         name: 'Concentration Curl',
         primaryMuscles: ['Biceps'],
         secondaryMuscles: ['Forearms'],
         suggestedRepRange: '12-15 reps'
     },
     {
+        type: 'ARMS',
         name: 'Hammer Curl',
         primaryMuscles: ['Biceps', 'Brachialis'],
         secondaryMuscles: ['Forearms'],
@@ -115,7 +130,7 @@ const generateExercise = (muscleBlock, muscleMapInstance) => {
 
     const exerciseDisplay = document.createElement('h2');
     exerciseDisplay.classList.add('exercise-display');
-    exerciseDisplay.innerText = exercise.name;
+    exerciseDisplay.innerText = exercise.type;
 
     const closeButton = document.createElement('button');
     closeButton.classList.add('close-button');

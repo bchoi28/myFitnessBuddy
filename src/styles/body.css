@@ -1,15 +1,15 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-color: hsl(214 100% 95% / 1);
+    /* margin: 0;
+    padding: 0; */
+    /* background-color: var(--midnight-blue); */
 }
 
 .container {
-    display: flex;
+    /* display: flex; */
     /* justify-content: center;
     align-items: center; */
-    height: 100vh;
-    background-color: hsl(214 100% 95% / 1);
+    /* height: 0vh; */
+    /* background-color: var(--background-color); */
 }
 
 .muscle-map {
@@ -22,7 +22,7 @@ body {
     top: 30px;
     width: 400px;
     height: 600px;
-    background-color: hsl(214 100% 95% / 1);
+    background-color: var(--background-color);
 }
 
 /* .muscle-map div:not(.abs) {
@@ -39,7 +39,7 @@ body {
 } */
 
 .muscle-map div:not(.abs) {
-    background-color: #F0F8FF;
+    background-color: var(--block-color);
     border: 1px solid var(--cornflower-blue);
     border-radius: 40%;
     /* display: flex;
@@ -61,7 +61,7 @@ body {
 }
 
 .abs>div {
-    background-color: #F0F8FF;
+    background-color: var(--block-color);
     border: 1px solid #ddd;
     /* color: white; */
     /* height: 75px;

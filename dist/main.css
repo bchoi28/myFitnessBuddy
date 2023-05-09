@@ -2,17 +2,17 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/body.css ***!
   \***************************************************************************************************/
 body {
-    margin: 0;
-    padding: 0;
-    background-color: hsl(214 100% 95% / 1);
+    /* margin: 0;
+    padding: 0; */
+    /* background-color: var(--midnight-blue); */
 }
 
 .container {
-    display: flex;
+    /* display: flex; */
     /* justify-content: center;
     align-items: center; */
-    height: 100vh;
-    background-color: hsl(214 100% 95% / 1);
+    /* height: 0vh; */
+    /* background-color: var(--background-color); */
 }
 
 .muscle-map {
@@ -25,7 +25,7 @@ body {
     top: 30px;
     width: 400px;
     height: 600px;
-    background-color: hsl(214 100% 95% / 1);
+    background-color: var(--background-color);
 }
 
 /* .muscle-map div:not(.abs) {
@@ -42,7 +42,7 @@ body {
 } */
 
 .muscle-map div:not(.abs) {
-    background-color: #F0F8FF;
+    background-color: var(--block-color);
     border: 1px solid var(--cornflower-blue);
     border-radius: 40%;
     /* display: flex;
@@ -64,7 +64,7 @@ body {
 }
 
 .abs>div {
-    background-color: #F0F8FF;
+    background-color: var(--block-color);
     border: 1px solid #ddd;
     /* color: white; */
     /* height: 75px;
@@ -296,6 +296,7 @@ body {
     width: 33%;
     text-align: center;
     position: relative;
+    font-size: 18px;
 }
 
 .close-button {
@@ -343,11 +344,65 @@ body {
     margin-top: 10px;
     color: var(--cornflower-blue);
 }
+/*!*******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/carousel.css ***!
+  \*******************************************************************************************************/
+.carousel-container {
+    /* width: 200px; */
+    /* overflow: hidden; */
+}
+
+.carousel {
+    width: 300px;
+    overflow: hidden;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-nav a {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    position: relative;
+}
+
+.carousel-slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 200px;
+    margin-right: 50px;
+    border-radius: 10px;
+    background: #eee;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
 :root {
   --branding-color: #0066EE;
+  --background-color: #f8ffff;
+  --block-color: #A9F9FF;
   --navy-blue: #003366;
   --deep-sky-blue: #0077b3;
   --light-blue: #3399ff;
@@ -358,12 +413,11 @@ body {
   --turquoise-blue: #00CED1;
   --powder-blue: #B0E0E6;
   --midnight-blue: #191970;
-  --background-color: hsl(214 100% 95% / 1);
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: hsl(214, 100%, 95%);
+  background-color: var(--background-color);
   color: var(--royal-blue);
 }
 
@@ -377,8 +431,21 @@ h1.main-title {
   justify-content: space-between;
 }
 
-.body-container {
+.left {
+  display: flex;
+  flex-direction: column;
   width: 40%;
+}
+
+.body-container {
+  display: flex;
+}
+
+.carousel-container {
+  border: 1px solid var(--midnight-blue);
+  border-radius: 25%;
+  padding: 25px;
+  margin: 50px auto 0 20px;
 }
 
 .gif-exercise-container {

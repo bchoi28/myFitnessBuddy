@@ -5,7 +5,7 @@
 
 .carousel {
     width: 300px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .carousel-nav {
@@ -17,7 +17,7 @@
     display: inline-flex;
     width: 1.5rem;
     height: 1.5rem;
-    background: white;
+    background: var(--block-color);
     text-decoration: none;
     align-items: center;
     justify-content: center;
@@ -38,8 +38,8 @@
     width: 100%;
     height: 200px;
     margin-right: 50px;
-    border-radius: 10px;
-    background: #eee;
+    border-radius: 10%;
+    background: var(--block-color);
     scroll-snap-align: start;
     flex-shrink: 0;
     display: flex;

@@ -1,33 +1,46 @@
-// class Carousel {
-//     constructor(containerEl) {
-//         this.container = containerEl;
-//         this.render();
-//     }
+class Carousel {
+    constructor(containerEl) {
+        this.container = containerEl;
+        this.render();
+        this.carouselNav;
+        this.carouselSlides;
+    }
 
-//     render() {
-//         const carouselItems = [
-//             {
-//                 title: "Item 1",
-//             },
-//             {
-//                 title: "Item 2",
-//             },
-//             {
-//                 title: "Item 3",
-//             },
-//         ];
+    render() {
+        const carousel = document.createElement("div");
+        carousel.classList.add("carousel");
 
-//         carouselItems.forEach((item) => {
-//             const carouselItem = document.createElement("div");
-//             carouselItem.classList.add("carousel-item");
+        const carouselNav = document.createElement("div");
+        carouselNav.classList.add("carousel-nav");
+        this.carouselNav = carouselNav;
+        carousel.appendChild(carouselNav);
 
-//             const itemTitle = document.createElement("h3");
-//             itemTitle.textContent = item.title;
+        const carouselSlides = document.createElement("div");
+        carouselSlides.classList.add("carousel-slides");
+        carousel.appendChild(carouselSlides);
+        this.carouselSlides = carouselSlides;
 
-//             carouselItem.appendChild(itemTitle);
-//             this.container.appendChild(carouselItem);
-//         });
-//     }
-// }
+        this.container.appendChild(carousel);
+    }
 
-// export default Carousel;
+    addExerciseToCarousel(exercise) {
+        const carouselItem = document.createElement("div");
+        carouselItem.classList.add("carousel-item");
+
+        const itemTitle = document.createElement("h3");
+        itemTitle.textContent = exercise.name;
+
+        carouselItem.appendChild(itemTitle);
+        // TODO: Add the carousel item to the carousel slide
+        this.carouselSlides.appendChild(carouselItem);
+        // TODO: Update the carousel nav
+        const numItems = document.querySelectorAll(".carousel-item").length;
+        const newNavItem = document.createElement("a");
+        newNavItem.href = `#carousel-item-${numItems}`;
+        newNavItem.textContent = numItems.toString();
+        this.carouselNav.appendChild(newNavItem);
+    };
+}
+
+
+export default Carousel;

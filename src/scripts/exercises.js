@@ -1,3 +1,5 @@
+import { Carousel } from './carousel';
+
 const shoulderExercises = [
     {
         type: 'SHOULDERS',
@@ -120,7 +122,7 @@ const exercises = {
     'right-bicep': bicepExercises,
 };
 
-const generateExercise = (muscleBlock, muscleMapInstance) => {
+const generateExercise = (muscleBlock, muscleMapInstance, carouselInstance) => {
     const exercisesByMuscleBlock = exercises[muscleBlock.classList[0]]; // Get exercises for the muscle block class
     const randomIndex = Math.floor(Math.random() * exercisesByMuscleBlock.length); // Get a random index from the exercises array
     const exercise = exercisesByMuscleBlock[randomIndex]; // Get the exercise at the random index
@@ -167,6 +169,8 @@ const generateExercise = (muscleBlock, muscleMapInstance) => {
     exerciseInfo.append(primaryMuscles);
     exerciseInfo.append(secondaryMusclesTitle);
     exerciseInfo.append(secondaryMuscles);
+
+    carouselInstance.addExerciseToCarousel(exercise);
 }
 
 export default generateExercise;

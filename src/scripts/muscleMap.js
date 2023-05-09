@@ -1,13 +1,14 @@
 import generateExercise, { exercises } from "./exercises";
 
 class MuscleMap {
-    constructor(containerEl) {
+    constructor(containerEl, myCarousel) {
         this.container = containerEl;
         this.render()
         // this.handleclick = this.handleclick.bind(this);
-        this.bindEvents();
+        // this.bindEvents();
         this.exerciseCount = 0;
-        this.addExerciseListener = this.addExerciseListener.bind(this);
+        this.addExerciseListener(myCarousel);
+        // this.addExerciseListener = this.addExerciseListener.bind(this);
     };
 
     render() {
@@ -136,12 +137,12 @@ class MuscleMap {
     //     });
     // }
 
-    addExerciseListener() {
+    addExerciseListener(myCarousel) {
         const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div)'));
         muscleBlocks.forEach(muscleBlock => {
             muscleBlock.addEventListener('click', () => {
                 if (this.exerciseCount < 3) {
-                    generateExercise(muscleBlock, this);
+                    generateExercise(muscleBlock, this, myCarousel);
                     this.exerciseCount++;
                 }
                 else {

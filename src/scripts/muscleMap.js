@@ -101,46 +101,47 @@ class MuscleMap {
     };
 
     bindEvents() {
-        this.addHoverListener();
+        // this.addHoverListener();
         this.addExerciseListener();
     };
 
-    addHoverListener() {
-        const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div)'));
-        muscleBlocks.forEach(muscleBlock => {
-            muscleBlock.addEventListener('mouseover', () => {
-                muscleBlock.style.backgroundColor = 'yellow';
-            });
-            muscleBlock.addEventListener('mouseout', () => {
-                muscleBlock.style.backgroundColor = "white";
-            })
-        })
+    // I did this all with simple quick css styling..
+    // addHoverListener() {
+    //     const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div)'));
+    //     muscleBlocks.forEach(muscleBlock => {
+    //         muscleBlock.addEventListener('mouseover', () => {
+    //             muscleBlock.style.backgroundColor = 'yellow';
+    //         });
+    //         muscleBlock.addEventListener('mouseout', () => {
+    //             muscleBlock.style.backgroundColor = "white";
+    //         })
+    //     })
 
-        const absContainer = document.querySelector('.abs');
-        absContainer.addEventListener('mouseover', (e) => {
-            if (e.target.matches('.abs > div')) {
-                const absBlocks = Array.from(absContainer.children);
-                absBlocks.forEach((absBlock) => {
-                    absBlock.style.backgroundColor = 'yellow';
-                });
-            }
-        });
-        absContainer.addEventListener('mouseout', (e) => {
-            if (e.target.matches('.abs > div')) {
-                const absBlocks = Array.from(absContainer.children);
-                absBlocks.forEach((absBlock) => {
-                    absBlock.style.backgroundColor = 'white';
-                });
-            }
-        });
-    }
+    //     const absContainer = document.querySelector('.abs');
+    //     absContainer.addEventListener('mouseover', (e) => {
+    //         if (e.target.matches('.abs > div')) {
+    //             const absBlocks = Array.from(absContainer.children);
+    //             absBlocks.forEach((absBlock) => {
+    //                 absBlock.style.backgroundColor = 'yellow';
+    //             });
+    //         }
+    //     });
+    //     absContainer.addEventListener('mouseout', (e) => {
+    //         if (e.target.matches('.abs > div')) {
+    //             const absBlocks = Array.from(absContainer.children);
+    //             absBlocks.forEach((absBlock) => {
+    //                 absBlock.style.backgroundColor = 'white';
+    //             });
+    //         }
+    //     });
+    // }
 
     addExerciseListener() {
         const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div)'));
         muscleBlocks.forEach(muscleBlock => {
             muscleBlock.addEventListener('click', () => {
                 if (this.exerciseCount < 3) {
-                    generateExercise(muscleBlock, this.exerciseCount + 1, this);
+                    generateExercise(muscleBlock, this);
                     this.exerciseCount++;
                 }
                 else {

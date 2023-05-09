@@ -1,5 +1,5 @@
 .exercise-info-container {
-    border: 5px solid var(--navy-blue);
+    border: 3px solid var(--navy-blue);
     height: 500px;
     width: 100%;
     border-radius: 10%;
@@ -10,8 +10,8 @@
     flex-direction: row;
 }
 
-.exercise-info-num {
-    margin: 20px auto;
+.exercise-display {
+    margin: 2% auto 0 auto;
     display: flex;
     flex-direction: column;
     width: 33%;
@@ -21,31 +21,31 @@
 
 .close-button {
     position: absolute;
-    top: 50px;
-    left: 2px;
-    border: none;
+    top: 7%;
+    left: 1%;
     font-size: 14px;
-    background-color: transparent;
     background-color: var(--midnight-blue);
     color: white;
-    border-radius: 25px;
+    border-radius: 40%;
     cursor: pointer;
     display: none;
 }
 
 .exercise-info {
     border: 3px solid var(--cornflower-blue);
+    margin-top: 10px;
     border-radius: 15%;
     height: 80%;
     display: flex;
     flex-direction: column;
 }
 
-.exercise-info-num:hover .close-button {
+.exercise-display:hover .close-button {
     display: block;
 }
 
-.primary-muscles-title {
+.primary-muscles-title,
+.secondary-muscles-title {
     margin-top: 20px;
     text-align: center;
     vertical-align: top;
@@ -53,10 +53,14 @@
     padding: 3px;
     display: flex;
     flex-direction: column;
+    letter-spacing: 1px;
+    color: var(--midnight-blue);
 }
 
-.primary-muscles {
+.primary-muscles,
+.secondary-muscles {
     text-align: center;
     font-size: 14px;
-    margin-top: 20px;
+    margin-top: 10px;
+    color: var(--cornflower-blue);
 }

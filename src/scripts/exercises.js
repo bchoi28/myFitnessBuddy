@@ -132,7 +132,7 @@ const exercises = {
     'right-bicep': bicepExercises,
 };
 
-const generateExercise = async (muscleBlock, muscleMapInstance, carouselInstance) => {
+const generateExercise = async (muscleBlock, muscleMapInstance, carouselInstance, gifContainerInstance) => {
 
     const exercisesByMuscleBlock = exercises[muscleBlock.classList[0]]; // Get exercises for the muscle block class
 
@@ -217,6 +217,13 @@ const generateExercise = async (muscleBlock, muscleMapInstance, carouselInstance
     exerciseInfoContainer.append(exerciseDisplay);
 
     carouselInstance.addExerciseToCarousel(exercise);
+
+    const gifContainer = document.querySelector('.gif-container');
+    const gifUrl = exercise.gifUrl;
+    const gif = document.createElement('img');
+    gif.src = exercise.gifUrl;
+    gif.alt = exercise.name;
+    gifContainer.appendChild(gif);
 }
 
 const removeExerciseFromInfoContainer = (exercise) => {

@@ -278,7 +278,7 @@ body {
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/exercise-info-container.css ***!
   \**********************************************************************************************************************/
 .exercise-info-container {
-    border: 3px solid var(--navy-blue);
+    /* border: 3px solid var(--navy-blue); */
     height: 500px;
     width: 100%;
     border-radius: 10%;
@@ -290,10 +290,10 @@ body {
 }
 
 .exercise-display {
-    margin: 2% auto 0 auto;
+    /* margin: 2% auto 0 auto; */
     display: flex;
-    flex-direction: column;
-    width: 33%;
+    /* flex-direction: column; */
+    /* width: 50%; */
     text-align: center;
     position: relative;
     font-size: 18px;
@@ -315,7 +315,7 @@ body {
     border: 3px solid var(--cornflower-blue);
     margin-top: 10px;
     border-radius: 15%;
-    height: 80%;
+    width: 50%;
     display: flex;
     flex-direction: column;
 }
@@ -325,7 +325,8 @@ body {
 }
 
 .primary-muscles-title,
-.secondary-muscles-title {
+.secondary-muscles-title,
+.instructions-div {
     margin-top: 20px;
     text-align: center;
     vertical-align: top;
@@ -343,6 +344,29 @@ body {
     font-size: 14px;
     margin-top: 10px;
     color: var(--cornflower-blue);
+}
+
+.exercise-steps {
+    list-style-type: none;
+    margin-left: 10px;
+    counter-reset: step-counter;
+}
+
+.exercise-steps li {
+    margin: 10px 5px;
+    position: relative;
+    text-align: left;
+    color: var(--cornflower-blue);
+}
+
+.exercise-steps li::before {
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    color: var(--midnight-blue);
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    left: -25px;
 }
 /*!*******************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/carousel.css ***!
@@ -373,6 +397,12 @@ body {
     border-radius: 50%;
     margin: 0 0.5rem;
     position: relative;
+}
+
+.carousel-nav a.active {
+    background-color: #FFC300;
+    color: #fff;
+    border: 2px solid #FFC300;
 }
 
 .carousel-slides {
@@ -458,7 +488,6 @@ h1.main-title {
 }
 
 .carousel-container {
-  border: 1px solid var(--midnight-blue);
   border-radius: 25%;
   padding: 25px;
   margin: 50px auto 0 20px;

@@ -26,6 +26,12 @@
     position: relative;
 }
 
+.carousel-nav a.active {
+    background-color: #FFC300;
+    color: #fff;
+    border: 2px solid #FFC300;
+}
+
 .carousel-slides {
     display: flex;
     overflow-x: auto;

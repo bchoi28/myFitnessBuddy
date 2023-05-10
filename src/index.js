@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     new GifContainer(gifContainer);
 
     const carouselContainer = document.querySelector('.carousel-container');
-    const myCarousel = new Carousel(carouselContainer);
+    const sharedExercises = [];
+    const myCarousel = new Carousel(carouselContainer, sharedExercises);
 
     const bodyContainer = document.querySelector('.body-container');
     new MuscleMap(bodyContainer, myCarousel);

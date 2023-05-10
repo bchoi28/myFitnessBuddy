@@ -1,4 +1,4 @@
-import generateExercise, { exercises } from "./exercises";
+import { generateExercise, removeExerciseFromInfoContainer } from './exercises.js';
 
 class MuscleMap {
     constructor(containerEl, myCarousel) {
@@ -6,8 +6,9 @@ class MuscleMap {
         this.render()
         // this.handleclick = this.handleclick.bind(this);
         // this.bindEvents();
-        this.exerciseCount = 0;
-        this.addExerciseListener(myCarousel);
+        // this.exerciseCount = 0;
+        this.myCarousel = myCarousel;
+        this.addExerciseListener();
         // this.addExerciseListener = this.addExerciseListener.bind(this);
     };
 
@@ -137,13 +138,12 @@ class MuscleMap {
     //     });
     // }
 
-    addExerciseListener(myCarousel) {
+    addExerciseListener() {
         const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div)'));
         muscleBlocks.forEach(muscleBlock => {
             muscleBlock.addEventListener('click', () => {
-                if (this.exerciseCount < 4) {
-                    generateExercise(muscleBlock, this, myCarousel);
-                    this.exerciseCount++;
+                if (this.myCarousel.sharedExercises.length < 4) {
+                    generateExercise(muscleBlock, this, this.myCarousel);
                 }
                 else {
                     muscleBlock.removeEventListener('click', () => { });

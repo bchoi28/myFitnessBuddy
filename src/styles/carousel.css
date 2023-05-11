@@ -84,7 +84,8 @@
     position: relative;
     font-weight: bold;
     color: var(--tangerine);
-    -webkit-text-stroke: 1px var(--background-color);
+    letter-spacing: 1px;
+    -webkit-text-stroke: .1px var(--branding-color);
 }
 
 .carousel-item-close-button {

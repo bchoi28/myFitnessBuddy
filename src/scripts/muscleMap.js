@@ -108,6 +108,10 @@ class MuscleMap {
         muscleBlocks.forEach(muscleBlock => {
             muscleBlock.addEventListener('click', () => {
                 this.handleClickGenerateExercise(muscleBlock);
+                muscleBlock.classList.add('animate');
+                muscleBlock.addEventListener('animationend', () => {
+                    muscleBlock.classList.remove('animate');
+                });
             });
             // muscleBlock.addEventListener('click', this.handleClickGenerateFace);
         });
@@ -121,31 +125,6 @@ class MuscleMap {
             muscleBlock.removeEventListener('click', () => { });
         }
     }
-
-    // handleClickGenerateFace(muscleBlock) {
-    //     const faceContainer = document.querySelector('.face-container');
-
-    //     const eyes = document.createElement('div');
-    //     eyes.classList.add('eyes');
-
-    //     const eyeSpan1 = document.createElement('span');
-    //     eyeSpan1.classList.add('eye');
-    //     eyeSpan1.textContent = 'd';
-
-    //     const eyeSpan2 = document.createElement('span');
-    //     eyeSpan2.classList.add('eye');
-    //     eyeSpan2.textContent = 'd';
-
-    //     const mouthSpan = document.createElement('span');
-    //     mouthSpan.classList.add('mouth');
-    //     mouthSpan.textContent = 'y';
-
-    //     eyes.appendChild(eyeSpan1);
-    //     eyes.appendChild(eyeSpan2);
-    //     faceContainer.append(eyes, mouthSpan);
-
-    //     // muscleBlock.removeEventListener('click', this.handleClickGenerateFace);
-    // };
 }
 
 export default MuscleMap;

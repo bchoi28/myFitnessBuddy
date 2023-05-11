@@ -417,7 +417,7 @@ const displayExerciseInfo = (exercise) => {
     exerciseInfo.append(primaryMusclesTitle, primaryMuscles, secondaryMusclesTitle, secondaryMuscles, buttonsContainer);
 
     const button = document.querySelector(`.goal-button[data-goal="${exercise.goal}"]`);
-    button.classList.add('active'); // Apply 'active' class to the button
+    button.classList.add('active');
 
     const repRangeContainer = document.createElement('div');
     repRangeContainer.classList.add('rep-range');

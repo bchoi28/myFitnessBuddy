@@ -28,7 +28,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: var(--background-color);
     // color: var(--royal-blue);
     height: 100vh;
@@ -44,13 +44,14 @@ body {
 }
 
 .main-title {
-    color: #0066EE;
-    font-size: 2.8em;
+    color: var(--branding-color);
+    font-size: 3.5em;
     // margin-top: 1em;
     // margin-bottom: 1em;
     font-weight: bolder;
-    -webkit-text-stroke: .5px var(--midnight-blue);
-    margin-right: 8px;
+    // -webkit-text-stroke: .1px var(--dark-slate-blue);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin-right: 30px;
 }
 
 .nav-links {
@@ -70,15 +71,19 @@ body {
     font-family: "Font Awesome 5 Brands";
     color: var(--branding-color);
     padding: 4px 22px 4px 7px;
-    margin: 5px 5px;
+    margin: 5px 1px;
     border: 0.5px solid white;
     border-radius: 5px;
     background-color: var(--background-color);
     width: 27px;
 }
 
+.fa-github {
+    padding-right: 26px;
+}
+
 .fab:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
 
 .buddy {
@@ -88,6 +93,7 @@ body {
 .containers {
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .left {
@@ -179,10 +185,21 @@ body {
     padding: 20px;
     border-radius: 18%;
     border: 1px solid var(--branding-color);
-    -webkit-text-stroke: .5px var(--background-color);
-    height: 33px;
+    // -webkit-text-stroke: .5px var(--background-color);
+    height: 45px;
     box-shadow: 0px 0 10px rgba(25, 25, 112, 0.2);
     display: none;
+    animation: pulse 10s 1;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: var(--block-color);
+    }
+
+    100% {
+        background-color: var(--tangerine);
+    }
 }
 
 .instructions-container {
@@ -231,3 +248,17 @@ body {
 //     visibility: visible;
 //     opacity: 1;
 // }
+
+#toggleButton {
+    position: absolute;
+    top: -80px;
+    right: 100px;
+    color: white;
+    background-color: var(--midnight-blue);
+    border: 3px solid black;
+    padding: 30px 10px;
+    border-radius: 25%;
+    font-size: 20px;
+    letter-spacing: 1px;
+    box-shadow: 5px 5px 20px rgba(2, 2, 35, 0.2)
+}

@@ -21,7 +21,6 @@ body {
     grid-template-rows: repeat(15, 1fr);
     grid-gap: 5px;
     position: relative;
-    left: 10px;
     top: 30px;
     width: 400px;
     height: 600px;
@@ -89,8 +88,12 @@ body {
 .head {
     grid-column: 4 / 8;
     grid-row: 1 / 4;
+    width: 85%;
+    height: 90%;
     border-radius: 50%;
-
+    position: relative;
+    left: 9px;
+    top: 7px;
 }
 
 .chest {
@@ -188,7 +191,7 @@ body {
     grid-row: 8 / 10;
     border-radius: 25%;
     position: relative;
-    top: 35px;
+    top: 25px;
     right: 8px;
     height: 90%;
     width: 110%;
@@ -202,7 +205,7 @@ body {
     width: 115%;
     height: 115%;
     position: relative;
-    top: -10px;
+    bottom: 22px;
     right: 10px;
 }
 
@@ -211,6 +214,8 @@ body {
     grid-row: 13 / 15;
     border-radius: 15%;
     width: 80%;
+    position: relative;
+    bottom: 9px;
 }
 
 .left-foot {
@@ -218,6 +223,8 @@ body {
     grid-row: 15 / 16;
     border-radius: 50%;
     width: 75%;
+    position: relative;
+    bottom: 10px;
 }
 
 .right-glute {
@@ -225,8 +232,8 @@ body {
     grid-row: 9 / 11;
     border-radius: 25%;
     position: relative;
-    top: -5px;
     right: 5px;
+    bottom: 16px;
     height: 90%;
     width: 110%;
     z-index: 0;
@@ -239,7 +246,7 @@ body {
     width: 115%;
     height: 115%;
     position: relative;
-    top: -10px;
+    bottom: 23px;
     right: 5px;
 }
 
@@ -249,6 +256,8 @@ body {
     border-radius: 15%;
     width: 80%;
     justify-self: center;
+    bottom: 10px;
+    position: relative;
 }
 
 .right-foot {
@@ -257,6 +266,8 @@ body {
     border-radius: 50%;
     width: 75%;
     justify-self: center;
+    position: relative;
+    bottom: 10px;
 }
 /*!****************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/exercise-info-gif.css ***!
@@ -287,6 +298,7 @@ body {
     width: 50%;
     display: flex;
     flex-direction: column;
+    box-shadow: 2px 3px 20px rgba(25, 25, 112, 0.2)
 }
 
 /* .exercise-info:hover .close-button {
@@ -315,7 +327,7 @@ body {
 }
 
 .gif-container {
-    border: 3px solid var(--cornflower-blue);
+    /* border: 3px solid var(--cornflower-blue); */
     margin-top: 10px;
     border-radius: 15%;
     width: 50%;
@@ -328,12 +340,17 @@ body {
 .gif {
     max-width: 100%;
     max-height: 100%;
+    border-radius: 15%;
+    border: 2px solid var(--cornflower-blue);
+    box-shadow: 5px 3px 20px rgba(25, 25, 112, 0.2)
 }
 /*!*******************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/carousel.css ***!
   \*******************************************************************************************************/
 .carousel-container {
-    border-radius: 25%;
+    border-radius: 5%;
+    border: 1px solid var(--cornflower-blue);
+    box-shadow: 0px 0 10px rgba(25, 25, 112, 0.2)
 }
 
 .carousel {
@@ -344,25 +361,38 @@ body {
 .carousel-nav {
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .carousel-nav a {
     display: inline-flex;
     width: 1.5rem;
     height: 1.5rem;
-    background: var(--block-color);
+    background: var(--baby-blue);
     text-decoration: none;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     margin: 0 0.5rem;
     position: relative;
+    top: 20px;
+    z-index: 1;
+    color: white;
 }
 
+/* .carousel-nav a.active {
+    background-color: var(--dark-slate-blue);
+    color: white;
+    border: 2px solid white;
+} */
+
 .carousel-nav a.active {
-    background-color: #FFC300;
-    color: #fff;
-    border: 2px solid #FFC300;
+    background-color: var(--tangerine);
+    color: white;
+    font-weight: bold;
+    border-radius: 30%;
+    border: 1px solid white;
+    transform: translateY(-3px);
 }
 
 .carousel-slides {
@@ -386,27 +416,48 @@ body {
     align-items: center;
     font-size: 24px;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-.carousel-item h3 {
-    font-size: 20px;
+.carousel-item-title {
+    margin: auto;
+    top: 34px;
+    position: relative;
+    color: var(--branding-color);
+}
+
+.carousel-item-type {
+    margin: auto;
+    top: 10px;
+    position: relative;
+    font-weight: bold;
+    color: var(--tangerine);
+    -webkit-text-stroke: 1px var(--background-color);
 }
 
 .carousel-item-close-button {
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 8px;
+    left: 3px;
     font-size: 16px;
+    font-weight: bold;
     background-color: transparent;
     border: none;
     color: white;
     cursor: pointer;
+    border-radius: 50%;
+}
+
+.carousel-item-close-button:hover {
+    background-color: var(--midnight-blue);
+    transform: scale(1.2);
 }
 /*!***********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/instructions.css ***!
   \***********************************************************************************************************/
 .instructions-container {
-    border: 3px solid var(--navy-blue);
+    /* border: 3px solid var(--navy-blue); */
     border-radius: 25%;
     display: flex;
     flex-direction: column;
@@ -415,30 +466,81 @@ body {
 .instructions-exercise-title {
     text-align: center;
     margin-top: 10px;
+    margin-bottom: 20px;
     letter-spacing: 1px;
+    color: var(--midnight-blue);
+    font-size: 20px;
 }
 
 .exercise-steps {
     list-style-type: none;
-    margin-left: 10px;
+    margin-left: 4em;
     counter-reset: step-counter;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .exercise-step {
-    margin: 10px 5px;
+    margin: 2px 0 10px 1em;
     position: relative;
     text-align: left;
+    display: flex;
+    align-items: center;
     color: var(--cornflower-blue);
+    border: 1px solid var(--cornflower-blue);
+    padding: 10px;
+    border-radius: 15%;
+    width: fit-content;
+    transition: all 0.2s ease-in-out;
+    white-space: pre;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.exercise-step:hover {
+    transform: scale(1.05);
+    cursor: default;
 }
 
 .exercise-step::before {
     content: counter(step-counter);
     counter-increment: step-counter;
     color: var(--midnight-blue);
-    font-size: 16px;
+    font-size: 1.1em;
     font-weight: bold;
     position: absolute;
-    left: -25px;
+    left: -1.5em;
+    bottom: 9px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: var(--midnight-blue);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    padding: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.exercise-step::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 25px;
+    border-style: solid;
+    border-width: 0px 2.5px 0px 0px;
+    border-color: var(--cornflower-blue);
+    left: -14px;
+    bottom: 6px;
+    border-radius: 50%;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--background-color);
 }
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
@@ -457,18 +559,33 @@ body {
   --turquoise-blue: #00CED1;
   --powder-blue: #B0E0E6;
   --midnight-blue: #191970;
+  --dark-slate-blue: #483d8b;
+  --burnt-orange: #D35400;
+  --coral: #FF7F50;
+  --pumpkin: #FF7518;
+  --tangerine: #FFA500;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: var(--background-color);
-  color: var(--royal-blue);
+  height: 100vh;
+  width: 100vw;
 }
 
-h1.main-title {
+.main-title {
   text-align: center;
   color: #0066EE;
-  margin-bottom: 10em;
+  font-size: 2.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-weight: bolder;
+  margin-right: 30%;
+  -webkit-text-stroke: 0.5px var(--midnight-blue);
+}
+
+.buddy {
+  color: var(--tangerine);
 }
 
 .containers {
@@ -480,34 +597,56 @@ h1.main-title {
   display: flex;
   flex-direction: column;
   width: 40%;
+  position: relative;
+  left: 6em;
 }
 
 .body-container {
   display: flex;
 }
 
+.my-exercises {
+  position: relative;
+  top: 90px;
+  left: 112px;
+  text-align: left;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #0066EE;
+}
+
 .carousel-container {
   padding: 25px;
-  margin: 50px auto 0 20px;
+  margin: 50px auto 0 0;
 }
 
 .right {
   width: 60%;
   display: flex;
   flex-direction: column;
+  position: relative;
+  top: 40px;
+  right: 8em;
+}
+
+.exercise-title {
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: bolder;
+  color: var(--branding-color);
 }
 
 .instructions-container {
   height: 300px;
   width: 100%;
   position: relative;
-  right: 30px;
 }
 
 .exercise-info-gif-container {
   height: 500px;
   width: 100%;
   position: relative;
-  right: 30px;
   top: 10px;
 }

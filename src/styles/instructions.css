@@ -1,5 +1,5 @@
 .instructions-container {
-    border: 3px solid var(--navy-blue);
+    /* border: 3px solid var(--navy-blue); */
     border-radius: 25%;
     display: flex;
     flex-direction: column;
@@ -8,28 +8,79 @@
 .instructions-exercise-title {
     text-align: center;
     margin-top: 10px;
+    margin-bottom: 20px;
     letter-spacing: 1px;
+    color: var(--midnight-blue);
+    font-size: 20px;
 }
 
 .exercise-steps {
     list-style-type: none;
-    margin-left: 10px;
+    margin-left: 4em;
     counter-reset: step-counter;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .exercise-step {
-    margin: 10px 5px;
+    margin: 2px 0 10px 1em;
     position: relative;
     text-align: left;
+    display: flex;
+    align-items: center;
     color: var(--cornflower-blue);
+    border: 1px solid var(--cornflower-blue);
+    padding: 10px;
+    border-radius: 15%;
+    width: fit-content;
+    transition: all 0.2s ease-in-out;
+    white-space: pre;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.exercise-step:hover {
+    transform: scale(1.05);
+    cursor: default;
 }
 
 .exercise-step::before {
     content: counter(step-counter);
     counter-increment: step-counter;
     color: var(--midnight-blue);
-    font-size: 16px;
+    font-size: 1.1em;
     font-weight: bold;
     position: absolute;
-    left: -25px;
+    left: -1.5em;
+    bottom: 9px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: var(--midnight-blue);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    padding: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.exercise-step::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 25px;
+    border-style: solid;
+    border-width: 0px 2.5px 0px 0px;
+    border-color: var(--cornflower-blue);
+    left: -14px;
+    bottom: 6px;
+    border-radius: 50%;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--background-color);
 }

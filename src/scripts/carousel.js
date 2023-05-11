@@ -30,26 +30,25 @@ class Carousel {
         carouselItem.classList.add("carousel-item");
         carouselItem.id = `carousel-item-${document.querySelectorAll(".carousel-item").length + 1}`;
 
-        const itemTitle = document.createElement("h3");
-        itemTitle.textContent = exercise.name;
+        const carouselItemTitle = document.createElement('div');
+        carouselItemTitle.classList.add('carousel-item-title');
+        carouselItemTitle.innerText = exercise.name;
+
+        const carouselItemType = document.createElement('div');
+        carouselItemType.classList.add('carousel-item-type');
+        carouselItemType.innerText = exercise.type;
 
         const closeButton = document.createElement("button");
         closeButton.classList.add("carousel-item-close-button");
         closeButton.innerText = "X";
 
-        closeButton.addEventListener('click', () => {
-            this.removeExerciseFromCarousel(carouselItem);
-            removeExerciseFromInfoContainer(exercise);
-        })
-
-        carouselItem.appendChild(itemTitle);
-        carouselItem.appendChild(closeButton);
-
-        if (this.carouselSlides.children.length >= 4) {
+        if (this.carouselSlides.children.length === 4) {
             return;
         }
 
         this.carouselSlides.appendChild(carouselItem);
+        carouselItem.append(carouselItemTitle, carouselItemType, closeButton);
+
 
         carouselItem.scrollIntoView({ behavior: "smooth" });
 
@@ -63,13 +62,16 @@ class Carousel {
         newNavItem.textContent = numItems.toString();
         this.carouselNav.appendChild(newNavItem);
 
-
-
         newNavItem.addEventListener('click', (event) => {
             displayExerciseInfo(exercise);
             const navItems = Array.from(document.querySelectorAll('.carousel-nav a'));
             navItems.forEach((navItem) => navItem.classList.remove('active'));
             event.target.classList.add('active');
+        });
+
+        closeButton.addEventListener('click', () => {
+            const nextExercise = this.removeExerciseFromCarousel(carouselItem);
+            removeExerciseFromInfoContainer(nextExercise);
         });
 
         this.storedExercises.push(exercise);
@@ -82,11 +84,10 @@ class Carousel {
         this.carouselNav.removeChild(navItem);
 
         // Remove the exercise from the storedExercises array
-        const exerciseName = carouselItem.querySelector("h3").textContent;
+        const exerciseName = carouselItem.querySelector('.carousel-item-title').innerText;
         const exerciseIndex = this.storedExercises.findIndex((exercise) => exercise.name === exerciseName);
-        if (exerciseIndex > -1) {
-            this.storedExercises.splice(exerciseIndex, 1);
-        }
+        this.storedExercises.splice(exerciseIndex, 1);
+        return this.storedExercises[exerciseIndex - 1];
     }
 };
 

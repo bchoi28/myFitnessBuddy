@@ -1,5 +1,7 @@
 .carousel-container {
-    border-radius: 25%;
+    border-radius: 5%;
+    border: 1px solid var(--cornflower-blue);
+    box-shadow: 0px 0 10px rgba(25, 25, 112, 0.2)
 }
 
 .carousel {
@@ -10,25 +12,38 @@
 .carousel-nav {
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .carousel-nav a {
     display: inline-flex;
     width: 1.5rem;
     height: 1.5rem;
-    background: var(--block-color);
+    background: var(--baby-blue);
     text-decoration: none;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     margin: 0 0.5rem;
     position: relative;
+    top: 20px;
+    z-index: 1;
+    color: white;
 }
 
+/* .carousel-nav a.active {
+    background-color: var(--dark-slate-blue);
+    color: white;
+    border: 2px solid white;
+} */
+
 .carousel-nav a.active {
-    background-color: #FFC300;
-    color: #fff;
-    border: 2px solid #FFC300;
+    background-color: var(--tangerine);
+    color: white;
+    font-weight: bold;
+    border-radius: 30%;
+    border: 1px solid white;
+    transform: translateY(-3px);
 }
 
 .carousel-slides {
@@ -52,19 +67,40 @@
     align-items: center;
     font-size: 24px;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-.carousel-item h3 {
-    font-size: 20px;
+.carousel-item-title {
+    margin: auto;
+    top: 34px;
+    position: relative;
+    color: var(--branding-color);
+}
+
+.carousel-item-type {
+    margin: auto;
+    top: 10px;
+    position: relative;
+    font-weight: bold;
+    color: var(--tangerine);
+    -webkit-text-stroke: 1px var(--background-color);
 }
 
 .carousel-item-close-button {
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 8px;
+    left: 3px;
     font-size: 16px;
+    font-weight: bold;
     background-color: transparent;
     border: none;
     color: white;
     cursor: pointer;
+    border-radius: 50%;
+}
+
+.carousel-item-close-button:hover {
+    background-color: var(--midnight-blue);
+    transform: scale(1.2);
 }

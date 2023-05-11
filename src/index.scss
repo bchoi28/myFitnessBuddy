@@ -19,18 +19,35 @@
     --turquoise-blue: #00CED1;
     --powder-blue: #B0E0E6;
     --midnight-blue: #191970;
+    --dark-slate-blue: #483d8b;
+
+    --burnt-orange: #D35400;
+    --coral: #FF7F50;
+    --pumpkin: #FF7518;
+    --tangerine: #FFA500;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--background-color);
-    color: var(--royal-blue);
+    // color: var(--royal-blue);
+    height: 100vh;
+    width: 100vw;
 }
 
-h1.main-title {
+.main-title {
     text-align: center;
     color: #0066EE;
-    margin-bottom: 10em;
+    font-size: 2.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-weight: bolder;
+    margin-right: 30%;
+    -webkit-text-stroke: .5px var(--midnight-blue);
+}
+
+.buddy {
+    color: var(--tangerine);
 }
 
 .containers {
@@ -42,35 +59,98 @@ h1.main-title {
     display: flex;
     flex-direction: column;
     width: 40%;
+    position: relative;
+    left: 6em;
 }
+
+// .face-container {
+//     position: relative;
+//     // width: 200px;
+//     // height: 200px;
+//     // background-image: url('path/to/your/body-image.png');
+//     background-size: cover;
+// }
+
+// .eyes {
+//     position: absolute;
+//     top: 30%;
+//     left: 50%;
+//     transform: translateX(-50%);
+// }
+
+// .eye {
+//     font-size: 60px;
+//     font-weight: bold;
+//     color: black;
+//     z-index: 1;
+//     font-family: "Roboto Mono", monospace;
+//     // font-family: "Futura";
+//     position: absolute;
+//     left: 144px;
+//     top: 220px;
+// }
+
+// .mouth {
+//     // display: block;
+//     position: absolute;
+//     bottom: 30px;
+//     left: 50%;
+//     // transform: translateY(-50%);
+//     font-size: 40px;
+//     font-weight: bold;
+// }
+
 
 .body-container {
     display: flex;
 }
 
+.my-exercises {
+    position: relative;
+    top: 90px;
+    left: 112px;
+    text-align: left;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #0066EE;
+}
+
 .carousel-container {
     padding: 25px;
-    margin: 50px auto 0 20px;
+    margin: 50px auto 0 0;
 }
 
 .right {
     width: 60%;
     display: flex;
     flex-direction: column;
+    position: relative;
+    top: 40px;
+    right: 8em;
+}
+
+.exercise-title {
+    text-align: center;
+    position: relative;
+    // right: 30px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: bolder;
+    color: var(--branding-color);
 }
 
 .instructions-container {
     height: 300px;
     width: 100%;
     position: relative;
-    right: 30px;
+    // right: 30px;
 }
 
 .exercise-info-gif-container {
     height: 500px;
     width: 100%;
     position: relative;
-    right: 30px;
+    // right: 30px;
     top: 10px;
 }
 

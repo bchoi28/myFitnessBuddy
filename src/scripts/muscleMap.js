@@ -5,6 +5,7 @@ class MuscleMap {
         this.container = containerEl;
         this.myCarousel = myCarousel;
         this.render()
+        this.handleClickGenerateExercise = this.handleClickGenerateExercise.bind(this);
         this.bindEvents();
     };
 
@@ -99,25 +100,52 @@ class MuscleMap {
     };
 
     bindEvents() {
-        this.addExerciseListener();
+        this.addEventListeners();
     };
 
-    addExerciseListener() {
+    addEventListeners() {
         const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div)'));
         muscleBlocks.forEach(muscleBlock => {
-
-            // let muscleMapInstance = this;
-
             muscleBlock.addEventListener('click', () => {
-                if (this.myCarousel.storedExercises.length < 4) {
-                    generateExercise(muscleBlock, this.myCarousel);
-                }
-                else {
-                    muscleBlock.removeEventListener('click', () => { });
-                }
+                this.handleClickGenerateExercise(muscleBlock);
             });
-
+            // muscleBlock.addEventListener('click', this.handleClickGenerateFace);
         });
     }
+
+    handleClickGenerateExercise(muscleBlock) {
+        if (this.myCarousel.storedExercises.length < 4) {
+            generateExercise(muscleBlock, this.myCarousel);
+        }
+        else {
+            muscleBlock.removeEventListener('click', () => { });
+        }
+    }
+
+    // handleClickGenerateFace(muscleBlock) {
+    //     const faceContainer = document.querySelector('.face-container');
+
+    //     const eyes = document.createElement('div');
+    //     eyes.classList.add('eyes');
+
+    //     const eyeSpan1 = document.createElement('span');
+    //     eyeSpan1.classList.add('eye');
+    //     eyeSpan1.textContent = 'd';
+
+    //     const eyeSpan2 = document.createElement('span');
+    //     eyeSpan2.classList.add('eye');
+    //     eyeSpan2.textContent = 'd';
+
+    //     const mouthSpan = document.createElement('span');
+    //     mouthSpan.classList.add('mouth');
+    //     mouthSpan.textContent = 'y';
+
+    //     eyes.appendChild(eyeSpan1);
+    //     eyes.appendChild(eyeSpan2);
+    //     faceContainer.append(eyes, mouthSpan);
+
+    //     // muscleBlock.removeEventListener('click', this.handleClickGenerateFace);
+    // };
 }
+
 export default MuscleMap;

@@ -2,6 +2,8 @@
 
 myFitnessBuddy is an interactive, single-page, data visualiazation web application that serves as a personal workout routine generator. Buddy will guide users through an interactive experience to quickly create and customize an exercise regimen.
 
+Live link: [myFitnessBuddy](https://bchoi28.github.io/myFitnessBuddy/)
+
 ## Functionality & MVPs
 
 With myFitnessBuddy, users are be able to:

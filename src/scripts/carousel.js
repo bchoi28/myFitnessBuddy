@@ -3,9 +3,9 @@ import { displayExerciseInfo, removeExerciseFromInfoContainer } from "./exercise
 class Carousel {
     constructor(containerEl, storedExercises) {
         this.container = containerEl;
-        this.render();
         this.carouselNav;
         this.carouselSlides;
+        this.render();
         this.storedExercises = storedExercises;
     }
 
@@ -16,14 +16,13 @@ class Carousel {
         const carouselNav = document.createElement("div");
         carouselNav.classList.add("carousel-nav");
         this.carouselNav = carouselNav;
-        carousel.appendChild(carouselNav);
 
         const carouselSlides = document.createElement("div");
         carouselSlides.classList.add("carousel-slides");
-        carousel.appendChild(carouselSlides);
         this.carouselSlides = carouselSlides;
 
         this.container.appendChild(carousel);
+        carousel.append(carouselNav, carouselSlides);
     }
 
     addExerciseToCarousel(exercise) {
@@ -52,7 +51,7 @@ class Carousel {
 
         this.carouselSlides.appendChild(carouselItem);
 
-        carouselItem.scrollIntoView({ behiavior: "smooth" });
+        carouselItem.scrollIntoView({ behavior: "smooth" });
 
         const numItems = document.querySelectorAll(".carousel-item").length;
         const newNavItem = document.createElement("a");

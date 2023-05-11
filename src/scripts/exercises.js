@@ -1,4 +1,3 @@
-// import { Carousel } from './carousel';
 
 const shoulderExercises = [
     {
@@ -135,29 +134,34 @@ const exercises = {
 const generateExercise = async (muscleBlock, carouselInstance) => {
 
     const exercisesByMuscleBlock = exercises[muscleBlock.classList[0]]; // Get exercises for the muscle block class
+
+
+    // keep assigning an exercise until it's NOT in storedExercises
     let exercise;
     do {
         const randomIndex = Math.floor(Math.random() * exercisesByMuscleBlock.length);
         exercise = exercisesByMuscleBlock[randomIndex];
     } while (carouselInstance.storedExercises.includes(exercise));
 
-    // check if anything exists on the R side
 
-    const exerciseInfoGifContainer = document.querySelector('.info-gif-container');
-    if (exerciseInfoGifContainer.firstChild) {
-        exerciseInfoGifContainer.removeChild(exerciseInfoGifContainer.firstChild)
+    // check if anything exists on the R side
+    const instructionsContainer = document.querySelector('.instructions-container');
+    while (instructionsContainer.firstChild) {
+        instructionsContainer.removeChild(instructionsContainer.firstChild)
     };
 
     const exerciseInfo = document.querySelector('.exercise-info');
     while (exerciseInfo.firstChild) {
         exerciseInfo.removeChild(exerciseInfo.firstChild);
-    }
+    };
 
     const gifContainer = document.querySelector('.gif-container');
     if (gifContainer.firstChild) {
         gifContainer.removeChild(gifContainer.firstChild);
-    }
+    };
 
+
+    // create/append exerciseInfo
     const primaryMusclesTitle = document.createElement('div');
     primaryMusclesTitle.classList.add('primary-muscles-title');
     primaryMusclesTitle.innerText = 'Primary Muscles';
@@ -174,36 +178,34 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     secondaryMuscles.classList.add('secondary-muscles');
     secondaryMuscles.innerText = `${exercise.secondaryMuscles.join(", ")}`;
 
-    exerciseInfo.append(primaryMusclesTitle);
-    exerciseInfo.append(primaryMuscles);
-    exerciseInfo.append(secondaryMusclesTitle);
-    exerciseInfo.append(secondaryMuscles);
-    exerciseInfoGifContainer.append(exerciseInfo);
+    exerciseInfo.append(primaryMusclesTitle, primaryMuscles, secondaryMusclesTitle, secondaryMuscles);
 
+
+    // create/append gif
     const gif = document.createElement('img');
     gif.classList.add('.gif');
     gif.src = exercise.gifUrl;
     gif.alt = exercise.name;
     gifContainer.appendChild(gif);
-    exerciseInfoGifContainer.append(gifContainer);
 
-
+    // create/append instructions
     const steps = await fetchSteps(exercise.apiName);
     exercise.steps = steps;
     const exerciseSteps = document.createElement('ul');
     exerciseSteps.classList.add('exercise-steps');
     steps.forEach((step) => {
         const exerciseStep = document.createElement('li');
+        exerciseStep.classList.add('.exercise-step');
         exerciseStep.innerText = step;
         exerciseSteps.appendChild(exerciseStep);
     });
 
-    const instructionsDiv = document.createElement('div');
-    instructionsDiv.classList.add('instructions-div');
-    instructionsDiv.innerText = 'Instructions';
+    const instructionsExerciseTitle = document.createElement('div');
+    instructionsExerciseTitle.classList.add('instructions-exercise-title');
+    instructionsExerciseTitle.innerText = 'Instructions';
 
-    instructionsContainer.appendChild(instructionsDiv);
-    instructionsContainer.append(exerciseSteps);
+    instructionsContainer.appendChild(instructionsExerciseTitle);
+    instructionsContainer.appendChild(exerciseSteps);
 
     carouselInstance.addExerciseToCarousel(exercise);
 

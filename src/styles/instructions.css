@@ -1,11 +1,14 @@
 .instructions-container {
     border: 3px solid var(--navy-blue);
     border-radius: 25%;
+    display: flex;
+    flex-direction: column;
 }
 
 .instructions-exercise-title {
     text-align: center;
     margin-top: 10px;
+    letter-spacing: 1px;
 }
 
 .exercise-steps {
@@ -14,14 +17,14 @@
     counter-reset: step-counter;
 }
 
-.exercise-steps li {
+.exercise-step {
     margin: 10px 5px;
     position: relative;
     text-align: left;
     color: var(--cornflower-blue);
 }
 
-.exercise-steps li::before {
+.exercise-step::before {
     content: counter(step-counter);
     counter-increment: step-counter;
     color: var(--midnight-blue);

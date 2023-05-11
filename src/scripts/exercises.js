@@ -135,7 +135,6 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
 
     const exercisesByMuscleBlock = exercises[muscleBlock.classList[0]]; // Get exercises for the muscle block class
 
-
     // keep assigning an exercise until it's NOT in storedExercises
     let exercise;
     do {
@@ -178,7 +177,32 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     secondaryMuscles.classList.add('secondary-muscles');
     secondaryMuscles.innerText = `${exercise.secondaryMuscles.join(", ")}`;
 
-    exerciseInfo.append(primaryMusclesTitle, primaryMuscles, secondaryMusclesTitle, secondaryMuscles);
+    // add three buttons in a row: strength, size, endurance
+    // depending on which one the user clicks, underneath an element is created with
+    // the recommended rep range for that button.
+
+    const strengthButton = document.createElement('button');
+    strengthButton.innerText = 'Strength';
+
+    const sizeButton = document.createElement('button');
+    sizeButton.innerText = 'Size';
+
+    const enduranceButton = document.createElement('button');
+    enduranceButton.innerText = 'Endurance';
+
+    strengthButton.addEventListener('click', () => {
+        displayRecommendedRepRange('strength');
+    });
+
+    sizeButton.addEventListener('click', () => {
+        displayRecommendedRepRange('size');
+    });
+
+    enduranceButton.addEventListener('click', () => {
+        displayRecommendedRepRange('endurance');
+    });
+
+    exerciseInfo.append(primaryMusclesTitle, primaryMuscles, secondaryMusclesTitle, secondaryMuscles, strengthButton, sizeButton, enduranceButton);
 
 
     // create/append gif
@@ -201,6 +225,7 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     });
 
     const exerciseTitle = document.querySelector('.exercise-title');
+    exerciseTitle.style.display = 'flex';
     exerciseTitle.innerText = exercise.name;
 
     const instructionsExerciseTitle = document.createElement('div');
@@ -221,6 +246,26 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     // });
 
     // exerciseDisplay.append(closeButton);
+}
+
+const displayRecommendedRepRange = (workoutType) => {
+    const repRangeContainer = document.createElement('div');
+    repRangeContainer.classList.add('rep-range');
+
+    let repRange;
+    if (workoutType === 'strength') {
+        repRange = '4-6 reps';
+    } else if (workoutType === 'size') {
+        repRange = '8-12 reps';
+    } else if (workoutType === 'endurance') {
+        repRange = '15-20 reps';
+    }
+
+    repRangeContainer.innerText = `Recommended Rep Range: ${repRange}`;
+
+    // Append the rep range container to the exercise info container
+    const exerciseInfo = document.querySelector('.exercise-info');
+    exerciseInfo.appendChild(repRangeContainer);
 }
 
 const removeExerciseFromInfoContainer = (nextExercise) => {

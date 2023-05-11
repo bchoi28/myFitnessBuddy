@@ -6,9 +6,11 @@
 }
 
 .instructions-exercise-title {
-    text-align: center;
+    /* text-align: center; */
     margin-top: 10px;
     margin-bottom: 20px;
+    left: 10%;
+    position: relative;
     letter-spacing: 1px;
     color: var(--midnight-blue);
     font-size: 20px;

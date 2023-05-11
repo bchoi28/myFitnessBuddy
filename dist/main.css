@@ -371,6 +371,23 @@
     color: var(--cornflower-blue);
 }
 
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.exercise-info>* {
+    animation: slideIn 0.5s ease-in-out;
+    /* animation-delay: 1s; */
+}
+
 .gif-container {
     /* border: 3px solid var(--cornflower-blue); */
     margin-top: 10px;
@@ -388,6 +405,20 @@
     border-radius: 15%;
     border: 2px solid var(--cornflower-blue);
     box-shadow: 5px 3px 20px rgba(25, 25, 112, 0.2)
+}
+
+@keyframes fadeInGif {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.gif-container {
+    animation: fadeInGif 0.5s ease-in-out;
 }
 /*!*******************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/carousel.css ***!
@@ -529,6 +560,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .exercise-step {
@@ -545,6 +577,8 @@
     transition: all 0.2s ease-in-out;
     white-space: pre;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+    animation-delay: 0.1s;
 }
 
 .exercise-step:hover {
@@ -590,6 +624,18 @@
     top: 50%;
     transform: translateY(-50%);
     background-color: var(--background-color);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!

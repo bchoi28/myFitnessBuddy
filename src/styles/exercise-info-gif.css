@@ -102,6 +102,23 @@
     color: var(--cornflower-blue);
 }
 
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.exercise-info>* {
+    animation: slideIn 0.5s ease-in-out;
+    /* animation-delay: 1s; */
+}
+
 .gif-container {
     /* border: 3px solid var(--cornflower-blue); */
     margin-top: 10px;
@@ -119,4 +136,18 @@
     border-radius: 15%;
     border: 2px solid var(--cornflower-blue);
     box-shadow: 5px 3px 20px rgba(25, 25, 112, 0.2)
+}
+
+@keyframes fadeInGif {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.gif-container {
+    animation: fadeInGif 0.5s ease-in-out;
 }

@@ -25,6 +25,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .exercise-step {
@@ -41,6 +42,8 @@
     transition: all 0.2s ease-in-out;
     white-space: pre;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+    animation-delay: 0.1s;
 }
 
 .exercise-step:hover {
@@ -86,4 +89,16 @@
     top: 50%;
     transform: translateY(-50%);
     background-color: var(--background-color);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

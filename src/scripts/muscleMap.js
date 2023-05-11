@@ -1,4 +1,4 @@
-import { generateExercise, removeExerciseFromInfoContainer } from './exercises.js';
+import { generateExercise } from './exercises.js';
 
 class MuscleMap {
     constructor(containerEl, myCarousel) {

@@ -1,6 +1,5 @@
 .carousel-container {
-    /* width: 200px; */
-    /* overflow: hidden; */
+    border-radius: 25%;
 }
 
 .carousel {

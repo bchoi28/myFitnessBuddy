@@ -1,0 +1,32 @@
+.instructions-container {
+    border: 3px solid var(--navy-blue);
+    border-radius: 25%;
+}
+
+.instructions-exercise-title {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.exercise-steps {
+    list-style-type: none;
+    margin-left: 10px;
+    counter-reset: step-counter;
+}
+
+.exercise-steps li {
+    margin: 10px 5px;
+    position: relative;
+    text-align: left;
+    color: var(--cornflower-blue);
+}
+
+.exercise-steps li::before {
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    color: var(--midnight-blue);
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    left: -25px;
+}

@@ -1,4 +1,4 @@
-import { Carousel } from './carousel';
+// import { Carousel } from './carousel';
 
 const shoulderExercises = [
     {
@@ -132,40 +132,31 @@ const exercises = {
     'right-bicep': bicepExercises,
 };
 
-const generateExercise = async (muscleBlock, muscleMapInstance, carouselInstance, gifContainerInstance) => {
+const generateExercise = async (muscleBlock, carouselInstance) => {
 
     const exercisesByMuscleBlock = exercises[muscleBlock.classList[0]]; // Get exercises for the muscle block class
-
     let exercise;
     do {
         const randomIndex = Math.floor(Math.random() * exercisesByMuscleBlock.length);
         exercise = exercisesByMuscleBlock[randomIndex];
-    } while (carouselInstance.sharedExercises.includes(exercise));
+    } while (carouselInstance.storedExercises.includes(exercise));
 
-    // exercise.steps = steps;
-    // const exerciseSteps = document.createElement('div');
-    // exerciseSteps.classList.add('exercise-steps');
-    // exerciseSteps.innerText = exercise.steps.join('\n');
+    // check if anything exists on the R side
 
-    const exerciseTitle = document.querySelector('.exercise-title');
-    const exerciseInfoContainer = document.querySelector('.exercise-info-container');
-    exerciseTitle.textContent = exercise.name;
+    const exerciseInfoGifContainer = document.querySelector('.info-gif-container');
+    if (exerciseInfoGifContainer.firstChild) {
+        exerciseInfoGifContainer.removeChild(exerciseInfoGifContainer.firstChild)
+    };
 
-    const exerciseDisplay = document.createElement('div');
-    exerciseDisplay.classList.add('exercise-display');
+    const exerciseInfo = document.querySelector('.exercise-info');
+    while (exerciseInfo.firstChild) {
+        exerciseInfo.removeChild(exerciseInfo.firstChild);
+    }
 
-    // const closeButton = document.createElement('button');
-    // closeButton.classList.add('close-button');
-    // closeButton.innerText = 'X';
-    // closeButton.addEventListener('click', () => {
-    //     exerciseDisplay.remove();
-    //     carouselInstance.removeExerciseFromInfoContainer(carouselItem);
-    // });
-
-    // exerciseDisplay.append(closeButton);
-
-    const exerciseInfo1 = document.createElement('div');
-    exerciseInfo1.classList.add('exercise-info');
+    const gifContainer = document.querySelector('.gif-container');
+    if (gifContainer.firstChild) {
+        gifContainer.removeChild(gifContainer.firstChild);
+    }
 
     const primaryMusclesTitle = document.createElement('div');
     primaryMusclesTitle.classList.add('primary-muscles-title');
@@ -183,13 +174,22 @@ const generateExercise = async (muscleBlock, muscleMapInstance, carouselInstance
     secondaryMuscles.classList.add('secondary-muscles');
     secondaryMuscles.innerText = `${exercise.secondaryMuscles.join(", ")}`;
 
-    exerciseDisplay.append(exerciseInfo1);
-    exerciseInfo1.append(primaryMusclesTitle);
-    exerciseInfo1.append(primaryMuscles);
-    exerciseInfo1.append(secondaryMusclesTitle);
-    exerciseInfo1.append(secondaryMuscles);
+    exerciseInfo.append(primaryMusclesTitle);
+    exerciseInfo.append(primaryMuscles);
+    exerciseInfo.append(secondaryMusclesTitle);
+    exerciseInfo.append(secondaryMuscles);
+    exerciseInfoGifContainer.append(exerciseInfo);
+
+    const gif = document.createElement('img');
+    gif.classList.add('.gif');
+    gif.src = exercise.gifUrl;
+    gif.alt = exercise.name;
+    gifContainer.appendChild(gif);
+    exerciseInfoGifContainer.append(gifContainer);
+
 
     const steps = await fetchSteps(exercise.apiName);
+    exercise.steps = steps;
     const exerciseSteps = document.createElement('ul');
     exerciseSteps.classList.add('exercise-steps');
     steps.forEach((step) => {
@@ -197,33 +197,25 @@ const generateExercise = async (muscleBlock, muscleMapInstance, carouselInstance
         exerciseStep.innerText = step;
         exerciseSteps.appendChild(exerciseStep);
     });
-    exercise.steps = steps;
-
-    const exerciseInfo2 = document.createElement('div');
-    exerciseInfo2.classList.add('exercise-info');
 
     const instructionsDiv = document.createElement('div');
     instructionsDiv.classList.add('instructions-div');
     instructionsDiv.innerText = 'Instructions';
 
-    exerciseInfo2.appendChild(instructionsDiv);
-    exerciseInfo2.append(exerciseSteps);
-    exerciseDisplay.append(exerciseInfo2);
-
-    if (exerciseInfoContainer.childElementCount === 1) {
-        exerciseInfoContainer.removeChild(exerciseInfoContainer.children[0]);
-    }
-
-    exerciseInfoContainer.append(exerciseDisplay);
+    instructionsContainer.appendChild(instructionsDiv);
+    instructionsContainer.append(exerciseSteps);
 
     carouselInstance.addExerciseToCarousel(exercise);
 
-    const gifContainer = document.querySelector('.gif-container');
-    const gifUrl = exercise.gifUrl;
-    const gif = document.createElement('img');
-    gif.src = exercise.gifUrl;
-    gif.alt = exercise.name;
-    gifContainer.appendChild(gif);
+    // const closeButton = document.createElement('button');
+    // closeButton.classList.add('close-button');
+    // closeButton.innerText = 'X';
+    // closeButton.addEventListener('click', () => {
+    //     exerciseDisplay.remove();
+    //     carouselInstance.removeExerciseFromInfoContainer(carouselItem);
+    // });
+
+    // exerciseDisplay.append(closeButton);
 }
 
 const removeExerciseFromInfoContainer = (exercise) => {
@@ -252,8 +244,8 @@ const displayExerciseInfo = (exercise) => {
 
     // exerciseDisplay.append(closeButton);
 
-    const exerciseInfo1 = document.createElement('div');
-    exerciseInfo1.classList.add('exercise-info');
+    const exerciseInfo = document.createElement('div');
+    exerciseInfo.classList.add('exercise-info');
 
     const primaryMusclesTitle = document.createElement('div');
     primaryMusclesTitle.classList.add('primary-muscles-title');
@@ -279,22 +271,22 @@ const displayExerciseInfo = (exercise) => {
         exerciseSteps.appendChild(exerciseStep);
     });
 
-    const exerciseInfo2 = document.createElement('div');
-    exerciseInfo2.classList.add('exercise-info');
+    const gifContainer = document.createElement('div');
+    gifContainer.classList.add('exercise-info');
 
     const instructionsDiv = document.createElement('div');
     instructionsDiv.classList.add('instructions-div');
     instructionsDiv.innerText = 'Instructions';
 
-    exerciseDisplay.append(exerciseInfo1);
-    exerciseInfo1.append(primaryMusclesTitle);
-    exerciseInfo1.append(primaryMuscles);
-    exerciseInfo1.append(secondaryMusclesTitle);
-    exerciseInfo1.append(secondaryMuscles);
+    exerciseDisplay.append(exerciseInfo);
+    exerciseInfo.append(primaryMusclesTitle);
+    exerciseInfo.append(primaryMuscles);
+    exerciseInfo.append(secondaryMusclesTitle);
+    exerciseInfo.append(secondaryMuscles);
 
-    exerciseDisplay.append(exerciseInfo2);
-    exerciseInfo2.appendChild(instructionsDiv);
-    exerciseInfo2.append(exerciseSteps);
+    exerciseDisplay.append(gifContainer);
+    gifContainer.appendChild(instructionsDiv);
+    gifContainer.append(exerciseSteps);
 
     exerciseInfoContainer.append(exerciseDisplay);
 }

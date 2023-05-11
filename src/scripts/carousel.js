@@ -1,12 +1,12 @@
 import { displayExerciseInfo, removeExerciseFromInfoContainer } from "./exercises";
 
 class Carousel {
-    constructor(containerEl, sharedExercises) {
+    constructor(containerEl, storedExercises) {
         this.container = containerEl;
         this.render();
         this.carouselNav;
         this.carouselSlides;
-        this.sharedExercises = sharedExercises;
+        this.storedExercises = storedExercises;
     }
 
     render() {
@@ -73,7 +73,7 @@ class Carousel {
             event.target.classList.add('active');
         });
 
-        this.sharedExercises.push(exercise);
+        this.storedExercises.push(exercise);
     }
 
     removeExerciseFromCarousel(carouselItem) {
@@ -82,11 +82,11 @@ class Carousel {
         const navItem = document.querySelector(`.carousel-nav a[href="#carousel-item-${itemId}"]`);
         this.carouselNav.removeChild(navItem);
 
-        // Remove the exercise from the sharedExercises array
+        // Remove the exercise from the storedExercises array
         const exerciseName = carouselItem.querySelector("h3").textContent;
-        const exerciseIndex = this.sharedExercises.findIndex((exercise) => exercise.name === exerciseName);
+        const exerciseIndex = this.storedExercises.findIndex((exercise) => exercise.name === exerciseName);
         if (exerciseIndex > -1) {
-            this.sharedExercises.splice(exerciseIndex, 1);
+            this.storedExercises.splice(exerciseIndex, 1);
         }
     }
 };

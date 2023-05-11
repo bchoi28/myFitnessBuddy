@@ -258,48 +258,17 @@ body {
     width: 75%;
     justify-self: center;
 }
-/*!************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/gif-container.css ***!
-  \************************************************************************************************************/
-.gif-container {
-    width: 100%;
-    height: 300px;
-    border: 3px solid var(--navy-blue);
-    border-radius: 25%;
-    position: relative;
-    right: 30px;
-}
-
-.exercise-title {
-    text-align: center;
-    margin-top: 10px;
-}
-/*!**********************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/exercise-info-container.css ***!
-  \**********************************************************************************************************************/
-.exercise-info-container {
-    /* border: 3px solid var(--navy-blue); */
-    height: 500px;
-    width: 100%;
+/*!****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/exercise-info-gif.css ***!
+  \****************************************************************************************************************/
+.exercise-info-gif-container {
     border-radius: 10%;
-    position: relative;
-    right: 30px;
-    top: 10px;
     display: flex;
-    flex-direction: row;
-}
-
-.exercise-display {
-    /* margin: 2% auto 0 auto; */
-    display: flex;
-    /* flex-direction: column; */
-    /* width: 50%; */
-    text-align: center;
-    position: relative;
     font-size: 18px;
+    text-align: center;
 }
 
-.close-button {
+/* .close-button {
     position: absolute;
     top: 7%;
     left: 1%;
@@ -309,7 +278,7 @@ body {
     border-radius: 40%;
     cursor: pointer;
     display: none;
-}
+} */
 
 .exercise-info {
     border: 3px solid var(--cornflower-blue);
@@ -320,13 +289,12 @@ body {
     flex-direction: column;
 }
 
-.exercise-display:hover .close-button {
+/* .exercise-info:hover .close-button {
     display: block;
-}
+} */
 
 .primary-muscles-title,
-.secondary-muscles-title,
-.instructions-div {
+.secondary-muscles-title {
     margin-top: 20px;
     text-align: center;
     vertical-align: top;
@@ -346,34 +314,26 @@ body {
     color: var(--cornflower-blue);
 }
 
-.exercise-steps {
-    list-style-type: none;
-    margin-left: 10px;
-    counter-reset: step-counter;
+.gif-container {
+    border: 3px solid var(--cornflower-blue);
+    margin-top: 10px;
+    border-radius: 15%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.exercise-steps li {
-    margin: 10px 5px;
-    position: relative;
-    text-align: left;
-    color: var(--cornflower-blue);
-}
-
-.exercise-steps li::before {
-    content: counter(step-counter);
-    counter-increment: step-counter;
-    color: var(--midnight-blue);
-    font-size: 16px;
-    font-weight: bold;
-    position: absolute;
-    left: -25px;
+.gif {
+    max-width: 100%;
+    max-height: 100%;
 }
 /*!*******************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/carousel.css ***!
   \*******************************************************************************************************/
 .carousel-container {
-    /* width: 200px; */
-    /* overflow: hidden; */
+    border-radius: 25%;
 }
 
 .carousel {
@@ -442,6 +402,41 @@ body {
     color: white;
     cursor: pointer;
 }
+/*!***********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/instructions.css ***!
+  \***********************************************************************************************************/
+.instructions-container {
+    border: 3px solid var(--navy-blue);
+    border-radius: 25%;
+}
+
+.instructions-exercise-title {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.exercise-steps {
+    list-style-type: none;
+    margin-left: 10px;
+    counter-reset: step-counter;
+}
+
+.exercise-steps li {
+    margin: 10px 5px;
+    position: relative;
+    text-align: left;
+    color: var(--cornflower-blue);
+}
+
+.exercise-steps li::before {
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    color: var(--midnight-blue);
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    left: -25px;
+}
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
@@ -488,44 +483,27 @@ h1.main-title {
 }
 
 .carousel-container {
-  border-radius: 25%;
   padding: 25px;
   margin: 50px auto 0 20px;
 }
 
-.gif-exercise-container {
+.right {
   width: 60%;
   display: flex;
   flex-direction: column;
 }
 
-.tooltip {
+.instructions-container {
+  height: 300px;
+  width: 100%;
   position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-  cursor: help;
+  right: 30px;
 }
 
-.tooltiptext {
-  visibility: hidden;
-  position: absolute;
-  z-index: 1;
-  width: 200px;
-  max-height: 100px;
-  overflow-y: auto;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
+.exercise-info-gif-container {
+  height: 500px;
+  width: 100%;
+  position: relative;
+  right: 30px;
+  top: 10px;
 }

@@ -1,13 +1,14 @@
 @import './styles/body.css';
-@import './styles/gif-container.css';
-@import './styles/exercise-info-container.css';
+@import './styles/exercise-info-gif.css';
 @import './styles/carousel.css';
+@import './styles/instructions.css';
 
 :root {
     --branding-color: #0066EE;
     // --background-color: hsl(214 100% 97% / 1);
     --background-color: #f8ffff;
     --block-color: #A9F9FF;
+
     --navy-blue: #003366;
     --deep-sky-blue: #0077b3;
     --light-blue: #3399ff;
@@ -28,10 +29,7 @@ body {
 
 h1.main-title {
     text-align: center;
-    // font-family: Montserrat, sans-serif;
     color: #0066EE;
-    // text-shadow: 1px 1px 1px var(--navy-blue);
-    // letter-spacing: 1px;
 }
 
 .containers {
@@ -50,45 +48,59 @@ h1.main-title {
 }
 
 .carousel-container {
-    // border: 1px solid var(--midnight-blue);
-    border-radius: 25%;
     padding: 25px;
     margin: 50px auto 0 20px;
 }
 
-.gif-exercise-container {
+.right {
     width: 60%;
     display: flex;
     flex-direction: column;
 }
 
-.tooltip {
+.instructions-container {
+    height: 300px;
+    width: 100%;
     position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-    cursor: help;
+    right: 30px;
 }
 
-.tooltiptext {
-    visibility: hidden;
-    position: absolute;
-    z-index: 1;
-    width: 200px;
-    max-height: 100px;
-    overflow-y: auto;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s;
+.exercise-info-gif-container {
+    height: 500px;
+    width: 100%;
+    position: relative;
+    right: 30px;
+    top: 10px;
 }
 
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-}
+
+// .tooltip {
+//     position: relative;
+//     display: inline-block;
+//     border-bottom: 1px dotted black;
+//     cursor: help;
+// }
+
+// .tooltiptext {
+//     visibility: hidden;
+//     position: absolute;
+//     z-index: 1;
+//     width: 200px;
+//     max-height: 100px;
+//     overflow-y: auto;
+//     background-color: #333;
+//     color: #fff;
+//     text-align: center;
+//     border-radius: 6px;
+//     padding: 5px;
+//     top: 100%;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     opacity: 0;
+//     transition: opacity 0.3s;
+// }
+
+// .tooltip:hover .tooltiptext {
+//     visibility: visible;
+//     opacity: 1;
+// }

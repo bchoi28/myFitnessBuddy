@@ -1,16 +1,11 @@
 import { generateExercise, removeExerciseFromInfoContainer } from './exercises.js';
 
 class MuscleMap {
-    constructor(containerEl, myCarousel, gifContainer) {
+    constructor(containerEl, myCarousel) {
         this.container = containerEl;
-        this.render()
-        // this.handleclick = this.handleclick.bind(this);
-        // this.bindEvents();
-        // this.exerciseCount = 0;
         this.myCarousel = myCarousel;
-        this.gifContainer = gifContainer;
-        this.addExerciseListener();
-        // this.addExerciseListener = this.addExerciseListener.bind(this);
+        this.render()
+        this.bindEvents();
     };
 
     render() {
@@ -104,52 +99,24 @@ class MuscleMap {
     };
 
     bindEvents() {
-        // this.addHoverListener();
         this.addExerciseListener();
     };
-
-    // I did this all with simple quick css styling..
-    // addHoverListener() {
-    //     const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div)'));
-    //     muscleBlocks.forEach(muscleBlock => {
-    //         muscleBlock.addEventListener('mouseover', () => {
-    //             muscleBlock.style.backgroundColor = 'yellow';
-    //         });
-    //         muscleBlock.addEventListener('mouseout', () => {
-    //             muscleBlock.style.backgroundColor = "white";
-    //         })
-    //     })
-
-    //     const absContainer = document.querySelector('.abs');
-    //     absContainer.addEventListener('mouseover', (e) => {
-    //         if (e.target.matches('.abs > div')) {
-    //             const absBlocks = Array.from(absContainer.children);
-    //             absBlocks.forEach((absBlock) => {
-    //                 absBlock.style.backgroundColor = 'yellow';
-    //             });
-    //         }
-    //     });
-    //     absContainer.addEventListener('mouseout', (e) => {
-    //         if (e.target.matches('.abs > div')) {
-    //             const absBlocks = Array.from(absContainer.children);
-    //             absBlocks.forEach((absBlock) => {
-    //                 absBlock.style.backgroundColor = 'white';
-    //             });
-    //         }
-    //     });
-    // }
 
     addExerciseListener() {
         const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div)'));
         muscleBlocks.forEach(muscleBlock => {
+
+            // let muscleMapInstance = this;
+
             muscleBlock.addEventListener('click', () => {
-                if (this.myCarousel.sharedExercises.length < 4) {
-                    generateExercise(muscleBlock, this, this.myCarousel, this.gifContainer);
+                if (this.myCarousel.storedExercises.length < 4) {
+                    generateExercise(muscleBlock, this.myCarousel);
                 }
                 else {
                     muscleBlock.removeEventListener('click', () => { });
                 }
             });
+
         });
     }
 }

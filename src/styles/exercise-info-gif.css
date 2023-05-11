@@ -1,0 +1,68 @@
+.exercise-info-gif-container {
+    border-radius: 10%;
+    display: flex;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* .close-button {
+    position: absolute;
+    top: 7%;
+    left: 1%;
+    font-size: 14px;
+    background-color: var(--midnight-blue);
+    color: white;
+    border-radius: 40%;
+    cursor: pointer;
+    display: none;
+} */
+
+.exercise-info {
+    border: 3px solid var(--cornflower-blue);
+    margin-top: 10px;
+    border-radius: 15%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .exercise-info:hover .close-button {
+    display: block;
+} */
+
+.primary-muscles-title,
+.secondary-muscles-title {
+    margin-top: 20px;
+    text-align: center;
+    vertical-align: top;
+    font-size: 18px;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 1px;
+    color: var(--midnight-blue);
+}
+
+.primary-muscles,
+.secondary-muscles {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    color: var(--cornflower-blue);
+}
+
+.gif-container {
+    border: 3px solid var(--cornflower-blue);
+    margin-top: 10px;
+    border-radius: 15%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gif {
+    max-width: 100%;
+    max-height: 100%;
+}

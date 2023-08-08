@@ -94,28 +94,6 @@ body {
     align-self: flex-start;
 }
 
-.exercise-title {
-    text-align: center;
-    position: relative;
-    align-self: center;
-    right: 40px;
-    margin-bottom: 20px;
-    font-size: 30px;
-    font-weight: bold;
-    color: var(--branding-color);
-    background-color: var(--block-color);
-    // display: inline-block;
-    width: fit-content;
-    padding: 20px;
-    border-radius: 18%;
-    border: 1px solid var(--branding-color);
-    // -webkit-text-stroke: .5px var(--background-color);
-    height: 45px;
-    box-shadow: 0px 0 10px rgba(25, 25, 112, 0.2);
-    display: none;
-    animation: pulse 10s 1;
-}
-
 @keyframes pulse {
     0% {
         background-color: var(--block-color);
@@ -138,15 +116,6 @@ body {
     margin-bottom: 20px;
     // min-width: 500px;
 }
-
-.exercise-info-gif-container {
-    height: 500px;
-    width: 100%;
-    position: relative;
-    // right: 30px;
-    top: 10px;
-}
-
 
 // .tooltip {
 //     position: relative;

@@ -17,6 +17,24 @@
     font-size: 24px;
 }
 
+.exercise-title {
+    text-align: center;
+    position: relative;
+    align-self: center;
+    right: 40px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--branding-color);
+    background-color: var(--block-color);
+    width: fit-content;
+    padding: 20px;
+    border-radius: 18%;
+    border: 1px solid var(--branding-color);
+    box-shadow: 0px 0 10px rgba(25, 25, 112, 0.2);
+}
+
+
 .exercise-steps {
     list-style-type: none;
     margin-left: 4em;
@@ -29,6 +47,7 @@
 }
 
 .exercise-step {
+    font-size: 12px;
     margin: 2px 0 10px 1em;
     position: relative;
     text-align: left;
@@ -46,7 +65,7 @@
     animation: fadeIn 0.5s ease-in-out;
     animation-delay: 0.1s;
     word-wrap: normal;
-    max-width: 800px;
+    max-width: 500px;
 }
 
 .exercise-step:hover {

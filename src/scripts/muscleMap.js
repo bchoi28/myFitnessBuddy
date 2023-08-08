@@ -10,7 +10,6 @@ class MuscleMap {
     };
 
     render() {
-
         const muscleMap = document.createElement('div');
         muscleMap.classList.add('muscle-map');
 

@@ -4,9 +4,9 @@
     grid-template-rows: repeat(15, 1fr);
     grid-gap: 5px;
     position: relative;
-    top: 30px;
-    width: 400px;
-    height: 600px;
+    /* top: 30px; */
+    width: 300px;
+    height: 400px;
     background-color: var(--background-color);
 }
 

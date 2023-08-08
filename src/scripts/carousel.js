@@ -3,8 +3,6 @@ import { displayExerciseInfo, removeExerciseFromInfoContainer } from "./exercise
 class Carousel {
     constructor(containerEl, storedExercises) {
         this.container = containerEl;
-        this.carouselNav;
-        this.carouselSlides;
         this.render();
         this.storedExercises = storedExercises;
     }
@@ -21,11 +19,17 @@ class Carousel {
         carouselSlides.classList.add("carousel-slides");
         this.carouselSlides = carouselSlides;
 
+        const exerciseTitle = document.createElement("div");
+        exerciseTitle.classList.add("my-exercises");
+        exerciseTitle.innerText = "My Exercises";
+
         this.container.appendChild(carousel);
-        carousel.append(carouselNav, carouselSlides);
+        carousel.style.display = "none";
+        carousel.append(exerciseTitle, carouselNav, carouselSlides);
     }
 
     addExerciseToCarousel(exercise) {
+
         const carouselItem = document.createElement("div");
         carouselItem.classList.add("carousel-item");
         carouselItem.id = `carousel-item-${document.querySelectorAll(".carousel-item").length + 1}`;
@@ -49,6 +53,9 @@ class Carousel {
         this.carouselSlides.appendChild(carouselItem);
         carouselItem.append(carouselItemTitle, carouselItemType, closeButton);
 
+        if (this.carouselSlides.children.length === 1) {
+            this.container.querySelector(".carousel").style.display = "block";
+        }
 
         carouselItem.scrollIntoView({ behavior: "smooth" });
 
@@ -87,6 +94,9 @@ class Carousel {
         const exerciseName = carouselItem.querySelector('.carousel-item-title').innerText;
         const exerciseIndex = this.storedExercises.findIndex((exercise) => exercise.name === exerciseName);
         this.storedExercises.splice(exerciseIndex, 1);
+        if (this.carouselSlides.children.length === 0) {
+            this.container.querySelector(".carousel").style.display = "none";  // Hide the carousel when all exercises are removed
+        }
         return this.storedExercises[exerciseIndex - 1];
     }
 };

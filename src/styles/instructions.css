@@ -1,9 +1,9 @@
 .instructions-container {
-    /* border: 3px solid var(--navy-blue); */
+    /* border: 3px solid var(--navy-blue);
     border-radius: 25%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 20px; */
 }
 
 .instructions-exercise-title {
@@ -41,9 +41,12 @@
     width: fit-content;
     transition: all 0.2s ease-in-out;
     white-space: pre;
+    white-space: normal;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.5s ease-in-out;
     animation-delay: 0.1s;
+    word-wrap: normal;
+    max-width: 800px;
 }
 
 .exercise-step:hover {
@@ -58,7 +61,7 @@
     font-size: 1.1em;
     font-weight: bold;
     position: absolute;
-    left: -1.5em;
+    left: -17px;
     bottom: 9px;
     width: 1em;
     height: 1em;

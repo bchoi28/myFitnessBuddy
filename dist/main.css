@@ -7,9 +7,9 @@
     grid-template-rows: repeat(15, 1fr);
     grid-gap: 5px;
     position: relative;
-    top: 30px;
-    width: 400px;
-    height: 600px;
+    /* top: 30px; */
+    width: 300px;
+    height: 400px;
     background-color: var(--background-color);
 }
 
@@ -287,7 +287,7 @@
 } */
 
 .exercise-info {
-    border: 3px solid var(--cornflower-blue);
+    /* border: 3px solid var(--cornflower-blue); */
     margin-top: 10px;
     border-radius: 15%;
     width: 50%;
@@ -295,6 +295,8 @@
     flex-direction: column;
     box-shadow: 2px 3px 20px rgba(25, 25, 112, 0.2);
     background-color: white;
+    min-width: 400px;
+    /* scale: 0.5; */
 }
 
 /* .exercise-info:hover .close-button {
@@ -423,15 +425,22 @@
 /*!*******************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/carousel.css ***!
   \*******************************************************************************************************/
-.carousel-container {
-    border-radius: 5%;
-    border: 1px solid var(--cornflower-blue);
-    box-shadow: 0px 0 10px rgba(25, 25, 112, 0.2)
-}
+.carousel-container {}
 
 .carousel {
+    margin-top: 20px;
     width: 300px;
     /* overflow: hidden; */
+    border-radius: 5%;
+    border: 1px solid var(--cornflower-blue);
+    box-shadow: 0px 0 10px rgba(25, 25, 112, 0.2);
+    background-color: var(--block-color);
+}
+
+.my-exercises {
+    text-align: center;
+    font-size: 20px;
+    color: #0066EE;
 }
 
 .carousel-nav {
@@ -442,8 +451,8 @@
 
 .carousel-nav a {
     display: inline-flex;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 18px;
+    height: 18px;
     background: var(--baby-blue);
     text-decoration: none;
     align-items: center;
@@ -534,11 +543,11 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/instructions.css ***!
   \***********************************************************************************************************/
 .instructions-container {
-    /* border: 3px solid var(--navy-blue); */
+    /* border: 3px solid var(--navy-blue);
     border-radius: 25%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 20px; */
 }
 
 .instructions-exercise-title {
@@ -576,9 +585,12 @@
     width: fit-content;
     transition: all 0.2s ease-in-out;
     white-space: pre;
+    white-space: normal;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.5s ease-in-out;
     animation-delay: 0.1s;
+    word-wrap: normal;
+    max-width: 800px;
 }
 
 .exercise-step:hover {
@@ -593,7 +605,7 @@
     font-size: 1.1em;
     font-weight: bold;
     position: absolute;
-    left: -1.5em;
+    left: -17px;
     bottom: 9px;
     width: 1em;
     height: 1em;
@@ -672,40 +684,31 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1em;
-  margin-right: 25%;
 }
 
 .main-title {
   color: var(--branding-color);
-  font-size: 3.5em;
+  font-size: 30px;
   font-weight: bolder;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  margin-right: 30px;
 }
 
 .nav-links {
   display: flex;
-  list-style: none;
-  padding: 0;
+  position: relative;
+  top: 3px;
+  margin-left: 15px;
 }
 
-.fab {
-  font-family: "Font Awesome 5 Brands";
+.nav-icon {
+  font-size: 30px;
   color: var(--branding-color);
-  padding: 4px 22px 4px 7px;
-  margin: 5px 1px;
   border: 0.5px solid white;
   border-radius: 5px;
   background-color: var(--background-color);
-  width: 27px;
 }
 
-.fa-github {
-  padding-right: 26px;
-}
-
-.fab:hover {
+.nav-icon:hover {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -715,44 +718,24 @@ body {
 
 .containers {
   display: flex;
-  justify-content: space-between;
-  position: relative;
+  justify-content: space-evenly;
+  margin: 40px 20px 10px 20px;
 }
 
 .left {
   display: flex;
   flex-direction: column;
-  width: 40%;
-  position: relative;
-  left: 6em;
 }
 
 .body-container {
   display: flex;
 }
 
-.my-exercises {
-  position: relative;
-  top: 90px;
-  left: 112px;
-  text-align: left;
-  font-size: 20px;
-  letter-spacing: 1px;
-  color: #0066EE;
-}
-
-.carousel-container {
-  padding: 25px;
-  margin: 50px auto 0 0;
-}
-
 .right {
-  width: 60%;
   display: flex;
   flex-direction: column;
-  position: relative;
-  top: 40px;
-  right: 8em;
+  width: 60%;
+  align-self: flex-start;
 }
 
 .exercise-title {
@@ -787,6 +770,11 @@ body {
   height: 300px;
   width: 100%;
   position: relative;
+  /* border: 3px solid var(--navy-blue); */
+  border-radius: 25%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .exercise-info-gif-container {
@@ -794,18 +782,4 @@ body {
   width: 100%;
   position: relative;
   top: 10px;
-}
-
-#toggleButton {
-  position: absolute;
-  top: -80px;
-  right: 100px;
-  color: white;
-  background-color: var(--midnight-blue);
-  border: 3px solid black;
-  padding: 30px 10px;
-  border-radius: 25%;
-  font-size: 20px;
-  letter-spacing: 1px;
-  box-shadow: 5px 5px 20px rgba(2, 2, 35, 0.2);
 }

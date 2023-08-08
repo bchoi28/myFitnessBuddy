@@ -1,12 +1,19 @@
-.carousel-container {
-    border-radius: 5%;
-    border: 1px solid var(--cornflower-blue);
-    box-shadow: 0px 0 10px rgba(25, 25, 112, 0.2)
-}
+.carousel-container {}
 
 .carousel {
+    margin-top: 20px;
     width: 300px;
     /* overflow: hidden; */
+    border-radius: 5%;
+    border: 1px solid var(--cornflower-blue);
+    box-shadow: 0px 0 10px rgba(25, 25, 112, 0.2);
+    background-color: var(--block-color);
+}
+
+.my-exercises {
+    text-align: center;
+    font-size: 20px;
+    color: #0066EE;
 }
 
 .carousel-nav {
@@ -17,8 +24,8 @@
 
 .carousel-nav a {
     display: inline-flex;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 18px;
+    height: 18px;
     background: var(--baby-blue);
     text-decoration: none;
     align-items: center;

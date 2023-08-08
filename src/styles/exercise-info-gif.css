@@ -18,7 +18,7 @@
 } */
 
 .exercise-info {
-    border: 3px solid var(--cornflower-blue);
+    /* border: 3px solid var(--cornflower-blue); */
     margin-top: 10px;
     border-radius: 15%;
     width: 50%;
@@ -26,6 +26,8 @@
     flex-direction: column;
     box-shadow: 2px 3px 20px rgba(25, 25, 112, 0.2);
     background-color: white;
+    min-width: 400px;
+    /* scale: 0.5; */
 }
 
 /* .exercise-info:hover .close-button {

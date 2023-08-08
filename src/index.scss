@@ -30,7 +30,6 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--background-color);
-    // color: var(--royal-blue);
     height: 100vh;
     width: 100vw;
 }
@@ -39,50 +38,31 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1em;
-    margin-right: 25%;
 }
 
 .main-title {
     color: var(--branding-color);
-    font-size: 3.5em;
-    // margin-top: 1em;
-    // margin-bottom: 1em;
+    font-size: 30px;
     font-weight: bolder;
-    // -webkit-text-stroke: .1px var(--dark-slate-blue);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    margin-right: 30px;
 }
 
 .nav-links {
     display: flex;
-    list-style: none;
-    padding: 0;
+    position: relative;
+    top: 3px;
+    margin-left: 15px;
 }
 
-.nav-links li {
-    // margin: 1em 10px 1em 10px;
-    // margin-top: 2em;
-    // margin-bottom: 1em;
-    // margin-left: 20px;
-}
-
-.fab {
-    font-family: "Font Awesome 5 Brands";
+.nav-icon {
+    font-size: 30px;
     color: var(--branding-color);
-    padding: 4px 22px 4px 7px;
-    margin: 5px 1px;
     border: 0.5px solid white;
     border-radius: 5px;
     background-color: var(--background-color);
-    width: 27px;
 }
 
-.fa-github {
-    padding-right: 26px;
-}
-
-.fab:hover {
+.nav-icon:hover {
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -92,82 +72,26 @@ body {
 
 .containers {
     display: flex;
-    justify-content: space-between;
-    position: relative;
+    justify-content: space-evenly;
+    margin: 40px 20px 10px 20px;
 }
 
 .left {
     display: flex;
     flex-direction: column;
-    width: 40%;
-    position: relative;
-    left: 6em;
+    // width: 40%;
 }
-
-// .face-container {
-//     position: relative;
-//     // width: 200px;
-//     // height: 200px;
-//     // background-image: url('path/to/your/body-image.png');
-//     background-size: cover;
-// }
-
-// .eyes {
-//     position: absolute;
-//     top: 30%;
-//     left: 50%;
-//     transform: translateX(-50%);
-// }
-
-// .eye {
-//     font-size: 60px;
-//     font-weight: bold;
-//     color: black;
-//     z-index: 1;
-//     font-family: "Roboto Mono", monospace;
-//     // font-family: "Futura";
-//     position: absolute;
-//     left: 144px;
-//     top: 220px;
-// }
-
-// .mouth {
-//     // display: block;
-//     position: absolute;
-//     bottom: 30px;
-//     left: 50%;
-//     // transform: translateY(-50%);
-//     font-size: 40px;
-//     font-weight: bold;
-// }
-
 
 .body-container {
     display: flex;
 }
 
-.my-exercises {
-    position: relative;
-    top: 90px;
-    left: 112px;
-    text-align: left;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: #0066EE;
-}
-
-.carousel-container {
-    padding: 25px;
-    margin: 50px auto 0 0;
-}
-
 .right {
-    width: 60%;
     display: flex;
     flex-direction: column;
-    position: relative;
-    top: 40px;
-    right: 8em;
+    width: 60%;
+    // min-width: 600px;
+    align-self: flex-start;
 }
 
 .exercise-title {
@@ -207,6 +131,12 @@ body {
     width: 100%;
     position: relative;
     // right: 30px;
+    /* border: 3px solid var(--navy-blue); */
+    border-radius: 25%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    // min-width: 500px;
 }
 
 .exercise-info-gif-container {
@@ -249,16 +179,16 @@ body {
 //     opacity: 1;
 // }
 
-#toggleButton {
-    position: absolute;
-    top: -80px;
-    right: 100px;
-    color: white;
-    background-color: var(--midnight-blue);
-    border: 3px solid black;
-    padding: 30px 10px;
-    border-radius: 25%;
-    font-size: 20px;
-    letter-spacing: 1px;
-    box-shadow: 5px 5px 20px rgba(2, 2, 35, 0.2)
-}
+// #toggleButton {
+//     position: absolute;
+//     top: -80px;
+//     right: 100px;
+//     color: white;
+//     background-color: var(--midnight-blue);
+//     border: 3px solid black;
+//     padding: 30px 10px;
+//     border-radius: 25%;
+//     font-size: 20px;
+//     letter-spacing: 1px;
+//     box-shadow: 5px 5px 20px rgba(2, 2, 35, 0.2)
+// }

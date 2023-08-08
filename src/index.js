@@ -11,17 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const bodyContainer = document.querySelector('.body-container');
     new MuscleMap(bodyContainer, myCarousel);
 
-    const audio = document.getElementById('myAudio');
-    // audio.currentTime = 14;
-    const toggleButton = document.getElementById('toggleButton');
+    // const audio = document.getElementById('myAudio');
+    // // audio.currentTime = 14;
+    // const toggleButton = document.getElementById('toggleButton');
 
-    toggleButton.addEventListener('click', () => {
-        if (audio.paused) {
-            audio.play();
-            toggleButton.innerText = 'PAUSE';
-        } else {
-            audio.pause();
-            toggleButton.innerText = 'TECHNO';
-        }
-    });
+    // toggleButton.addEventListener('click', () => {
+    //     if (audio.paused) {
+    //         audio.play();
+    //         toggleButton.innerText = 'PAUSE';
+    //     } else {
+    //         audio.pause();
+    //         toggleButton.innerText = 'TECHNO';
+    //     }
+    // });
 });

@@ -5,8 +5,7 @@
     text-align: center;
     position: relative;
     bottom: 10px;
-    height: 250px;
-    width: 250px;
+    height: 240px;
 }
 
 /* .close-button {
@@ -25,11 +24,11 @@
     /* border: 3px solid var(--cornflower-blue); */
     /* margin-top: 10px; */
     border-radius: 15%;
-    /* width: 50%; */
     display: flex;
     flex-direction: column;
     box-shadow: 2px 3px 20px rgba(25, 25, 112, 0.2);
     background-color: white;
+    width: 300px;
 }
 
 /* .exercise-info:hover .close-button {
@@ -43,7 +42,7 @@
     /* margin-bottom: 30px; */
     text-align: center;
     vertical-align: top;
-    font-size: 16px;
+    font-size: 15px;
     padding: 3px;
     display: flex;
     flex-direction: column;
@@ -56,7 +55,7 @@
 .primary-muscles,
 .secondary-muscles {
     text-align: center;
-    font-size: 13px;
+    font-size: 12px;
     margin-top: 10px;
     margin-bottom: 15px;
     color: var(--cornflower-blue);
@@ -66,15 +65,14 @@
 
 .goal-buttons-container {
     display: flex;
-    justify-content: center;
-    /* margin-top: 40px; */
-    position: relative;
-    /* top: 10px; */
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .goal-button {
-    padding: 0.5rem 1rem;
-    margin: 15px 15px;
+    padding: 5px 8px;
+    margin: 5px 10px;
     background-color: var(--cornflower-blue);
     color: white;
     border: none;
@@ -82,7 +80,6 @@
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
     font-size: 15px;
-    position: relative;
 }
 
 .goal-button:hover {
@@ -94,15 +91,14 @@
     color: white;
     font-weight: bold;
     border-radius: 30%;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     /* transform: translateY(-3px); */
 }
 
 .rep-range {
     text-align: center;
-    font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 15px;
+    font-size: 12px;
+    margin: 8px 0px 0px 0px;
     color: var(--cornflower-blue);
 }
 
@@ -126,8 +122,9 @@
 .gif-container {
     /* border: 3px solid var(--cornflower-blue); */
     margin-top: 10px;
+    margin-left: 40px;
     border-radius: 15%;
-    width: 50%;
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;

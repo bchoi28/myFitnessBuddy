@@ -159,6 +159,10 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
         gifContainer.removeChild(gifContainer.firstChild);
     };
 
+    const exerciseTitleContainer = document.querySelector('.exercise-title-container');
+    if (exerciseTitleContainer.firstChild) {
+        exerciseTitleContainer.removeChild(exerciseTitleContainer.firstChild);
+    }
 
     // create/append exerciseInfo
     const primaryMusclesTitle = document.createElement('div');
@@ -244,9 +248,11 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
         exerciseSteps.appendChild(exerciseStep);
     });
 
-    const exerciseTitle = document.querySelector('.exercise-title');
-    exerciseTitle.style.display = 'flex';
+    // exerciseTitle.style.display = 'flex';
+    const exerciseTitle = document.createElement('div');
+    exerciseTitle.classList.add('exercise-title');
     exerciseTitle.innerText = exercise.name;
+    exerciseTitleContainer.append(exerciseTitle);
 
     const instructionsExerciseTitle = document.createElement('div');
     instructionsExerciseTitle.classList.add('instructions-exercise-title');

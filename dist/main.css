@@ -10,8 +10,8 @@
     /* top: 30px; */
     bottom: 20px;
     left: 15px;
-    width: 300px;
-    height: 400px;
+    width: 250px;
+    height: 350px;
     background-color: var(--background-color);
 }
 
@@ -275,8 +275,8 @@
     font-size: 18px;
     text-align: center;
     position: relative;
-    bottom: 40px;
-    height: 300px;
+    bottom: 10px;
+    height: 250px;
     width: 250px;
 }
 
@@ -314,7 +314,7 @@
     /* margin-bottom: 30px; */
     text-align: center;
     vertical-align: top;
-    font-size: 20px;
+    font-size: 16px;
     padding: 3px;
     display: flex;
     flex-direction: column;
@@ -327,7 +327,7 @@
 .primary-muscles,
 .secondary-muscles {
     text-align: center;
-    font-size: 14px;
+    font-size: 13px;
     margin-top: 10px;
     margin-bottom: 15px;
     color: var(--cornflower-blue);
@@ -497,7 +497,7 @@
 .carousel-item {
     width: 99%;
     height: 150px;
-    margin-right: 50px;
+    /* margin-right: 50px; */
     border-radius: 10%;
     background: var(--block-color);
     scroll-snap-align: start;
@@ -509,7 +509,9 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--cornflower-blue)
+    border: 1px solid var(--cornflower-blue);
+    /* padding: 10px; */
+    margin: 10px;
 }
 
 .carousel-item-title {
@@ -557,28 +559,30 @@
 }
 
 .instructions-exercise-title {
-    /* text-align: center; */
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin-top: 5px;
     left: 10%;
     position: relative;
     letter-spacing: 1px;
     color: var(--midnight-blue);
-    font-size: 24px;
+    font-size: 16px;
 }
 
-.exercise-title {
+.exercise-title-container {
     text-align: center;
     position: relative;
     align-self: center;
     right: 40px;
-    margin-bottom: 10px;
-    font-size: 20px;
+    position: relative;
+    bottom: 5px;
+}
+
+.exercise-title {
+    font-size: 16px;
     font-weight: bold;
     color: var(--branding-color);
     background-color: var(--block-color);
     width: fit-content;
-    padding: 20px;
+    padding: 10px;
     border-radius: 18%;
     border: 1px solid var(--branding-color);
     box-shadow: 0px 0 10px rgba(25, 25, 112, 0.2);
@@ -703,9 +707,11 @@ body {
   background-color: var(--background-color);
   height: 100vh;
   width: 100vw;
+  margin: 0;
 }
 
 .nav-bar {
+  padding-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;

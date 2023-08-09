@@ -66,7 +66,7 @@
 .carousel-item {
     width: 99%;
     height: 150px;
-    margin-right: 50px;
+    /* margin-right: 50px; */
     border-radius: 10%;
     background: var(--block-color);
     scroll-snap-align: start;
@@ -78,7 +78,9 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--cornflower-blue)
+    border: 1px solid var(--cornflower-blue);
+    /* padding: 10px; */
+    margin: 10px;
 }
 
 .carousel-item-title {

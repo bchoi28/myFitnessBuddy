@@ -78,7 +78,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--cornflower-blue);
+    border: 0.5px solid var(--cornflower-blue);
     /* padding: 10px; */
     margin: 10px;
 }

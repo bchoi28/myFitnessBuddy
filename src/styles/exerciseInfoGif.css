@@ -132,7 +132,7 @@
     max-width: 100%;
     max-height: 100%;
     border-radius: 15%;
-    border: 2px solid var(--cornflower-blue);
+    /* border: 2px solid var(--cornflower-blue); */
     box-shadow: 5px 3px 20px rgba(25, 25, 112, 0.2)
 }
 

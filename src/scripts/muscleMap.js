@@ -51,8 +51,8 @@ class MuscleMap {
             absContainer.appendChild(abs);
         };
 
-        const leftGlute = document.createElement('div');
-        leftGlute.classList.add('left-glute');
+        // const leftGlute = document.createElement('div');
+        // leftGlute.classList.add('left-glute');
 
         const leftQuad = document.createElement('div');
         leftQuad.classList.add('left-quad');
@@ -63,8 +63,8 @@ class MuscleMap {
         const leftFoot = document.createElement('div');
         leftFoot.classList.add('left-foot');
 
-        const rightGlute = document.createElement('div');
-        rightGlute.classList.add('right-glute');
+        // const rightGlute = document.createElement('div');
+        // rightGlute.classList.add('right-glute');
 
         const rightQuad = document.createElement('div');
         rightQuad.classList.add('right-quad');
@@ -86,11 +86,11 @@ class MuscleMap {
         muscleMap.appendChild(rightBicep);
         muscleMap.appendChild(rightHand);
         muscleMap.appendChild(absContainer);
-        muscleMap.appendChild(leftGlute);
+        // muscleMap.appendChild(leftGlute);
         muscleMap.appendChild(leftQuad);
         muscleMap.appendChild(leftCalf);
         muscleMap.appendChild(leftFoot);
-        muscleMap.appendChild(rightGlute);
+        // muscleMap.appendChild(rightGlute);
         muscleMap.appendChild(rightQuad);
         muscleMap.appendChild(rightCalf);
         muscleMap.appendChild(rightFoot);

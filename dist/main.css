@@ -1,6 +1,6 @@
-/*!***************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/body.css ***!
-  \***************************************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/muscleMap.css ***!
+  \********************************************************************************************************/
 .muscle-map {
     display: grid;
     grid-template-columns: repeat(11, 1fr);
@@ -89,7 +89,7 @@
     height: 90%;
     border-radius: 50%;
     position: relative;
-    left: 9px;
+    left: 4px;
     top: 7px;
 }
 
@@ -172,6 +172,8 @@
     flex-wrap: wrap;
     justify-content: center;
     background-color: transparent;
+    position: relative;
+    left: 3px;
 }
 
 .abs div {
@@ -202,7 +204,7 @@
     width: 115%;
     height: 115%;
     position: relative;
-    bottom: 22px;
+    bottom: 15px;
     right: 10px;
 }
 
@@ -230,7 +232,7 @@
     border-radius: 25%;
     position: relative;
     right: 5px;
-    bottom: 16px;
+    bottom: 5px;
     height: 90%;
     width: 110%;
     z-index: 0;
@@ -243,7 +245,7 @@
     width: 115%;
     height: 115%;
     position: relative;
-    bottom: 23px;
+    bottom: 15px;
     right: 5px;
 }
 
@@ -266,9 +268,9 @@
     position: relative;
     bottom: 10px;
 }
-/*!****************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/exercise-info-gif.css ***!
-  \****************************************************************************************************************/
+/*!**************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/exerciseInfoGif.css ***!
+  \**************************************************************************************************************/
 .exercise-info-gif-container {
     display: flex;
     position: relative;
@@ -403,7 +405,7 @@
     max-width: 100%;
     max-height: 100%;
     border-radius: 15%;
-    border: 2px solid var(--cornflower-blue);
+    /* border: 2px solid var(--cornflower-blue); */
     box-shadow: 5px 3px 20px rgba(25, 25, 112, 0.2)
 }
 
@@ -503,7 +505,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--cornflower-blue);
+    border: 0.5px solid var(--cornflower-blue);
     /* padding: 10px; */
     margin: 10px;
 }

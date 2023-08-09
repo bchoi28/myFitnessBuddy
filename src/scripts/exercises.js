@@ -149,9 +149,9 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
         instructionsContainer.removeChild(instructionsContainer.firstChild)
     };
 
-    const exerciseInfo = document.querySelector('.exercise-info');
-    while (exerciseInfo.firstChild) {
-        exerciseInfo.removeChild(exerciseInfo.firstChild);
+    const exerciseInfoContainer = document.querySelector('.exercise-info-container');
+    while (exerciseInfoContainer.firstChild) {
+        exerciseInfoContainer.removeChild(exerciseInfoContainer.firstChild);
     };
 
     const gifContainer = document.querySelector('.gif-container');
@@ -225,8 +225,10 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     const buttonsContainer = document.createElement('div');
     buttonsContainer.classList.add('goal-buttons-container');
     buttonsContainer.append(strengthButton, sizeButton, enduranceButton);
-
+    const exerciseInfo = document.createElement('div');
+    exerciseInfo.classList.add('exercise-info');
     exerciseInfo.append(primaryMusclesTitle, primaryMuscles, secondaryMusclesTitle, secondaryMuscles, buttonsContainer);
+    exerciseInfoContainer.appendChild(exerciseInfo);
 
 
     // create/append gif
@@ -323,9 +325,9 @@ const removeExerciseFromInfoContainer = (nextExercise) => {
             instructionsContainer.removeChild(instructionsContainer.firstChild)
         };
 
-        const exerciseInfo = document.querySelector('.exercise-info');
-        while (exerciseInfo.firstChild) {
-            exerciseInfo.removeChild(exerciseInfo.firstChild);
+        const exerciseInfoContainer = document.querySelector('.exercise-info-container');
+        while (exerciseInfoContainer.firstChild) {
+            exerciseInfoContainer.removeChild(exerciseInfoContainer.firstChild);
         };
 
         const gifContainer = document.querySelector('.gif-container');

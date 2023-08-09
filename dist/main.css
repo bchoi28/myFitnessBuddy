@@ -270,13 +270,10 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/exercise-info-gif.css ***!
   \****************************************************************************************************************/
 .exercise-info-gif-container {
-    border-radius: 10%;
     display: flex;
-    font-size: 18px;
-    text-align: center;
     position: relative;
     bottom: 10px;
-    height: 240px;
+    height: 225px;
 }
 
 /* .close-button {
@@ -300,6 +297,8 @@
     box-shadow: 2px 3px 20px rgba(25, 25, 112, 0.2);
     background-color: white;
     width: 300px;
+    height: 100%;
+    padding-top: 20px;
 }
 
 /* .exercise-info:hover .close-button {
@@ -309,8 +308,6 @@
 
 .primary-muscles-title,
 .secondary-muscles-title {
-    margin-top: 10px;
-    /* margin-bottom: 30px; */
     text-align: center;
     vertical-align: top;
     font-size: 15px;
@@ -336,7 +333,7 @@
 
 .goal-buttons-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 100%;
     box-sizing: border-box;
 }
@@ -557,7 +554,7 @@
 
 .instructions-exercise-title {
     margin-top: 5px;
-    left: 10%;
+    /* left: 10%; */
     position: relative;
     letter-spacing: 1px;
     color: var(--midnight-blue);
@@ -588,7 +585,7 @@
 
 .exercise-steps {
     list-style-type: none;
-    margin-left: 4em;
+    /* margin-left: 4em; */
     counter-reset: step-counter;
     padding: 0;
     display: flex;

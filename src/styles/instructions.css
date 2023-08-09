@@ -8,7 +8,7 @@
 
 .instructions-exercise-title {
     margin-top: 5px;
-    left: 10%;
+    /* left: 10%; */
     position: relative;
     letter-spacing: 1px;
     color: var(--midnight-blue);
@@ -39,7 +39,7 @@
 
 .exercise-steps {
     list-style-type: none;
-    margin-left: 4em;
+    /* margin-left: 4em; */
     counter-reset: step-counter;
     padding: 0;
     display: flex;

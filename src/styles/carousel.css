@@ -8,14 +8,16 @@
     border-radius: 10%;
     /* border: 1px solid var(--cornflower-blue);
     box-shadow: 0px 0 10px rgba(25, 25, 112, 0.2); */
+    position: relative;
+    bottom: 30px;
 }
 
 .my-exercises {
     text-align: center;
     font-size: 20px;
-    color: #0066EE;
+    color: var(--midnight-blue);
     position: relative;
-    top: 10px;
+    top: 17px;
 }
 
 .carousel-nav {
@@ -35,7 +37,7 @@
     border-radius: 50%;
     margin: 0 0.5rem;
     position: relative;
-    top: 20px;
+    top: 23px;
     z-index: 1;
     color: white;
 }
@@ -61,6 +63,7 @@
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    overflow: hidden;
 }
 
 .carousel-item {

@@ -48,6 +48,8 @@ body {
     font-size: 30px;
     font-weight: bolder;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: 8px;
 }
 
 .nav-links {
@@ -76,7 +78,7 @@ body {
 .containers {
     display: flex;
     justify-content: space-evenly;
-    margin: 40px 20px 10px 20px;
+    margin: 40px 20px 0px 50px;
 }
 
 .left {
@@ -93,7 +95,7 @@ body {
 .right {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    // width: 60%;
     // min-width: 600px;
     align-self: flex-start;
 }

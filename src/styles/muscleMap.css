@@ -20,7 +20,7 @@
     transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.muscle-map div:not(.abs, .abs div, .chest, .left-chest, .right-chest):hover {
+.muscle-map div:not(.abs, .abs div, .chest, .left-chest, .right-chest, .back, .left-glute, .right-glute):hover {
     background-color: var(--midnight-blue);
     box-shadow: 0 0 10px var(--cornflower-blue);
     transform: scale(1.1);
@@ -91,7 +91,7 @@
     height: 95%;
     border-radius: 40%;
     position: relative;
-    left: 6px;
+    left: 8px;
     top: 7px;
 }
 
@@ -140,12 +140,23 @@
     box-shadow: 0 0 10px var(--cornflower-blue);
 } */
 
-
+.back {
+    grid-column: 4 / 8;
+    width: 120%;
+    justify-self: center;
+    grid-row: 4 / 9;
+    display: flex;
+    position: relative;
+    top: 3px;
+    /* border-radius: 10% 10% 40% 40%; */
+    border-radius: 20px 20px 50% 50%;
+    z-index: 1;
+}
 
 .left-shoulder {
     grid-column: 2 / 4;
     grid-row: 4 / 5;
-    border-radius: 30%;
+    border-radius: 35%;
     height: 130%;
     position: relative;
     top: 3px;
@@ -186,7 +197,7 @@
 .right-shoulder {
     grid-column: 8 / 10;
     grid-row: 4 / 5;
-    border-radius: 30%;
+    border-radius: 35%;
     height: 130%;
     position: relative;
     top: 3px;
@@ -248,11 +259,23 @@
     grid-column: 4 / 6;
     grid-row: 8 / 10;
     border-radius: 25%;
+    right: 10px;
+    height: 110%;
+    width: 120%;
+    z-index: 0;
     position: relative;
-    top: 25px;
-    right: 8px;
-    height: 90%;
-    width: 110%;
+    top: 10px;
+}
+
+.right-glute {
+    grid-column: 6 / 8;
+    grid-row: 8 / 10;
+    border-radius: 25%;
+    position: relative;
+    right: 2px;
+    top: 10px;
+    height: 110%;
+    width: 120%;
     z-index: 0;
 }
 
@@ -285,18 +308,6 @@
     position: relative;
     bottom: 14px;
     right: 1px;
-}
-
-.right-glute {
-    grid-column: 6 / 8;
-    grid-row: 9 / 11;
-    border-radius: 25%;
-    position: relative;
-    right: 5px;
-    bottom: 5px;
-    height: 90%;
-    width: 110%;
-    z-index: 0;
 }
 
 .right-quad {

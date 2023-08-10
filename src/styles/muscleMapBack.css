@@ -1,0 +1,75 @@
+.muscle-map-back {
+    display: none;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    grid-gap: 5px;
+    position: relative;
+    /* top: 30px; */
+    bottom: 20px;
+    left: 15px;
+    width: 250px;
+    height: 350px;
+    background-color: var(--background-color);
+}
+
+.muscle-map-back div {
+    background-color: var(--block-color);
+    border: 2px solid var(--cornflower-blue);
+    cursor: pointer;
+    box-shadow: 0 0 5px var(--cornflower-blue);
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.muscle-map-back div:hover {
+    background-color: var(--midnight-blue);
+    box-shadow: 0 0 10px var(--cornflower-blue);
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.head-2 {
+    grid-column: 4 / 8;
+    grid-row: 1 / 4;
+    width: 80%;
+    height: 95%;
+    border-radius: 40%;
+    position: relative;
+    left: 8px;
+    top: 7px;
+}
+
+.back-2 {
+    grid-column: 4 / 8;
+    width: 120%;
+    justify-self: center;
+    grid-row: 4 / 9;
+    display: flex;
+    position: relative;
+    top: 3px;
+    /* border-radius: 10% 10% 40% 40%; */
+    border-radius: 20px 20px 50% 50%;
+}
+
+.left-glute-2 {
+    grid-column: 4 / 6;
+    grid-row: 8 / 10;
+    border-radius: 25%;
+    right: 10px;
+    height: 110%;
+    width: 120%;
+    z-index: 1;
+    position: relative;
+    top: 10px;
+}
+
+.right-glute-2 {
+    grid-column: 6 / 8;
+    grid-row: 8 / 10;
+    border-radius: 25%;
+    position: relative;
+    right: 2px;
+    top: 10px;
+    height: 110%;
+    width: 120%;
+    z-index: 1;
+}

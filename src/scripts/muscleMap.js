@@ -19,6 +19,14 @@ class MuscleMap {
         const chest = document.createElement('div');
         chest.classList.add('chest');
 
+        const leftChest = document.createElement('div');
+        leftChest.classList.add('left-chest');
+        chest.appendChild(leftChest);
+
+        const rightChest = document.createElement('div');
+        rightChest.classList.add('right-chest');
+        chest.appendChild(rightChest);
+
         const leftShoulder = document.createElement('div');
         leftShoulder.classList.add('left-shoulder');
 
@@ -77,6 +85,8 @@ class MuscleMap {
 
         muscleMap.appendChild(head);
         muscleMap.appendChild(chest);
+        // muscleMap.appendChild(leftChest);
+        // muscleMap.appendChild(rightChest);
         muscleMap.appendChild(leftShoulder);
         muscleMap.appendChild(leftBicep);
         muscleMap.appendChild(leftForearm);

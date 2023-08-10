@@ -330,3 +330,11 @@
     bottom: 14px;
     left: 4px;
 }
+
+.muscle-map-back {
+    display: none;
+}
+
+.toggle-view {
+    width: 50px;
+}

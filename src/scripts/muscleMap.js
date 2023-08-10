@@ -4,7 +4,8 @@ class MuscleMap {
     constructor(containerEl, myCarousel) {
         this.container = containerEl;
         this.myCarousel = myCarousel;
-        this.render()
+        this.render();
+        this.renderBack();
         this.handleClickGenerateExercise = this.handleClickGenerateExercise.bind(this);
         this.bindEvents();
     };
@@ -106,11 +107,45 @@ class MuscleMap {
         muscleMap.appendChild(rightFoot);
 
         this.container.appendChild(muscleMap);
+
+        const toggleButton = document.createElement('button');
+        toggleButton.id = 'toggle-view';
+        toggleButton.innerText = "Flip";
+        this.container.appendChild(toggleButton);
+
     };
+
+
+    renderBack() {
+        const muscleMapBack = document.createElement('div');
+        muscleMapBack.classList.add('muscle-map-back');
+        muscleMapBack.innerText = 'Hi';
+
+
+        // Define and append back body parts here, just like you did for the front
+
+        this.container.appendChild(muscleMapBack);
+    }
+
+    toggleView() {
+        const frontView = this.container.querySelector('.muscle-map');
+        const backView = this.container.querySelector('.muscle-map-back');
+
+        if (frontView.style.display !== 'none') {
+            frontView.style.display = 'none';
+            backView.style.display = 'block';
+        } else {
+            frontView.style.display = 'grid';
+            backView.style.display = 'none';
+        }
+    }
 
     bindEvents() {
         this.addEventListeners();
-    };
+
+        const toggleButton = document.getElementById('toggle-view');
+        toggleButton.addEventListener('click', this.toggleView.bind(this));
+    }
 
     // addEventListeners() {
     //     const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div)'));

@@ -54,9 +54,9 @@
     grid-column: 4 / 6;
     grid-row: 8 / 10;
     border-radius: 25%;
-    right: 10px;
+    right: 6px;
     height: 110%;
-    width: 120%;
+    width: 110%;
     z-index: 1;
     position: relative;
     top: 10px;
@@ -70,6 +70,27 @@
     right: 2px;
     top: 10px;
     height: 110%;
-    width: 120%;
+    width: 110%;
     z-index: 1;
+}
+
+.left-hamstring {
+    grid-column: 4 / 6;
+    grid-row: 10 / 12;
+    border-radius: 30%;
+    width: 115%;
+    height: 135%;
+    position: relative;
+    right: 10px;
+    top: 4px;
+}
+
+.right-hamstring {
+    grid-column: 6 / 8;
+    grid-row: 10 / 12;
+    border-radius: 30%;
+    width: 115%;
+    height: 135%;
+    position: relative;
+    top: 4px;
 }

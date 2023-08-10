@@ -100,6 +100,14 @@ class Carousel {
         }
         return this.storedExercises[exerciseIndex - 1];
     }
+
+    updateStoredExercise(updatedExercise) {
+        // Find the index of the exercise that matches the name of updatedExercise
+        const index = this.storedExercises.findIndex(exercise => exercise.name === updatedExercise.name);
+        if (index !== -1) {
+            this.storedExercises[index] = updatedExercise;
+        }
+    }
 };
 
 

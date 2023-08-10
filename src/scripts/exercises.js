@@ -80,24 +80,32 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
 
 
     strengthButton.addEventListener('click', () => {
+        debugger
         toggleActiveButton(strengthButton);
         displayRecommendedRepRange('strength');
         exercise.goal = 'strength';
-        exercise.repRange = '4-6 reps';
+        // exercise.repRange = '4-6 reps';
+        carouselInstance.updateStoredExercise(exercise);
+
     });
 
     sizeButton.addEventListener('click', () => {
         toggleActiveButton(sizeButton);
         displayRecommendedRepRange('size');
         exercise.goal = 'size';
-        exercise.repRange = '8-12 reps';
+        // exercise.repRange = '8-12 reps';
+        carouselInstance.updateStoredExercise(exercise);
+
     });
 
     enduranceButton.addEventListener('click', () => {
+        debugger
         toggleActiveButton(enduranceButton);
         displayRecommendedRepRange('endurance');
         exercise.goal = 'endurance';
-        exercise.repRange = '15-20 reps';
+        // exercise.repRange = '15-20 reps';
+        carouselInstance.updateStoredExercise(exercise);
+
     });
 
     const buttonsContainer = document.createElement('div');
@@ -327,8 +335,11 @@ const displayExerciseInfo = (exercise) => {
     // buttonsContainer.append(strengthButton, sizeButton, enduranceButton);
 
     // exerciseInfo.append(primaryMusclesTitle, primaryMuscles, secondaryMusclesTitle, secondaryMuscles, buttonsContainer);
-
+    debugger
+    const goalButtons = document.querySelectorAll('.goal-button');
+    goalButtons.forEach(button => button.classList.remove('active'));
     const button = document.querySelector(`.goal-button[data-goal="${exercise.goal}"]`);
+    // const button1 = document.querySelector('.rep-range');
     if (button) {
         button.classList.add('active');
         displayRecommendedRepRange(exercise.goal);
@@ -336,6 +347,12 @@ const displayExerciseInfo = (exercise) => {
         // repRangeContainer.classList.add('rep-range');
         // repRangeContainer.innerText = exercise.repRange;
         // exerciseInfo.appendChild(repRangeContainer);
+    } else {
+        // Reset the innerText of the rep-range element
+        const repRangeElement = document.querySelector('.rep-range');
+        if (repRangeElement) {
+            repRangeElement.innerText = '';
+        }
     }
 
     // rebuild instructions

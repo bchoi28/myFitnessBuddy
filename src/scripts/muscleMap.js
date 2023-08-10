@@ -112,19 +112,46 @@ class MuscleMap {
         this.addEventListeners();
     };
 
+    // addEventListeners() {
+    //     const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div)'));
+    //     muscleBlocks.forEach(muscleBlock => {
+    //         muscleBlock.addEventListener('click', () => {
+    //             this.handleClickGenerateExercise(muscleBlock);
+    //             muscleBlock.classList.add('animate');
+    //             muscleBlock.addEventListener('animationend', () => {
+    //                 muscleBlock.classList.remove('animate');
+    //             });
+    //         });
+    //         // muscleBlock.addEventListener('click', this.handleClickGenerateFace);
+    //     });
+    // }
+
     addEventListeners() {
-        const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div)'));
+        const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div, .chest)'));
         muscleBlocks.forEach(muscleBlock => {
             muscleBlock.addEventListener('click', () => {
                 this.handleClickGenerateExercise(muscleBlock);
-                muscleBlock.classList.add('animate');
-                muscleBlock.addEventListener('animationend', () => {
-                    muscleBlock.classList.remove('animate');
-                });
+                this.addAnimation(muscleBlock);
             });
-            // muscleBlock.addEventListener('click', this.handleClickGenerateFace);
+        });
+
+        const chest = document.querySelector('.chest');
+        chest.addEventListener('click', () => {
+            this.handleClickGenerateExercise(chest);
+            const leftChest = chest.querySelector('.left-chest');
+            const rightChest = chest.querySelector('.right-chest');
+            this.addAnimation(leftChest);
+            this.addAnimation(rightChest);
         });
     }
+
+    addAnimation(element) {
+        element.classList.add('animate');
+        element.addEventListener('animationend', () => {
+            element.classList.remove('animate');
+        });
+    }
+
 
     handleClickGenerateExercise(muscleBlock) {
         if (this.myCarousel.storedExercises.length < 4) {

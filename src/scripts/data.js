@@ -54,7 +54,7 @@ export const chestExercises = [
         primaryMuscles: ['Pectoralis Major'],
         secondaryMuscles: ['Triceps', 'Deltoids'],
         suggestedRepRange: '8-12 reps',
-        gifUrl: "https://api.exercisedb.io/image/6oqtAuKlG5-bzV" //ExerciseDB API
+        gifUrl: "https://api.exercisedb.io/image/6DfWN1z54cETZX" //ExerciseDB API
     },
     {
         type: 'CHEST',
@@ -63,7 +63,7 @@ export const chestExercises = [
         primaryMuscles: ['Pectoralis Major'],
         secondaryMuscles: ['Triceps', 'Deltoids'],
         suggestedRepRange: '10-15 reps',
-        gifUrl: "https://api.exercisedb.io/image/lf6WwkMUJBh5DP"
+        gifUrl: "https://api.exercisedb.io/image/oGhCP1aqkj6UMA"
     },
     {
         type: 'CHEST',
@@ -72,7 +72,7 @@ export const chestExercises = [
         primaryMuscles: ['Pectoralis Major'],
         secondaryMuscles: ['Anterior Deltoids', 'Triceps'],
         suggestedRepRange: '12-15 reps',
-        gifUrl: "https://api.exercisedb.io/image/DUV1L1qEUKMwcX"
+        gifUrl: "https://api.exercisedb.io/image/1KD5UWEroDlyFE"
     },
     {
         type: 'CHEST',
@@ -81,7 +81,7 @@ export const chestExercises = [
         primaryMuscles: ['Upper Pectoralis Major'],
         secondaryMuscles: ['Anterior Deltoids', 'Triceps'],
         suggestedRepRange: '8-12 reps',
-        gifUrl: "https://api.exercisedb.io/image/bTZLihCqNroBnU"
+        gifUrl: "https://api.exercisedb.io/image/LEHuMI0sJlp8p7"
     },
     {
         type: 'CHEST',
@@ -90,7 +90,7 @@ export const chestExercises = [
         primaryMuscles: ['Pectoralis Major'],
         secondaryMuscles: ['Anterior Deltoids', 'Triceps'],
         suggestedRepRange: '10-15 reps',
-        gifUrl: "https://api.exercisedb.io/image/dDH5iGnvFy391X"
+        gifUrl: "https://api.exercisedb.io/image/6EZCBL59QmMiqG"
     }
 ];
 

@@ -348,6 +348,8 @@
     display: none;
 }
 
-.toggle-view {
+#toggle-view {
     width: 50px;
+    font-weight: 500;
+    margin-left: auto;
 }

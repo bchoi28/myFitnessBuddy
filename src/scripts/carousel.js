@@ -70,6 +70,7 @@ class Carousel {
         this.carouselNav.appendChild(newNavItem);
 
         newNavItem.addEventListener('click', (event) => {
+            debugger
             displayExerciseInfo(exercise);
             const navItems = Array.from(document.querySelectorAll('.carousel-nav a'));
             navItems.forEach((navItem) => navItem.classList.remove('active'));
@@ -80,7 +81,7 @@ class Carousel {
             const nextExercise = this.removeExerciseFromCarousel(carouselItem);
             removeExerciseFromInfoContainer(nextExercise);
         });
-
+        debugger
         this.storedExercises.push(exercise);
     }
 

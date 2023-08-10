@@ -351,8 +351,10 @@
     display: none;
 }
 
-.toggle-view {
+#toggle-view {
     width: 50px;
+    font-weight: 500;
+    margin-left: auto;
 }
 /*!************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/muscleMapBack.css ***!

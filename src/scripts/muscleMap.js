@@ -217,7 +217,7 @@ class MuscleMap {
     renderToggleButton() {
         const toggleButton = document.createElement('button');
         toggleButton.id = 'toggle-view';
-        toggleButton.innerText = "Flip";
+        toggleButton.innerText = "FLIP";
         this.container.appendChild(toggleButton);
     }
 
@@ -236,7 +236,7 @@ class MuscleMap {
     // }
 
     addEventListeners() {
-        const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div, .chest)'));
+        const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div, .chest, .left-chest, .right-chest)'));
         muscleBlocks.forEach(muscleBlock => {
             muscleBlock.addEventListener('click', () => {
                 this.handleClickGenerateExercise(muscleBlock);

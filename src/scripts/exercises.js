@@ -2,7 +2,6 @@ import { shoulderExercises, chestExercises, bicepExercises } from './data.js';
 
 const exercises = {
     'chest': chestExercises,
-    'chest': chestExercises,
     'left-shoulder': shoulderExercises,
     'right-shoulder': shoulderExercises,
     'left-bicep': bicepExercises,
@@ -58,10 +57,6 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     const secondaryMuscles = document.createElement('div');
     secondaryMuscles.classList.add('secondary-muscles');
     secondaryMuscles.innerText = `${exercise.secondaryMuscles.join(", ")}`;
-
-    // add three buttons in a row: strength, size, endurance
-    // depending on which one the user clicks, underneath an element is created with
-    // the recommended rep range for that button.
 
     const strengthButton = document.createElement('button');
     strengthButton.classList.add('goal-button')
@@ -150,16 +145,6 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     instructionsContainer.appendChild(exerciseSteps);
 
     carouselInstance.addExerciseToCarousel(exercise);
-
-    // const closeButton = document.createElement('button');
-    // closeButton.classList.add('close-button');
-    // closeButton.innerText = 'X';
-    // closeButton.addEventListener('click', () => {
-    //     exerciseDisplay.remove();
-    //     carouselInstance.removeExerciseFromInfoContainer(carouselItem);
-    // });
-
-    // exerciseDisplay.append(closeButton);
 }
 
 const displayRecommendedRepRange = (workoutType) => {
@@ -245,16 +230,6 @@ const displayExerciseInfo = (exercise) => {
 
     instructionsContainer.appendChild(exerciseSteps);
 
-    // const exerciseInfo = document.querySelector('.exercise-info');
-    // while (exerciseInfo.firstChild) {
-    //     exerciseInfo.removeChild(exerciseInfo.firstChild);
-    // };
-
-    // const exerciseInfoContainer = document.querySelector('.exercise-info-container');
-    // while (exerciseInfoContainer.firstChild) {
-    //     exerciseInfoContainer.removeChild(exerciseInfoContainer.firstChild);
-    // };
-
     const primaryMuscles = document.querySelector('.primary-muscles');
     primaryMuscles.innerText = `${exercise.primaryMuscles.join(" ")}`;
     const secondaryMuscles = document.querySelector('.secondary-muscles');
@@ -265,114 +240,19 @@ const displayExerciseInfo = (exercise) => {
         gifContainer.removeChild(gifContainer.firstChild);
     };
 
-    // const exerciseTitleContainer = document.querySelector('.exercise-title-container');
-    // if (exerciseTitleContainer.firstChild) {
-    //     exerciseTitleContainer.removeChild(exerciseTitleContainer.firstChild);
-    // }
-
-    // const closeButton = document.createElement('button');
-    // closeButton.classList.add('close-button');
-    // closeButton.innerText = 'X';
-    // closeButton.addEventListener('click', () => {
-    //     exerciseDisplay.remove();
-    // });
-
-    // exerciseDisplay.append(closeButton);
-
-
-    // rebuild exercise info
-    // const primaryMusclesTitle = document.createElement('div');
-    // primaryMusclesTitle.classList.add('primary-muscles-title');
-    // primaryMusclesTitle.innerText = 'Primary Muscles';
-
-    // const primaryMuscles = document.createElement('div');
-    // primaryMuscles.classList.add('primary-muscles');
-    // primaryMuscles.innerText = `${exercise.primaryMuscles.join(" ")}`;
-
-    // const secondaryMusclesTitle = document.createElement('div');
-    // secondaryMusclesTitle.classList.add('secondary-muscles-title');
-    // secondaryMusclesTitle.innerText = 'Secondary Muscles';
-
-    // const secondaryMuscles = document.createElement('div');
-    // secondaryMuscles.classList.add('secondary-muscles');
-    // secondaryMuscles.innerText = `${exercise.secondaryMuscles.join(", ")}`;
-
-    // const strengthButton = document.createElement('button');
-    // strengthButton.classList.add('goal-button')
-    // strengthButton.innerText = 'Strength';
-    // strengthButton.dataset.goal = 'strength';
-
-    // const sizeButton = document.createElement('button');
-    // sizeButton.classList.add('goal-button')
-    // sizeButton.innerText = 'Size';
-    // sizeButton.dataset.goal = 'size';
-
-    // const enduranceButton = document.createElement('button');
-    // enduranceButton.classList.add('goal-button')
-    // enduranceButton.innerText = 'Endurance';
-    // enduranceButton.dataset.goal = 'endurance';
-
-    // strengthButton.addEventListener('click', () => {
-    //     toggleActiveButton(strengthButton);
-    //     displayRecommendedRepRange('strength');
-    //     exercise.goal = 'strength';
-    // });
-
-    // sizeButton.addEventListener('click', () => {
-    //     toggleActiveButton(sizeButton);
-    //     displayRecommendedRepRange('size');
-    //     exercise.goal = 'size';
-    // });
-
-    // enduranceButton.addEventListener('click', () => {
-    //     toggleActiveButton(enduranceButton);
-    //     displayRecommendedRepRange('endurance');
-    //     exercise.goal = 'endurance';
-    // });
-
-    // const buttonsContainer = document.createElement('div');
-    // buttonsContainer.classList.add('goal-buttons-container');
-    // buttonsContainer.append(strengthButton, sizeButton, enduranceButton);
-
-    // exerciseInfo.append(primaryMusclesTitle, primaryMuscles, secondaryMusclesTitle, secondaryMuscles, buttonsContainer);
-    debugger
     const goalButtons = document.querySelectorAll('.goal-button');
     goalButtons.forEach(button => button.classList.remove('active'));
     const button = document.querySelector(`.goal-button[data-goal="${exercise.goal}"]`);
-    // const button1 = document.querySelector('.rep-range');
     if (button) {
         button.classList.add('active');
         displayRecommendedRepRange(exercise.goal);
-        // const repRangeContainer = document.createElement('div');
-        // repRangeContainer.classList.add('rep-range');
-        // repRangeContainer.innerText = exercise.repRange;
-        // exerciseInfo.appendChild(repRangeContainer);
     } else {
-        // Reset the innerText of the rep-range element
         const repRangeElement = document.querySelector('.rep-range');
         if (repRangeElement) {
             repRangeElement.innerText = '';
         }
     }
 
-    // rebuild instructions
-    // const exerciseSteps = document.createElement('ul');
-    // exerciseSteps.classList.add('exercise-steps');
-    // exercise.steps.forEach((step) => {
-    //     const exerciseStep = document.createElement('li');
-    //     exerciseStep.classList.add('exercise-step');
-    //     exerciseStep.innerText = step;
-    //     exerciseSteps.appendChild(exerciseStep);
-    // });
-
-    // const instructionsExerciseTitle = document.createElement('div');
-    // instructionsExerciseTitle.classList.add('instructions-exercise-title');
-    // instructionsExerciseTitle.innerText = 'Instructions';
-
-    // instructionsContainer.appendChild(instructionsExerciseTitle);
-    // instructionsContainer.appendChild(exerciseSteps);
-
-    // rebuild gif
     const gif = document.createElement('img');
     gif.classList.add('gif');
     gif.src = exercise.gifUrl;

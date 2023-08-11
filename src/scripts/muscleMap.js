@@ -9,6 +9,7 @@ class MuscleMap {
         this.renderToggleButton();
         this.handleClickGenerateExercise = this.handleClickGenerateExercise.bind(this);
         this.bindEvents();
+        this.onCooldown = false;
     };
 
     render() {
@@ -207,6 +208,7 @@ class MuscleMap {
         }
     }
 
+
     bindEvents() {
         this.addEventListeners();
 
@@ -220,20 +222,6 @@ class MuscleMap {
         toggleButton.innerText = "FLIP";
         this.container.appendChild(toggleButton);
     }
-
-    // addEventListeners() {
-    //     const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div)'));
-    //     muscleBlocks.forEach(muscleBlock => {
-    //         muscleBlock.addEventListener('click', () => {
-    //             this.handleClickGenerateExercise(muscleBlock);
-    //             muscleBlock.classList.add('animate');
-    //             muscleBlock.addEventListener('animationend', () => {
-    //                 muscleBlock.classList.remove('animate');
-    //             });
-    //         });
-    //         // muscleBlock.addEventListener('click', this.handleClickGenerateFace);
-    //     });
-    // }
 
     addEventListeners() {
         const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div, .chest, .left-chest, .right-chest)'));
@@ -262,14 +250,36 @@ class MuscleMap {
     }
 
 
+    // handleClickGenerateExercise(muscleBlock) {
+    //     if (this.myCarousel.storedExercises.length < 4) {
+    //         generateExercise(muscleBlock, this.myCarousel);
+    //     }
+    //     else {
+    //         muscleBlock.removeEventListener('click', () => { });
+    //     }
+    // }
+
     handleClickGenerateExercise(muscleBlock) {
+        if (this.onCooldown) {
+            return; // If on cooldown, do not proceed
+        }
         if (this.myCarousel.storedExercises.length < 4) {
             generateExercise(muscleBlock, this.myCarousel);
+            this.startCooldown();  // Start the cooldown after generating the exercise
         }
         else {
             muscleBlock.removeEventListener('click', () => { });
         }
     }
+
+    startCooldown() {
+        this.onCooldown = true;
+        setTimeout(() => {
+            this.onCooldown = false;
+        }, 2000); // 2 seconds
+    }
+
+
 }
 
 export default MuscleMap;

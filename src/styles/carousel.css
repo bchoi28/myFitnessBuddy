@@ -40,6 +40,7 @@
     top: 23px;
     z-index: 1;
     color: white;
+    font-size: 12px;
 }
 
 /* .carousel-nav a.active {
@@ -104,18 +105,22 @@
 
 .carousel-item-close-button {
     position: absolute;
-    top: 8px;
-    left: 3px;
-    font-size: 16px;
+    top: 5px;
+    left: 8px;
+    font-size: 11px;
     font-weight: bold;
     background-color: transparent;
     border: none;
     color: white;
     cursor: pointer;
     border-radius: 50%;
+    transform: scaleX(1.4);
+    padding: 2px 2px 2px 2px;
+    transition: background-color 0.1s ease-in-out;
 }
 
 .carousel-item-close-button:hover {
     background-color: var(--midnight-blue);
-    transform: scale(1.2);
+
+    /* transform: scale(1.2); */
 }

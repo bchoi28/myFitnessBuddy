@@ -15,6 +15,35 @@
     background-color: var(--background-color);
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.muscle-map,
+.muscle-map-back {
+    animation-duration: 0.5s;
+    /* Animation duration */
+    animation-timing-function: ease;
+    /* The rest of your styles ... */
+}
+
+
 .muscle-map div:not(.abs, .chest, .back, .left-glute, .right-glute) {
     background-color: var(--block-color);
     border: 2px solid var(--cornflower-blue);
@@ -353,11 +382,27 @@
 
 #toggle-view {
     width: 50px;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 1px;
     margin-left: auto;
     position: relative;
     bottom: 50px;
     cursor: pointer;
+    border-radius: 5px;
+    padding-top: 5px;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0 3px 5px rgba(25, 25, 112, 0.2),
+        0 1px 2px rgba(25, 25, 112, 0.2);
+    transition: transform 0.1s, box-shadow 0.3s, background-color 0.3s;
+    color: var(--tangerine)
+}
+
+#toggle-view:hover {
+    /* background-color: var(--midnight-blue); */
+    box-shadow: 0 5px 9px rgba(25, 25, 112, 0.2),
+        0 2px 4px rgba(25, 25, 112, 0.2);
+    transform: translateY(-2px);
 }
 /*!************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/muscleMapBack.css ***!
@@ -375,6 +420,7 @@
     height: 350px;
     background-color: var(--background-color);
 }
+
 
 .muscle-map-back div {
     background-color: var(--block-color);
@@ -658,6 +704,7 @@
     top: 23px;
     z-index: 1;
     color: white;
+    font-size: 12px;
 }
 
 /* .carousel-nav a.active {
@@ -722,20 +769,24 @@
 
 .carousel-item-close-button {
     position: absolute;
-    top: 8px;
-    left: 3px;
-    font-size: 16px;
+    top: 5px;
+    left: 8px;
+    font-size: 11px;
     font-weight: bold;
     background-color: transparent;
     border: none;
     color: white;
     cursor: pointer;
     border-radius: 50%;
+    transform: scaleX(1.4);
+    padding: 2px 2px 2px 2px;
+    transition: background-color 0.1s ease-in-out;
 }
 
 .carousel-item-close-button:hover {
     background-color: var(--midnight-blue);
-    transform: scale(1.2);
+
+    /* transform: scale(1.2); */
 }
 /*!***********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/instructions.css ***!

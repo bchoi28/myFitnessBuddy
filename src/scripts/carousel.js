@@ -67,11 +67,16 @@ class Carousel {
 
         newNavItem.href = `#carousel-item-${numItems}`;
         newNavItem.textContent = numItems.toString();
+        newNavItem.dataset.exerciseName = exercise.name;
         this.carouselNav.appendChild(newNavItem);
 
         newNavItem.addEventListener('click', (event) => {
             debugger
-            displayExerciseInfo(exercise);
+            const exerciseName = event.target.dataset.exerciseName;
+            const updatedExercise = this.storedExercises.find(exercise => exercise.name === exerciseName);
+            if (updatedExercise) {
+                displayExerciseInfo(updatedExercise);
+            }
             const navItems = Array.from(document.querySelectorAll('.carousel-nav a'));
             navItems.forEach((navItem) => navItem.classList.remove('active'));
             event.target.classList.add('active');
@@ -189,6 +194,7 @@ class Carousel {
 
 
     updateStoredExercise(updatedExercise) {
+        debugger
         // Find the index of the exercise that matches the name of updatedExercise
         const index = this.storedExercises.findIndex(exercise => exercise.name === updatedExercise.name);
         if (index !== -1) {

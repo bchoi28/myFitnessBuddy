@@ -1,7 +1,7 @@
 .exercise-info-gif-container {
     display: flex;
     position: relative;
-    bottom: 30px;
+    bottom: 25px;
     height: 225px;
     left: 10px
 }
@@ -26,9 +26,9 @@
     flex-direction: column;
     box-shadow: 2px 3px 20px rgba(25, 25, 112, 0.2);
     background-color: white;
-    width: 300px;
+    width: 320px;
     height: 100%;
-    padding-top: 20px;
+    padding-top: 15px;
 }
 
 /* .exercise-info:hover .close-button {

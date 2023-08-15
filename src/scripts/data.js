@@ -183,3 +183,32 @@ export const tricepExercises = [
         ]
     }
 ];
+
+export const backExercises = [
+    {
+        type: 'BACK',
+        name: 'Barbell Bent Over Row',
+        gifName: "barbell bent over row",
+        primaryMuscles: ['Latissimus Dorsi', 'Rhomboids', 'Trapezius'],
+        secondaryMuscles: ['Biceps Brachii', 'Brachialis', 'Brachioradialis'],
+        steps: [
+            "Grab a barbell with a shoulder width pronated or supinated grip.",
+            "Bend forward at your hips while maintaining a flat back.",
+            "Pull the weight toward your upper abdomen.",
+            "Lower the weight in a controlled manner and repeat."
+        ]
+    },
+    {
+        type: 'BACK',
+        name: 'Lat Pulldown',
+        gifName: "cable pulldown",
+        primaryMuscles: ['Latissimus Dorsi'],
+        secondaryMuscles: ['Rhomboids', 'Trapezius', 'Brachialis', 'Brachioradialis'],
+        steps: [
+            "Grip the bar with the palms facing forward, your hands need to be spaced out at a distance wider than shoulder width.",
+            "As you have both arms extended in front of you holding the bar, bring your torso back around 30 degrees while sticking your chest out.",
+            "Pull the bar down to about chin level or a little lower in a smooth movement whilst squeezing the shoulder blades together.",
+            "After a second of squeezing, slowly raise the bar back to the starting position when your arms are fully extended."
+        ]
+    }
+];

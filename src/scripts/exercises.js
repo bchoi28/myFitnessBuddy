@@ -1,4 +1,4 @@
-import { shoulderExercises, chestExercises, bicepExercises, tricepExercises } from './data.js';
+import { shoulderExercises, chestExercises, bicepExercises, tricepExercises, backExercises } from './data.js';
 
 const exercises = {
     'chest': chestExercises,
@@ -7,7 +7,8 @@ const exercises = {
     'left-bicep': bicepExercises,
     'right-bicep': bicepExercises,
     'left-tricep': tricepExercises,
-    'right-tricep': tricepExercises
+    'right-tricep': tricepExercises,
+    'back-2': backExercises
 };
 
 const generateExercise = async (muscleBlock, carouselInstance) => {
@@ -149,17 +150,18 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     exerciseTitle.innerText = exercise.name;
     exerciseTitleContainer.append(exerciseTitle);
 
-    const instructionsExerciseTitle = document.createElement('div');
-    instructionsExerciseTitle.classList.add('instructions-exercise-title');
-    instructionsExerciseTitle.innerText = 'Instructions';
+    // const instructionsExerciseTitle = document.createElement('div');
+    // instructionsExerciseTitle.classList.add('instructions-exercise-title');
+    // instructionsExerciseTitle.innerText = 'Instructions';
 
-    instructionsContainer.appendChild(instructionsExerciseTitle);
+    // instructionsContainer.appendChild(instructionsExerciseTitle);
     instructionsContainer.appendChild(exerciseSteps);
 
     carouselInstance.addExerciseToCarousel(exercise);
 }
 
 const displayRecommendedRepRange = (workoutType) => {
+    debugger
     let repRangeContainer = document.querySelector('.rep-range');
 
     if (!repRangeContainer) {
@@ -228,7 +230,7 @@ const displayExerciseInfo = (exercise) => {
 
     const instructionsContainer = document.querySelector('.instructions-container');
     // while (instructionsContainer.secondChild) {
-    instructionsContainer.removeChild(instructionsContainer.children[1]);
+    instructionsContainer.removeChild(instructionsContainer.children[0]);
     // };
     const exerciseSteps = document.createElement('ul');
     exerciseSteps.classList.add('exercise-steps');
@@ -254,6 +256,7 @@ const displayExerciseInfo = (exercise) => {
     const goalButtons = document.querySelectorAll('.goal-button');
     goalButtons.forEach(button => button.classList.remove('active'));
     const button = document.querySelector(`.goal-button[data-goal="${exercise.goal}"]`);
+    debugger
     if (button) {
         button.classList.add('active');
         displayRecommendedRepRange(exercise.goal);
@@ -293,7 +296,6 @@ const displayExerciseInfo = (exercise) => {
 // };
 
 const fetchGif = async (exerciseName) => {
-    debugger
     const encodedName = encodeURIComponent(exerciseName);
     const url = `https://exercisedb.p.rapidapi.com/exercises/name/${encodedName}`;
     const options = {
@@ -303,7 +305,6 @@ const fetchGif = async (exerciseName) => {
             'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
         }
     };
-    debugger
 
     try {
         const response = await fetch(url, options);

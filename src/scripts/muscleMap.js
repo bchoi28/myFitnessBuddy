@@ -224,13 +224,17 @@ class MuscleMap {
     }
 
     addEventListeners() {
-        const muscleBlocks = Array.from(document.querySelectorAll('.muscle-map div:not(.abs, .abs div, .chest, .left-chest, .right-chest)'));
+        const muscleBlocks = Array.from(document.querySelectorAll(
+            '.muscle-map div:not(.head, .abs, .abs div, .chest, .left-chest, .right-chest), .muscle-map-back div:not(.head-2)')
+        );
         muscleBlocks.forEach(muscleBlock => {
             muscleBlock.addEventListener('click', () => {
                 this.handleClickGenerateExercise(muscleBlock);
                 this.addAnimation(muscleBlock);
             });
         });
+
+
 
         const chest = document.querySelector('.chest');
         chest.addEventListener('click', () => {

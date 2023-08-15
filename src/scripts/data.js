@@ -50,47 +50,62 @@ export const chestExercises = [
     {
         type: 'CHEST',
         name: 'Barbell Bench Press',
-        apiName: 'Barbell Bench Press', //MuscleWiki API
+        gifName: 'barbell bench press',
         primaryMuscles: ['Pectoralis Major'],
         secondaryMuscles: ['Triceps', 'Deltoids'],
-        suggestedRepRange: '8-12 reps',
-        gifUrl: "https://api.exercisedb.io/image/6DfWN1z54cETZX" //ExerciseDB API
+        steps: [
+            "Lay flat on the bench with your feet on the ground. With straight arms unrack the bar.",
+            "Lower the bar to your mid chest",
+            "Raise the bar until you've locked your elbows."
+        ]
     },
     {
         type: 'CHEST',
         name: 'Push-Ups',
-        apiName: "Push Up",
+        gifName: "deep push up",
         primaryMuscles: ['Pectoralis Major'],
         secondaryMuscles: ['Triceps', 'Deltoids'],
-        suggestedRepRange: '10-15 reps',
-        gifUrl: "https://api.exercisedb.io/image/oGhCP1aqkj6UMA"
+        steps: [
+            "Place your hands firmly on the ground, directly under shoulders.",
+            "Flatten your back so your entire body is straight and slowly lower your body",
+            "Draw shoulder blades back and down, keeping elbows tucked close to your body",
+            "Exhale as you push back to the starting position."
+        ]
     },
     {
         type: 'CHEST',
         name: 'Dumbbell Fly',
-        apiName: "Dumbbell Chest Fly",
+        gifName: "dumbbell fly",
         primaryMuscles: ['Pectoralis Major'],
         secondaryMuscles: ['Anterior Deltoids', 'Triceps'],
-        suggestedRepRange: '12-15 reps',
-        gifUrl: "https://api.exercisedb.io/image/1KD5UWEroDlyFE"
+        steps: [
+            "Lay flat on the bench and place your feet on the ground.",
+            "Begin the exercise with the dumbbells held together above your chest, elbows slightly bent.",
+            "Simultaneously lower the weights to either side.",
+            "Pause when the weights are parallel to the bench, then raise your arms to the starting position."
+        ]
     },
-    {
-        type: 'CHEST',
-        name: 'Incline Bench Press',
-        apiName: "Barbell Incline Bench Press",
-        primaryMuscles: ['Upper Pectoralis Major'],
-        secondaryMuscles: ['Anterior Deltoids', 'Triceps'],
-        suggestedRepRange: '8-12 reps',
-        gifUrl: "https://api.exercisedb.io/image/LEHuMI0sJlp8p7"
-    },
+    // {
+    //     type: 'CHEST',
+    //     name: 'Incline Bench Press',
+    //     apiName: "Barbell Incline Bench Press",
+    //     primaryMuscles: ['Upper Pectoralis Major'],
+    //     secondaryMuscles: ['Anterior Deltoids', 'Triceps'],
+    //     suggestedRepRange: '8-12 reps',
+    //     gifUrl: "https://api.exercisedb.io/image/LEHuMI0sJlp8p7"
+    // },
     {
         type: 'CHEST',
         name: 'Cable Crossover',
-        apiName: 'Cable Pec Fly',
+        gifName: 'cable standing fly',
         primaryMuscles: ['Pectoralis Major'],
         secondaryMuscles: ['Anterior Deltoids', 'Triceps'],
-        suggestedRepRange: '10-15 reps',
-        gifUrl: "https://api.exercisedb.io/image/6EZCBL59QmMiqG"
+        steps: [
+            "Use a handle attachment set all the way to the bottom of the machine.",
+            "Bring both of the handles to your chest and make sure you are in the center of the cable crossover.",
+            "Walk a few steps forward.",
+            "Then press the weight forward. From there, your shoulders should horizontally abduct and adduct while your elbows stay in a fixed position."
+        ]
     }
 ];
 

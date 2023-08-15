@@ -843,7 +843,7 @@
 
 .exercise-step {
     font-size: 12px;
-    margin: 2px 0 10px 1em;
+    margin: 2px 0 10px 10px;
     position: relative;
     text-align: left;
     display: flex;
@@ -851,6 +851,7 @@
     color: var(--cornflower-blue);
     border: 1px solid var(--cornflower-blue);
     padding: 10px;
+    padding-left: 15px;
     border-radius: 15%;
     width: fit-content;
     transition: all 0.2s ease-in-out;
@@ -875,7 +876,7 @@
     font-size: 1.1em;
     font-weight: bold;
     position: absolute;
-    left: -17px;
+    left: -14px;
     bottom: 9px;
     width: 1em;
     height: 1em;
@@ -952,7 +953,7 @@ body {
 }
 
 .nav-bar {
-  padding-top: 10px;
+  padding-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -964,7 +965,7 @@ body {
   font-weight: bolder;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   position: relative;
-  top: 8px;
+  cursor: pointer;
 }
 
 .nav-links {
@@ -975,11 +976,16 @@ body {
 }
 
 .nav-icon {
-  font-size: 30px;
+  font-size: 25px;
+  height: 25px;
+  width: 25px;
   color: var(--branding-color);
   border: 0.5px solid white;
   border-radius: 5px;
   background-color: var(--background-color);
+  padding: 5px;
+  margin: 0px 2px;
+  text-align: center;
 }
 
 .nav-icon:hover {
@@ -1029,4 +1035,5 @@ body {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  bottom: 10px;
 }

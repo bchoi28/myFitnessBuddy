@@ -50,7 +50,7 @@
 
 .exercise-step {
     font-size: 12px;
-    margin: 2px 0 10px 1em;
+    margin: 2px 0 10px 10px;
     position: relative;
     text-align: left;
     display: flex;
@@ -58,6 +58,7 @@
     color: var(--cornflower-blue);
     border: 1px solid var(--cornflower-blue);
     padding: 10px;
+    padding-left: 15px;
     border-radius: 15%;
     width: fit-content;
     transition: all 0.2s ease-in-out;
@@ -82,7 +83,7 @@
     font-size: 1.1em;
     font-weight: bold;
     position: absolute;
-    left: -17px;
+    left: -14px;
     bottom: 9px;
     width: 1em;
     height: 1em;

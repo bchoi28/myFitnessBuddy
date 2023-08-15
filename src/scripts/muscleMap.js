@@ -249,23 +249,13 @@ class MuscleMap {
         });
     }
 
-
-    // handleClickGenerateExercise(muscleBlock) {
-    //     if (this.myCarousel.storedExercises.length < 4) {
-    //         generateExercise(muscleBlock, this.myCarousel);
-    //     }
-    //     else {
-    //         muscleBlock.removeEventListener('click', () => { });
-    //     }
-    // }
-
     handleClickGenerateExercise(muscleBlock) {
         if (this.onCooldown) {
-            return; // If on cooldown, do not proceed
+            return;
         }
         if (this.myCarousel.storedExercises.length < 4) {
             generateExercise(muscleBlock, this.myCarousel);
-            this.startCooldown();  // Start the cooldown after generating the exercise
+            this.startCooldown();
         }
         else {
             muscleBlock.removeEventListener('click', () => { });
@@ -276,7 +266,7 @@ class MuscleMap {
         this.onCooldown = true;
         setTimeout(() => {
             this.onCooldown = false;
-        }, 2000); // 2 seconds
+        }, 2000);
     }
 
 

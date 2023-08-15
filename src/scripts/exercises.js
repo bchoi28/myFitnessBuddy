@@ -36,6 +36,12 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
         gifContainer.removeChild(gifContainer.firstChild);
     };
 
+    // Create/append loading spinner or text
+    const loadingIndicator = document.createElement('div');
+    loadingIndicator.classList.add('gif');
+    loadingIndicator.innerText = "Fetching gif..."; // You can use a CSS spinner or a loading image instead of text
+    gifContainer.appendChild(loadingIndicator);
+
     const exerciseTitleContainer = document.querySelector('.exercise-title-container');
     if (exerciseTitleContainer.firstChild) {
         exerciseTitleContainer.removeChild(exerciseTitleContainer.firstChild);
@@ -111,20 +117,24 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     exerciseInfo.append(primaryMusclesTitle, primaryMuscles, secondaryMusclesTitle, secondaryMuscles, buttonsContainer);
     exerciseInfoContainer.appendChild(exerciseInfo);
 
-
     // create/append gif
     const gif = document.createElement('img');
     gif.classList.add('gif');
-    gif.src = exercise.gifUrl;
     gif.alt = exercise.name;
+
+    const gifImage = await fetchGif(exercise.gifName);
+    gif.src = gifImage;
+    loadingIndicator.remove();
+
     gifContainer.appendChild(gif);
+    exercise.gifUrl = gifImage;
 
     // create/append instructions
-    const steps = await fetchSteps(exercise.apiName);
-    exercise.steps = steps;
+    // const steps = await fetchSteps(exercise.apiName);
+    // exercise.steps = steps;
     const exerciseSteps = document.createElement('ul');
     exerciseSteps.classList.add('exercise-steps');
-    steps.forEach((step) => {
+    exercise.steps.forEach((step) => {
         const exerciseStep = document.createElement('li');
         exerciseStep.classList.add('exercise-step');
         exerciseStep.innerText = `  ${step}`;
@@ -209,7 +219,6 @@ const removeExerciseFromInfoContainer = (nextExercise) => {
 };
 
 const displayExerciseInfo = (exercise) => {
-    debugger
     // change exercise name and remove appendages
 
     const exerciseTitle = document.querySelector('.exercise-title');
@@ -260,25 +269,49 @@ const displayExerciseInfo = (exercise) => {
     gifContainer.appendChild(gif);
 }
 
-const fetchSteps = async (exerciseName) => {
+// const fetchSteps = async (exerciseName) => {
+//     const encodedName = encodeURIComponent(exerciseName);
+//     const url = `https://musclewiki.p.rapidapi.com/exercises?name=${encodedName}`;
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//             'X-RapidAPI-Key': '3af8ef8f2dmshc6efeb993784441p1a7439jsn93b2667827e7',
+//             'X-RapidAPI-Host': 'musclewiki.p.rapidapi.com'
+//         }
+//     };
+//     try {
+//         const response = await fetch(url, options);
+//         const result = await response.json();
+//         const exercise = result[0];
+//         return exercise.steps;
+//     } catch (error) {
+//         console.error(error);
+//         return null;
+//     }
+// };
+
+const fetchGif = async (exerciseName) => {
+    debugger
     const encodedName = encodeURIComponent(exerciseName);
-    const url = `https://musclewiki.p.rapidapi.com/exercises?name=${encodedName}`;
+    const url = `https://exercisedb.p.rapidapi.com/exercises/name/${encodedName}`;
     const options = {
         method: 'GET',
         headers: {
             'X-RapidAPI-Key': '3af8ef8f2dmshc6efeb993784441p1a7439jsn93b2667827e7',
-            'X-RapidAPI-Host': 'musclewiki.p.rapidapi.com'
+            'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
         }
     };
+    debugger
+
     try {
         const response = await fetch(url, options);
         const result = await response.json();
-        const exercise = result[0];
-        return exercise.steps;
+        const gifUrl = result[0].gifUrl;
+        return gifUrl;
     } catch (error) {
         console.error(error);
-        return null;
     }
-};
+}
+
 
 export { generateExercise, removeExerciseFromInfoContainer, displayExerciseInfo };

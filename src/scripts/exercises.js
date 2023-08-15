@@ -1,4 +1,4 @@
-import { shoulderExercises, chestExercises, bicepExercises, tricepExercises, backExercises } from './data.js';
+import { shoulderExercises, chestExercises, bicepExercises, tricepExercises, forearmExercises, coreExercises, backExercises, gluteExercises, quadExercises, hamstringExercises } from './data.js';
 
 const exercises = {
     'chest': chestExercises,
@@ -8,7 +8,17 @@ const exercises = {
     'right-bicep': bicepExercises,
     'left-tricep': tricepExercises,
     'right-tricep': tricepExercises,
-    'back-2': backExercises
+    'left-forearm': forearmExercises,
+    'right-forearm': forearmExercises,
+    'abs': coreExercises,
+    'back-2': backExercises,
+    'left-glute-2': gluteExercises,
+    'right-glute-2': gluteExercises,
+    'left-quad': quadExercises,
+    'right-quad': quadExercises,
+    'left-hamstring': hamstringExercises,
+    'right-hamstring': hamstringExercises,
+
 };
 
 const generateExercise = async (muscleBlock, carouselInstance) => {

@@ -225,7 +225,7 @@ class MuscleMap {
 
     addEventListeners() {
         const muscleBlocks = Array.from(document.querySelectorAll(
-            '.muscle-map div:not(.head, .abs, .abs div, .chest, .left-chest, .right-chest), .muscle-map-back div:not(.head-2)')
+            '.muscle-map div:not(.head, .abs div, .chest, .left-chest, .right-chest), .muscle-map-back div:not(.head-2)')
         );
         muscleBlocks.forEach(muscleBlock => {
             muscleBlock.addEventListener('click', () => {

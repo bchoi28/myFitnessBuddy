@@ -212,3 +212,130 @@ export const backExercises = [
         ]
     }
 ];
+
+export const forearmExercises = [
+    {
+        type: 'LOWER ARMS',
+        name: 'Seated Dumbbell Wrist Curl',
+        gifName: "dumbbell seated palms up wrist curl",
+        primaryMuscles: ['Flexor Carpi Radialis', 'Flexor Carpi Ulnaris'],
+        secondaryMuscles: ['Flexor Digitorum Superficialis'],
+        steps: [
+            "Grip the dumbbell with your palm facing upwards with your forearm rested against the bench.",
+            "Slowly curl your wrist upwards in a semicircular motion.",
+            "Return to starting position and repeat."
+        ]
+    }
+];
+
+export const coreExercises = [
+    {
+        type: 'CORE',
+        name: 'Barbell Rollouts',
+        gifName: "barbell rollerout",
+        primaryMuscles: ['Rectus Abdominis'],
+        secondaryMuscles: ['Obliques', 'Transverse Abdominis', 'Erector Spinae'],
+        steps: [
+            "Hold the Barbell with both hands and kneel on the floor with your feet up",
+            "Slowly roll the Barbell straight forward, stretching your body into a straight position.",
+            "After a pause at the stretched position, start pulling yourself back to the starting position. This should be a slow and controlled movement."
+        ]
+    },
+    {
+        type: 'CORE',
+        name: 'Crunches',
+        gifName: "crunch floor",
+        primaryMuscles: ['Rectus Abdominis'],
+        secondaryMuscles: ['Obliques', 'Transverse Abdominis'],
+        steps: [
+            "Lay flat on your back with your knees bent and your feet flat on the ground, about a foot from your lower back.",
+            "Place your fingertips on your temples with your palms facing out.",
+            "Draw your belly into the base of your spine to engage the muscles, then raise your head and shoulders off the floor.",
+            "Return to starting position and repeat."
+        ]
+    }
+];
+
+export const gluteExercises = [
+    {
+        type: 'GLUTES',
+        name: 'Barbell Hip Thrust',
+        gifName: "barbell glute bridge",
+        primaryMuscles: ['Gluteus Maximus'],
+        secondaryMuscles: ['Hamstrings', 'Core Stabilizers'],
+        steps: [
+            "Sit on the ground with a bench behind you. Have the barbell over your legs just above your hips.",
+            "Lean back against the bench so that your shoulders are resting upon it, stretch your arms out to either side using the bench as support.",
+            "Raise the weight by driving through your feet and extending your hips upwards. Support the weight with your shoulders and feet.",
+            "Slowly extend as far as you can, and then slowly return to the starting position."
+        ]
+    },
+    {
+        type: 'GLUTES',
+        name: 'Cable Pull Through',
+        gifName: "cable pull through (with rope)",
+        primaryMuscles: ['Gluteus Maximus'],
+        secondaryMuscles: ['Hamstrings'],
+        steps: [
+            "This exercise works best with a rope attachment but can be done with anything. The attachment should be set to the bottom of the machine.",
+            "Face away from the cable machine, straddle the cable itself, and grab the attachment. Walk a few steps away.",
+            "Break at the hips while maintaining a flat back and mostly extended knees.",
+            "Push hips forward until you are back in a standing position."
+        ]
+    }
+];
+
+export const quadExercises = [
+    {
+        type: 'QUADS',
+        name: 'Barbell Squat',
+        gifName: "barbell bench squat",
+        primaryMuscles: ['Quadriceps'],
+        secondaryMuscles: ['Gluteus Maximus', 'Hamstrings', 'Erector Spinae'],
+        steps: [
+            "Stand with your feet shoulder-width apart. Maintain the natural arch in your back, squeezing your shoulder blades and raising your chest.",
+            "Grip the bar across your shoulders and support it on your upper back. Unwrack the bar by straightening your legs, and take a step back.",
+            "Bend your knees as you lower the weight without altering the form of your back until your hips are below your knees.",
+            "Raise the bar back to starting position, lift with your legs and exhale at the top."
+        ]
+    },
+    {
+        type: 'QUADS',
+        name: 'Dumbbell Goblet Squat',
+        gifName: "dumbbell goblet squat",
+        primaryMuscles: ['Quadriceps'],
+        secondaryMuscles: ['Gluteus Maximus', 'Hamstrings', 'Erector Spinae'],
+        steps: [
+            "Hold the weight tucked into your upper chest area, keeping your elbows in. Your feet should be slightly wider than shoulder width.",
+            "Sink down into the squat, keeping your elbows inside the track of your knees.",
+            "Push through your heels while keeping your chest up and return to starting position."
+        ]
+    }
+];
+
+export const hamstringExercises = [
+    {
+        type: 'HAMSTRINGS',
+        name: 'Dumbbell Romanian Deadlift',
+        gifName: "dumbbell romanian deadlift",
+        primaryMuscles: ['Hamstrings'],
+        secondaryMuscles: ['Gluteus Maximus', 'Erector Spinae'],
+        steps: [
+            "Stand with a shoulder width stance. Push your butt back while leaving your knees MOSTLY extended.",
+            "You should feel a stretch in your hamstrings. When you feel the stretch, push your hips forward to complete the rep.",
+            "Do not push your hips all the way forward. This will hyperextend your spine. Just go to a normal standing position."
+        ]
+    },
+    {
+        type: 'HAMSTRINGS',
+        name: 'Machine Hamstring Curl',
+        gifName: "lever lying two-one leg curl",
+        primaryMuscles: ['Hamstrings'],
+        secondaryMuscles: ['Calves', 'Gluteus Minimus'],
+        steps: [
+            "Lay down on the machine, placing your legs beneath the padded lever. Position your legs so that the padded lever is below your calve muscles.",
+            "Support yourself by grabbing the side handles of the machine, and slowly raise the weight with your legs, toes pointed straight.",
+            "Pause at the apex of the motion, then slowly return to starting position."
+        ]
+    }
+];

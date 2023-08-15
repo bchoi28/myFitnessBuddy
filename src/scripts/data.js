@@ -2,48 +2,59 @@ export const shoulderExercises = [
     {
         type: 'SHOULDERS',
         name: 'Seated Dumbbell Press',
-        apiName: "Dumbbell Neutral Overhead Press",
+        gifName: "dumbbell seated shoulder press",
         primaryMuscles: ['Anterior Deltoids'],
         secondaryMuscles: ['Lateral Deltoids', 'Triceps'],
-        suggestedRepRange: '8-12 reps',
-        gifUrl: "https://api.exercisedb.io/image/TfvFzAjFktX0mk"
+        steps: [
+            "Sit on a bench with back support. Raise the dumbbells to shoulder height with your palms forward.",
+            "Raise the dumbbells upwards and pause at the contracted position.",
+            "Lower the weights back to starting position."
+        ]
     },
-    {
-        type: 'SHOULDERS',
-        name: 'Arnold Press',
-        apiName: "Dumbbell Seated Arnold Press",
-        primaryMuscles: ['Anterior and Lateral Deltoids'],
-        secondaryMuscles: ['Triceps'],
-        suggestedRepRange: '10-15 reps',
-        gifUrl: "https://api.exercisedb.io/image/yj8v4s87LiY57Y"
-    },
+    // {
+    //     type: 'SHOULDERS',
+    //     name: 'Arnold Press',
+    //     apiName: "Dumbbell Seated Arnold Press",
+    //     primaryMuscles: ['Anterior and Lateral Deltoids'],
+    //     secondaryMuscles: ['Triceps'],
+    //     suggestedRepRange: '10-15 reps',
+    //     gifUrl: "https://api.exercisedb.io/image/yj8v4s87LiY57Y"
+    // },
     {
         type: 'SHOULDERS',
         name: 'Dumbbell Lateral Raise',
-        apiName: "Dumbbell Lateral Raise",
+        gifName: "dumbbell lateral raise",
         primaryMuscles: ['Lateral Deltoids'],
         secondaryMuscles: ['Anterior and Posterior Deltoids'],
-        suggestedRepRange: '12-15 reps',
-        gifUrl: "https://api.exercisedb.io/image/e7O-I9hVe4D9mN"
+        steps: [
+            "Stand up straight with dumbbells at either side, palms facing your hips.",
+            "Raise your arms on either side with a slight bend in your elbow until they are parallel with the floor. Pause at the top of the motion.",
+            "Slowly return your arms down to starting position."
+        ]
+
     },
     {
         type: 'SHOULDERS',
         name: 'Dumbbell Front Raise',
-        apiName: "Dumbbell Front Raise",
+        gifName: "dumbbell front raise",
         primaryMuscles: ['Anterior Deltoids'],
         secondaryMuscles: ['Lateral Deltoids'],
-        suggestedRepRange: '8-12 reps',
-        gifUrl: "https://api.exercisedb.io/image/byZGzxCpG0CDVH"
+        steps: [
+            "Grab two dumbbells while standing upright with the dumbbells at your side.",
+            "Raise the two dumbbells with your elbows being fully extended until the dumbbells are eye level.",
+            "Lower the weights in a controlled manner to the starting position and repeat."
+        ]
+
     },
-    {
-        type: 'SHOULDERS',
-        name: 'Reverse Fly',
-        apiName: "Dumbbell Laying Reverse Fly",
-        primaryMuscles: ['Posterior Deltoids'],
-        secondaryMuscles: ['Trapezius', 'Rhomboids'],
-        suggestedRepRange: '10-15 reps',
-        gifUrl: "https://api.exercisedb.io/image/t6GtGbr8C87HgB"
-    }
+    // {
+    //     type: 'SHOULDERS',
+    //     name: 'Reverse Fly',
+    //     apiName: "Dumbbell Laying Reverse Fly",
+    //     primaryMuscles: ['Posterior Deltoids'],
+    //     secondaryMuscles: ['Trapezius', 'Rhomboids'],
+    //     suggestedRepRange: '10-15 reps',
+    //     gifUrl: "https://api.exercisedb.io/image/t6GtGbr8C87HgB"
+    // }
 ];
 
 export const chestExercises = [
@@ -111,30 +122,64 @@ export const chestExercises = [
 
 export const bicepExercises = [
     {
-        type: 'ARMS',
+        type: 'UPPER ARMS',
         name: 'Barbell Curl',
-        apiName: "Barbell Curl",
-        primaryMuscles: ['Biceps'],
-        secondaryMuscles: ['Forearms'],
-        suggestedRepRange: '8-12 reps',
-        gifUrl: "https://api.exercisedb.io/image/xIdtvDMsR5y7fR"
+        gifName: "barbell curl",
+        primaryMuscles: ['Biceps Brachii'],
+        secondaryMuscles: ['Brachialis', 'Brachioradialis'],
+        steps: [
+            "While holding the upper arms stationary, curl the weights forward while contracting the biceps as you breathe out.",
+            "Continue the movement until your biceps are fully contracted and the bar is at shoulder level.",
+            "Hold the contracted position for a second and squeeze the biceps hard.",
+            "Slowly bring the weight back down to the starting position."
+        ]
     },
     {
-        type: 'ARMS',
+        type: 'UPPER ARMS',
         name: 'Dumbbell Curl',
-        apiName: "Dumbbell Curl",
-        primaryMuscles: ['Biceps'],
-        secondaryMuscles: ['Forearms'],
-        suggestedRepRange: '10-15 reps',
-        gifUrl: "https://api.exercisedb.io/image/DqOMqS4IvguNzu"
+        gifName: "dumbbell alternate biceps curl",
+        primaryMuscles: ['Biceps Brachii'],
+        secondaryMuscles: ['Brachialis', 'Brachioradialis'],
+        steps: [
+            "Stand up straight with a dumbbell in each hand at arm's length.",
+            "Raise one dumbbell and twist your forearm until it is vertical and your palm faces the shoulder.",
+            "Lower to original position and repeat with opposite arm."
+        ]
     },
     {
-        type: 'ARMS',
+        type: 'UPPER ARMS',
         name: 'Preacher Curl',
-        apiName: "Dumbbell Single Arm Preacher Curl",
-        primaryMuscles: ['Biceps'],
-        secondaryMuscles: ['Forearms'],
-        suggestedRepRange: '10-12 reps',
-        gifUrl: "https://api.exercisedb.io/image/jheZVO6g5uhx1v"
+        gifName: "dumbbell alternate preacher curl",
+        primaryMuscles: ['Biceps Brachii'],
+        secondaryMuscles: ['Brachialis', 'Brachioradialis'],
+        steps: [
+            "Start with a with a dumbbell in one hand and your elbow resting on the bench.",
+            "From this starting position, curl the dumbbell up towards your shoulder, keeping your upper arm stationary on the bench."
+        ]
+    }
+];
+
+export const tricepExercises = [
+    {
+        type: 'UPPER ARMS',
+        name: 'Cable Push Down',
+        gifName: "cable pushdown",
+        primaryMuscles: ['Triceps Brachii'],
+        secondaryMuscles: ['Anconeus'],
+        steps: [
+            "You can use any attachment for this. The cable should be set all the way at the top of the machine.",
+            "Make sure to keep your upper arm glued at your side. Extend your elbows until you feel your triceps contract."
+        ]
+    },
+    {
+        type: 'UPPER ARMS',
+        name: 'Skull Crusher',
+        gifName: "barbell lying triceps extension skull crusher",
+        primaryMuscles: ['Triceps Brachii'],
+        secondaryMuscles: ['Anconeus', 'Deltoids'],
+        steps: [
+            "Take a shoulder width grip. Break at the elbows. Try to keep your elbows tucked in. Don't let them flare out.",
+            "Stop the bar a few inches from your forehead and extend your elbows back up."
+        ]
     }
 ];

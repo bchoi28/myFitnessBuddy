@@ -128,8 +128,8 @@ class MuscleMap {
         const leftShoulder = document.createElement('div');
         leftShoulder.classList.add('left-shoulder');
 
-        const leftBicep = document.createElement('div');
-        leftBicep.classList.add('left-bicep');
+        const leftTricep = document.createElement('div');
+        leftTricep.classList.add('left-tricep');
 
         const leftForearm = document.createElement('div');
         leftForearm.classList.add('left-forearm');
@@ -140,8 +140,8 @@ class MuscleMap {
         const rightShoulder = document.createElement('div');
         rightShoulder.classList.add('right-shoulder');
 
-        const rightBicep = document.createElement('div');
-        rightBicep.classList.add('right-bicep');
+        const rightTricep = document.createElement('div');
+        rightTricep.classList.add('right-tricep');
 
         const rightForearm = document.createElement('div');
         rightForearm.classList.add('right-forearm');
@@ -176,12 +176,12 @@ class MuscleMap {
         muscleMapBack.appendChild(head2);
         muscleMapBack.appendChild(back2);
         muscleMapBack.appendChild(leftShoulder);
-        muscleMapBack.appendChild(leftBicep);
+        muscleMapBack.appendChild(leftTricep);
         muscleMapBack.appendChild(leftForearm);
         muscleMapBack.appendChild(leftHand);
         muscleMapBack.appendChild(rightShoulder);
         muscleMapBack.appendChild(rightForearm);
-        muscleMapBack.appendChild(rightBicep);
+        muscleMapBack.appendChild(rightTricep);
         muscleMapBack.appendChild(rightHand);
         muscleMapBack.appendChild(leftGlute2);
         muscleMapBack.appendChild(leftHamstring);

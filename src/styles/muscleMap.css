@@ -192,7 +192,8 @@
     right: 6px;
 }
 
-.left-bicep {
+.left-bicep,
+.left-tricep {
     grid-column: 2 / 4;
     grid-row: 5 / 7;
     border-radius: 25%;
@@ -233,7 +234,8 @@
     left: 6px;
 }
 
-.right-bicep {
+.right-bicep,
+.right-tricep {
     grid-column: 8 / 10;
     grid-row: 5 / 7;
     border-radius: 25%;

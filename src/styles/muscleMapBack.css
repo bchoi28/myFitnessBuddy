@@ -13,7 +13,7 @@
 }
 
 
-.muscle-map-back div {
+.muscle-map-back div:not(.head-2, .left-hand, .right-hand, .left-foot, .right-foot) {
     background-color: var(--block-color);
     border: 2px solid var(--cornflower-blue);
     cursor: pointer;
@@ -21,7 +21,7 @@
     transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.muscle-map-back div:hover {
+.muscle-map-back div:not(.head-2, .left-hand, .right-hand, .left-foot, .right-foot):hover {
     background-color: var(--midnight-blue);
     box-shadow: 0 0 10px var(--cornflower-blue);
     transform: scale(1.1);
@@ -37,6 +37,8 @@
     position: relative;
     left: 8px;
     top: 7px;
+    background-color: var(--block-color);
+    box-shadow: 0 0 5px var(--cornflower-blue);
 }
 
 .back-2 {

@@ -339,3 +339,31 @@ export const hamstringExercises = [
         ]
     }
 ];
+
+export const calfExercises = [
+    {
+        type: 'CALVES',
+        name: 'Dumbbell Calf Raises',
+        gifName: "dumbbell standing calf raise",
+        primaryMuscles: ['Gastrocnemius'],
+        secondaryMuscles: ['Soleus'],
+        steps: [
+            "Stand tall with your feet on the ground. You can put the balls of your feet on top of a plate to extend the range of motion.",
+            "Imagine you have a string attached to your heels and pull your heels up toward the ceiling."
+        ]
+    },
+    {
+        type: 'CALVES',
+        name: 'Barbell Calf Raise',
+        gifName: "barbell standing calf raise",
+        primaryMuscles: ['Gastrocnemius', 'Soleus'],
+        secondaryMuscles: ['Anterior Tibialis'],
+        steps: [
+            "Begin by standing on a raised surface (such as a step or box) with the balls of your feet on the edge of the surface and your heels hanging off.",
+            "Hold a barbell across your upper back and shoulders, using an overhand grip.",
+            "Keeping your core engaged and your back straight, push through the balls of your feet to raise your heels up as high as you can.",
+            "Lower your heels back down to the starting position, allowing your calves to stretch."
+        ]
+    }
+];
+

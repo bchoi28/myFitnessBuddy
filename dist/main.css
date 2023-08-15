@@ -44,7 +44,10 @@
 }
 
 
-.muscle-map div:not(.abs, .chest, .back, .left-glute, .right-glute) {
+.muscle-map div:not(.head, .left-hand,
+    .right-hand,
+    .left-foot,
+    .right-foot, .abs, .chest, .back, .left-glute, .right-glute) {
     background-color: var(--block-color);
     border: 2px solid var(--cornflower-blue);
     cursor: pointer;
@@ -52,7 +55,10 @@
     transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.muscle-map div:not(.abs, .abs div, .chest, .left-chest, .right-chest, .back, .left-glute, .right-glute):hover {
+.muscle-map div:not(.head, .left-hand,
+    .right-hand,
+    .left-foot,
+    .right-foot, .abs, .abs div, .chest, .left-chest, .right-chest, .back, .left-glute, .right-glute):hover {
     background-color: var(--midnight-blue);
     box-shadow: 0 0 10px var(--cornflower-blue);
     transform: scale(1.1);
@@ -96,16 +102,7 @@
 .abs>div {
     background-color: var(--block-color);
     border: 1px solid #ddd;
-    /* color: white; */
-    /* height: 75px;
-    width: 75px; */
-    /* margin: 5px; */
     border-radius: 40%;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-    /* font-size: 20px; */
-    /* font-weight: bold; */
     cursor: pointer;
     transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
@@ -125,6 +122,8 @@
     position: relative;
     left: 8px;
     top: 7px;
+    background-color: var(--block-color);
+    box-shadow: 0 0 5px var(--cornflower-blue);
 }
 
 .chest {
@@ -225,6 +224,8 @@
     position: relative;
     top: 1px;
     right: 6px;
+    background-color: var(--block-color);
+    box-shadow: 0 0 5px var(--cornflower-blue);
 }
 
 .right-shoulder {
@@ -267,6 +268,8 @@
     position: relative;
     top: 1px;
     left: 6px;
+    background-color: var(--block-color);
+    box-shadow: 0 0 5px var(--cornflower-blue);
 }
 
 .abs {
@@ -343,7 +346,9 @@
     width: 75%;
     position: relative;
     bottom: 8px;
-    right: 1px;
+    right: -1px;
+    background-color: var(--block-color);
+    box-shadow: 0 0 5px var(--cornflower-blue);
 }
 
 .right-quad {
@@ -376,6 +381,8 @@
     position: relative;
     bottom: 8px;
     left: 4px;
+    background-color: var(--block-color);
+    box-shadow: 0 0 5px var(--cornflower-blue);
 }
 
 .muscle-map-back {
@@ -424,7 +431,7 @@
 }
 
 
-.muscle-map-back div {
+.muscle-map-back div:not(.head-2, .left-hand, .right-hand, .left-foot, .right-foot) {
     background-color: var(--block-color);
     border: 2px solid var(--cornflower-blue);
     cursor: pointer;
@@ -432,7 +439,7 @@
     transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.muscle-map-back div:hover {
+.muscle-map-back div:not(.head-2, .left-hand, .right-hand, .left-foot, .right-foot):hover {
     background-color: var(--midnight-blue);
     box-shadow: 0 0 10px var(--cornflower-blue);
     transform: scale(1.1);
@@ -448,6 +455,8 @@
     position: relative;
     left: 8px;
     top: 7px;
+    background-color: var(--block-color);
+    box-shadow: 0 0 5px var(--cornflower-blue);
 }
 
 .back-2 {

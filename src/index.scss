@@ -78,6 +78,7 @@ body {
 
 .buddy {
     color: var(--tangerine);
+    font-weight: 500;
 }
 
 .containers {
@@ -172,4 +173,51 @@ body {
 //     font-size: 20px;
 //     letter-spacing: 1px;
 //     box-shadow: 5px 5px 20px rgba(2, 2, 35, 0.2)
+// }
+
+.hidden {
+    display: none;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(248, 255, 255, 0.6);
+    /* This uses #f8ffff but with 80% opacity for dimming */
+    z-index: 999;
+    /* Ensures it covers everything except the modal */
+}
+
+#buddy-modal {
+    position: absolute;
+    left: 45%;
+    top: 15%;
+    text-align: center;
+    height: 350px;
+    width: 350px;
+    z-index: 1000;
+    background-image: url(/assets/images/bubble.png);
+    background-size: cover;
+}
+
+.modal-text {
+    position: relative;
+    top: 100px;
+}
+
+// /* Add a little triangle to make it look like a speech bubble */
+// #buddy-modal::before {
+//     content: "";
+//     position: absolute;
+//     left: 0px;
+//     margin-left: -5px;
+//     width: 0;
+//     height: 0;
+//     border-left: 2px solid black;
+//     border-right: 2px solid black;
+//     border-top: 2px solid black;
+//     transform: rotate(90deg);
 // }

@@ -51,7 +51,7 @@
     background-color: var(--block-color);
     border: 2px solid var(--cornflower-blue);
     cursor: pointer;
-    box-shadow: 0 0 5px var(--cornflower-blue);
+    box-shadow: 0 0 4px var(--cornflower-blue);
     transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
@@ -113,6 +113,22 @@
     box-shadow: 0 0 10px var(--cornflower-blue);
 }
 
+.front-cap {
+    width: 75px;
+    position: absolute;
+    left: 74px;
+    top: -27px;
+    z-index: 10;
+}
+
+.backward-cap {
+    width: 90px;
+    position: absolute;
+    left: 67px;
+    top: -45px;
+    z-index: 10;
+}
+
 .head {
     grid-column: 4 / 8;
     grid-row: 1 / 4;
@@ -124,6 +140,7 @@
     top: 7px;
     background-color: var(--block-color);
     box-shadow: 0 0 5px var(--cornflower-blue);
+    /* border: 10px solid black; */
 }
 
 .chest {
@@ -144,7 +161,7 @@
     height: 51px;
     width: 51px;
     position: relative;
-    left: 11px;
+    left: 12px;
     top: 8px;
     z-index: 10;
 }
@@ -153,7 +170,7 @@
     height: 51px;
     width: 51px;
     position: relative;
-    left: 14px;
+    left: 13px;
     top: 8px;
     border-radius: 20%;
     z-index: 10;
@@ -222,7 +239,7 @@
     width: 60%;
     justify-self: center;
     position: relative;
-    top: 1px;
+    top: 2px;
     right: 6px;
     background-color: var(--block-color);
     box-shadow: 0 0 5px var(--cornflower-blue);
@@ -266,7 +283,7 @@
     width: 60%;
     justify-self: center;
     position: relative;
-    top: 1px;
+    top: 2px;
     left: 6px;
     background-color: var(--block-color);
     box-shadow: 0 0 5px var(--cornflower-blue);
@@ -345,7 +362,7 @@
     border-radius: 45%;
     width: 75%;
     position: relative;
-    bottom: 8px;
+    bottom: 6px;
     right: -1px;
     background-color: var(--block-color);
     box-shadow: 0 0 5px var(--cornflower-blue);
@@ -379,7 +396,7 @@
     width: 75%;
     justify-self: center;
     position: relative;
-    bottom: 8px;
+    bottom: 6px;
     left: 4px;
     background-color: var(--block-color);
     box-shadow: 0 0 5px var(--cornflower-blue);
@@ -997,6 +1014,7 @@ body {
 
 .buddy {
   color: var(--tangerine);
+  font-weight: 500;
 }
 
 .containers {
@@ -1040,4 +1058,37 @@ body {
   margin-bottom: 20px;
   bottom: 5px;
   justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(248, 255, 255, 0.6);
+  /* This uses #f8ffff but with 80% opacity for dimming */
+  z-index: 999;
+  /* Ensures it covers everything except the modal */
+}
+
+#buddy-modal {
+  position: absolute;
+  left: 45%;
+  top: 15%;
+  text-align: center;
+  height: 350px;
+  width: 350px;
+  z-index: 1000;
+  background-image: url(/assets/images/bubble.png);
+  background-size: cover;
+}
+
+.modal-text {
+  position: relative;
+  top: 100px;
 }

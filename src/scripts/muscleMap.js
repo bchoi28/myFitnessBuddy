@@ -16,6 +16,10 @@ class MuscleMap {
         const muscleMap = document.createElement('div');
         muscleMap.classList.add('muscle-map');
 
+        const cap = document.createElement('img');
+        cap.classList.add('backward-cap');
+        cap.src = 'assets/images/backward-cap-transparent.jpeg';
+
         const head = document.createElement('div');
         head.classList.add('head');
 
@@ -89,6 +93,8 @@ class MuscleMap {
         const rightFoot = document.createElement('div');
         rightFoot.classList.add('right-foot');
 
+
+        muscleMap.appendChild(cap);
         muscleMap.appendChild(head);
         muscleMap.appendChild(chest);
         muscleMap.appendChild(back);
@@ -118,6 +124,10 @@ class MuscleMap {
     renderBack() {
         const muscleMapBack = document.createElement('div');
         muscleMapBack.classList.add('muscle-map-back');
+
+        const cap = document.createElement('img');
+        cap.classList.add('front-cap');
+        cap.src = 'assets/images/front-cap-transparent.png';
 
         const head2 = document.createElement('div');
         head2.classList.add('head-2');
@@ -174,6 +184,7 @@ class MuscleMap {
         rightFoot.classList.add('right-foot');
 
         muscleMapBack.appendChild(head2);
+        muscleMapBack.appendChild(cap);
         muscleMapBack.appendChild(back2);
         muscleMapBack.appendChild(leftShoulder);
         muscleMapBack.appendChild(leftTricep);

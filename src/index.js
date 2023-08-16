@@ -14,4 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.main-title').addEventListener("click", () => {
         location.reload();
     })
+
+    const overlay = document.getElementById('overlay');
+
+    // Show the introduction modal
+    const buddyModal = document.getElementById('buddy-modal');
+
+    // Hide the modal when it's clicked
+    document.addEventListener('click', () => {
+        buddyModal.classList.add('hidden');
+        overlay.classList.add('hidden');
+    });
 });

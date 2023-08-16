@@ -1,19 +1,6 @@
 /*!********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/muscleMap.css ***!
   \********************************************************************************************************/
-/* .muscle-map {
-    display: grid;
-    grid-template-columns: repeat(11, 1fr);
-    grid-template-rows: repeat(15, 1fr);
-    grid-gap: 5px;
-    position: relative;
-    bottom: 20px;
-    left: 14px;
-    width: 250px;
-    height: 350px;
-    background-color: var(--background-color);
-} */
-
 .muscle-map {
     display: grid;
     grid-template-columns: repeat(11, 1fr);
@@ -22,51 +9,19 @@
     position: relative;
     bottom: 20px;
     right: 2px;
-    /* left: 14px; */
     width: 250px;
     height: 350px;
     background-color: var(--background-color);
-}
-
-/* .start {
-    top: 50px;
-    bottom: 20px;
-    left: 14px;
-    width: 250px;
-    height: 350px;
-    background-color: var(--background-color);
-} */
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
 }
 
 .muscle-map,
 .muscle-map-back {
     animation-duration: 0.5s;
-    /* Animation duration */
     animation-timing-function: ease;
-    /* The rest of your styles ... */
 }
 
 
-.muscle-map div:not(.head, .left-hand,
+.muscle-map div:not(.head, .eyes, .mouth, .left-hand,
     .right-hand,
     .left-foot,
     .right-foot, .abs, .chest, .back, .left-glute, .right-glute) {
@@ -165,6 +120,32 @@
     /* border: 10px solid black; */
 }
 
+.eyes {
+    position: absolute;
+    left: 94px;
+    top: 15px;
+    letter-spacing: 6px;
+    font-size: 20px;
+    color: var(--tangerine);
+    font-weight: bolder;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.mouth {
+    width: 30px;
+    position: absolute;
+    left: 97px;
+    top: 43px;
+}
+
+.mouth-title {
+    width: 26px;
+    position: relative;
+    top: 24px;
+    right: 50px;
+
+}
+
 .chest {
     grid-column: 3 / 9;
     grid-row: 4 / 7;
@@ -198,17 +179,10 @@
     z-index: 10;
 }
 
-/* When hovering over .left-chest, style .left-chest */
 .left-chest:hover .left-chest+.right-chest {
     background-color: var(--midnight-blue);
     box-shadow: 0 0 10px var(--cornflower-blue);
 }
-
-/* When hovering over .left-chest, style the subsequent .right-chest */
-/* .left-chest:hover+.right-chest {
-    background-color: var(--midnight-blue);
-    box-shadow: 0 0 10px var(--cornflower-blue);
-} */
 
 .back {
     grid-column: 4 / 8;
@@ -432,13 +406,15 @@
     width: 50px;
     font-weight: 600;
     letter-spacing: 1px;
+    text-align: center;
     margin-left: auto;
     position: relative;
     bottom: 50px;
     right: 15px;
     cursor: pointer;
     border-radius: 5px;
-    padding-top: 5px;
+    padding-top: 2px;
+    padding-right: 3px;
     background-color: transparent;
     border: none;
     box-shadow: 0 3px 5px rgba(25, 25, 112, 0.2),
@@ -448,7 +424,6 @@
 }
 
 #toggle-view:hover {
-    /* background-color: var(--midnight-blue); */
     box-shadow: 0 5px 9px rgba(25, 25, 112, 0.2),
         0 2px 4px rgba(25, 25, 112, 0.2);
     transform: translateY(-2px);
@@ -566,18 +541,6 @@
     left: 10px
 }
 
-/* .close-button {
-    position: absolute;
-    top: 7%;
-    left: 1%;
-    font-size: 14px;
-    background-color: var(--midnight-blue);
-    color: white;
-    border-radius: 40%;
-    cursor: pointer;
-    display: none;
-} */
-
 .exercise-info {
     /* border: 3px solid var(--cornflower-blue); */
     /* margin-top: 10px; */
@@ -590,11 +553,6 @@
     height: 100%;
     padding-top: 15px;
 }
-
-/* .exercise-info:hover .close-button {
-    display: block;
-} */
-
 
 .primary-muscles-title,
 .secondary-muscles-title {
@@ -689,6 +647,15 @@
     justify-content: center;
 }
 
+.loading {
+    padding: 10px;
+    border-radius: 15%;
+    border: var(--cornflower-blue);
+    background-color: var(--block-color);
+    color: var(--branding-color);
+    box-shadow: 5px 3px 20px rgba(25, 25, 112, 0.2)
+}
+
 .gif {
     max-width: 100%;
     max-height: 100%;
@@ -713,16 +680,10 @@
 /*!*******************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/carousel.css ***!
   \*******************************************************************************************************/
-.carousel-container {}
-
 .carousel {
     margin: auto;
     width: 250px;
-    /* height: 300px; */
-    /* overflow: hidden; */
     border-radius: 10%;
-    /* border: 1px solid var(--cornflower-blue);
-    box-shadow: 0px 0 10px rgba(25, 25, 112, 0.2); */
     position: relative;
     bottom: 10px;
 }
@@ -757,12 +718,6 @@
     color: white;
     font-size: 12px;
 }
-
-/* .carousel-nav a.active {
-    background-color: var(--dark-slate-blue);
-    color: white;
-    border: 2px solid white;
-} */
 
 .carousel-nav a.active {
     background-color: var(--tangerine);
@@ -836,8 +791,6 @@
 
 .carousel-item-close-button:hover {
     background-color: var(--midnight-blue);
-
-    /* transform: scale(1.2); */
 }
 /*!***********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/instructions.css ***!
@@ -1097,7 +1050,7 @@ body {
   justify-content: center;
 }
 
-.hidden {
+#hidden {
   display: none;
 }
 
@@ -1108,25 +1061,23 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(248, 255, 255, 0.6);
-  /* This uses #f8ffff but with 80% opacity for dimming */
   z-index: 999;
-  /* Ensures it covers everything except the modal */
 }
 
 #buddy-modal {
   position: absolute;
-  left: 470px;
-  top: 150px;
+  left: 45%;
+  top: 146px;
   text-align: center;
   height: 350px;
-  width: 350px;
+  width: 360px;
   z-index: 1000;
   background-color: var(--block-color);
   border: 1px solid var(--branding-color);
   border-radius: 12.8px;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 10px 15px;
   justify-content: space-between;
   font-size: 14px;
 }
@@ -1141,10 +1092,12 @@ body {
 
 .modal-flip-text {
   color: var(--tangerine);
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: 1px;
-  padding: 1px 7px;
-  background-color: white;
+  padding: 1px 7px 1px 8px;
+  text-align: center;
+  background-color: var(--background-color);
   border-radius: 5px;
+  border: none;
   box-shadow: 0 3px 5px rgba(25, 25, 112, 0.2), 0 1px 2px rgba(25, 25, 112, 0.2);
 }

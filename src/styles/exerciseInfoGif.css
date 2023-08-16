@@ -6,18 +6,6 @@
     left: 10px
 }
 
-/* .close-button {
-    position: absolute;
-    top: 7%;
-    left: 1%;
-    font-size: 14px;
-    background-color: var(--midnight-blue);
-    color: white;
-    border-radius: 40%;
-    cursor: pointer;
-    display: none;
-} */
-
 .exercise-info {
     /* border: 3px solid var(--cornflower-blue); */
     /* margin-top: 10px; */
@@ -30,11 +18,6 @@
     height: 100%;
     padding-top: 15px;
 }
-
-/* .exercise-info:hover .close-button {
-    display: block;
-} */
-
 
 .primary-muscles-title,
 .secondary-muscles-title {
@@ -127,6 +110,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.loading {
+    padding: 10px;
+    border-radius: 15%;
+    border: var(--cornflower-blue);
+    background-color: var(--block-color);
+    color: var(--branding-color);
+    box-shadow: 5px 3px 20px rgba(25, 25, 112, 0.2)
 }
 
 .gif {

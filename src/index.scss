@@ -6,7 +6,6 @@
 
 :root {
     --branding-color: #0066EE;
-    // --background-color: hsl(214 100% 97% / 1);
     --background-color: #f8ffff;
     --block-color: #A9F9FF;
 
@@ -147,52 +146,7 @@ body {
     justify-content: center;
 }
 
-// .tooltip {
-//     position: relative;
-//     display: inline-block;
-//     border-bottom: 1px dotted black;
-//     cursor: help;
-// }
-
-// .tooltiptext {
-//     visibility: hidden;
-//     position: absolute;
-//     z-index: 1;
-//     width: 200px;
-//     max-height: 100px;
-//     overflow-y: auto;
-//     background-color: #333;
-//     color: #fff;
-//     text-align: center;
-//     border-radius: 6px;
-//     padding: 5px;
-//     top: 100%;
-//     left: 50%;
-//     transform: translateX(-50%);
-//     opacity: 0;
-//     transition: opacity 0.3s;
-// }
-
-// .tooltip:hover .tooltiptext {
-//     visibility: visible;
-//     opacity: 1;
-// }
-
-// #toggleButton {
-//     position: absolute;
-//     top: -80px;
-//     right: 100px;
-//     color: white;
-//     background-color: var(--midnight-blue);
-//     border: 3px solid black;
-//     padding: 30px 10px;
-//     border-radius: 25%;
-//     font-size: 20px;
-//     letter-spacing: 1px;
-//     box-shadow: 5px 5px 20px rgba(2, 2, 35, 0.2)
-// }
-
-.hidden {
+#hidden {
     display: none;
 }
 
@@ -203,25 +157,24 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(248, 255, 255, 0.6);
-    /* This uses #f8ffff but with 80% opacity for dimming */
     z-index: 999;
-    /* Ensures it covers everything except the modal */
 }
 
 #buddy-modal {
     position: absolute;
-    left: 470px;
-    top: 150px;
+    // left: 540px;
+    left: 45%;
+    top: 146px;
     text-align: center;
     height: 350px;
-    width: 350px;
+    width: 360px;
     z-index: 1000;
     background-color: var(--block-color);
     border: 1px solid var(--branding-color);
     border-radius: 12.8px;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 10px 15px;
     justify-content: space-between;
     font-size: 14px;
 }
@@ -239,25 +192,13 @@ body {
 
 .modal-flip-text {
     color: var(--tangerine);
-    font-weight: 900;
+    font-weight: 600;
     letter-spacing: 1px;
-    padding: 1px 7px;
-    background-color: white;
+    padding: 1px 7px 1px 8px;
+    text-align: center;
+    background-color: var(--background-color);
     border-radius: 5px;
+    border: none;
     box-shadow: 0 3px 5px rgba(25, 25, 112, 0.2),
         0 1px 2px rgba(25, 25, 112, 0.2);
 }
-
-// /* Add a little triangle to make it look like a speech bubble */
-// #buddy-modal::before {
-//     content: "";
-//     position: absolute;
-//     left: 0px;
-//     margin-left: -5px;
-//     width: 0;
-//     height: 0;
-//     border-left: 2px solid black;
-//     border-right: 2px solid black;
-//     border-top: 2px solid black;
-//     transform: rotate(90deg);
-// }

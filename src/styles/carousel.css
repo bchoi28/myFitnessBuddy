@@ -1,13 +1,7 @@
-.carousel-container {}
-
 .carousel {
     margin: auto;
     width: 250px;
-    /* height: 300px; */
-    /* overflow: hidden; */
     border-radius: 10%;
-    /* border: 1px solid var(--cornflower-blue);
-    box-shadow: 0px 0 10px rgba(25, 25, 112, 0.2); */
     position: relative;
     bottom: 10px;
 }
@@ -42,12 +36,6 @@
     color: white;
     font-size: 12px;
 }
-
-/* .carousel-nav a.active {
-    background-color: var(--dark-slate-blue);
-    color: white;
-    border: 2px solid white;
-} */
 
 .carousel-nav a.active {
     background-color: var(--tangerine);
@@ -121,6 +109,4 @@
 
 .carousel-item-close-button:hover {
     background-color: var(--midnight-blue);
-
-    /* transform: scale(1.2); */
 }

@@ -24,7 +24,7 @@ const exercises = {
 
 const generateExercise = async (muscleBlock, carouselInstance) => {
 
-    const exercisesByMuscleBlock = exercises[muscleBlock.classList[0]]; // Get exercises for the muscle block class
+    const exercisesByMuscleBlock = exercises[muscleBlock.classList[0]];
     debugger
     // keep assigning an exercise until it's NOT in storedExercises
     let exercise;
@@ -50,12 +50,11 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
         gifContainer.removeChild(gifContainer.firstChild);
     };
 
-    // Create/append loading spinner or text
     const loadingIndicator = document.createElement('div');
-    loadingIndicator.classList.add('gif');
-    loadingIndicator.innerText = "Fetching gif..."; // You can use a CSS spinner or a loading image instead of text
+    loadingIndicator.classList.add('loading');
+    loadingIndicator.innerText = "Fetching GIF...";
     gifContainer.appendChild(loadingIndicator);
-
+    debugger
     const exerciseTitleContainer = document.querySelector('.exercise-title-container');
     if (exerciseTitleContainer.firstChild) {
         exerciseTitleContainer.removeChild(exerciseTitleContainer.firstChild);
@@ -93,24 +92,18 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     enduranceButton.innerText = 'Endurance';
     enduranceButton.dataset.goal = 'endurance';
 
-
     strengthButton.addEventListener('click', () => {
-        debugger
         toggleActiveButton(strengthButton);
         displayRecommendedRepRange('strength');
         exercise.goal = 'strength';
-        // exercise.repRange = '4-6 reps';
         carouselInstance.updateStoredExercise(exercise);
-
     });
 
     sizeButton.addEventListener('click', () => {
         toggleActiveButton(sizeButton);
         displayRecommendedRepRange('size');
         exercise.goal = 'size';
-        // exercise.repRange = '8-12 reps';
         carouselInstance.updateStoredExercise(exercise);
-
     });
 
     enduranceButton.addEventListener('click', () => {
@@ -118,14 +111,13 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
         toggleActiveButton(enduranceButton);
         displayRecommendedRepRange('endurance');
         exercise.goal = 'endurance';
-        // exercise.repRange = '15-20 reps';
         carouselInstance.updateStoredExercise(exercise);
-
     });
 
     const buttonsContainer = document.createElement('div');
     buttonsContainer.classList.add('goal-buttons-container');
     buttonsContainer.append(strengthButton, sizeButton, enduranceButton);
+
     const exerciseInfo = document.createElement('div');
     exerciseInfo.classList.add('exercise-info');
     exerciseInfo.append(primaryMusclesTitle, primaryMuscles, secondaryMusclesTitle, secondaryMuscles, buttonsContainer);
@@ -139,13 +131,10 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     const gifImage = await fetchGif(exercise.gifName);
     gif.src = gifImage;
     loadingIndicator.remove();
-
     gifContainer.appendChild(gif);
+
     exercise.gifUrl = gifImage;
 
-    // create/append instructions
-    // const steps = await fetchSteps(exercise.apiName);
-    // exercise.steps = steps;
     const exerciseSteps = document.createElement('ul');
     exerciseSteps.classList.add('exercise-steps');
     exercise.steps.forEach((step) => {
@@ -155,35 +144,27 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
         exerciseSteps.appendChild(exerciseStep);
     });
 
-    // exerciseTitle.style.display = 'flex';
     const exerciseTitle = document.createElement('div');
     exerciseTitle.classList.add('exercise-title');
     exerciseTitle.innerText = exercise.name;
     exerciseTitleContainer.append(exerciseTitle);
 
-    // const instructionsExerciseTitle = document.createElement('div');
-    // instructionsExerciseTitle.classList.add('instructions-exercise-title');
-    // instructionsExerciseTitle.innerText = 'Instructions';
-
-    // instructionsContainer.appendChild(instructionsExerciseTitle);
     instructionsContainer.appendChild(exerciseSteps);
 
     carouselInstance.addExerciseToCarousel(exercise);
 }
 
 const displayRecommendedRepRange = (workoutType) => {
-    debugger
     let repRangeContainer = document.querySelector('.rep-range');
 
     if (!repRangeContainer) {
         repRangeContainer = document.createElement('div');
         repRangeContainer.classList.add('rep-range');
 
-        // Append the rep range container to the exercise info container
         const exerciseInfo = document.querySelector('.exercise-info');
         exerciseInfo.appendChild(repRangeContainer);
     } else {
-        repRangeContainer.innerText = ''; // Clear the existing inner text
+        repRangeContainer.innerText = '';
     }
 
     let repRange;
@@ -234,15 +215,12 @@ const removeExerciseFromInfoContainer = (nextExercise) => {
 };
 
 const displayExerciseInfo = (exercise) => {
-    // change exercise name and remove appendages
 
     const exerciseTitle = document.querySelector('.exercise-title');
     exerciseTitle.innerText = exercise.name;
 
     const instructionsContainer = document.querySelector('.instructions-container');
-    // while (instructionsContainer.secondChild) {
     instructionsContainer.removeChild(instructionsContainer.children[0]);
-    // };
     const exerciseSteps = document.createElement('ul');
     exerciseSteps.classList.add('exercise-steps');
     exercise.steps.forEach((step) => {

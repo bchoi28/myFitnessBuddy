@@ -1,16 +1,38 @@
+/* .muscle-map {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    grid-gap: 5px;
+    position: relative;
+    bottom: 20px;
+    left: 14px;
+    width: 250px;
+    height: 350px;
+    background-color: var(--background-color);
+} */
+
 .muscle-map {
     display: grid;
     grid-template-columns: repeat(11, 1fr);
     grid-template-rows: repeat(15, 1fr);
     grid-gap: 5px;
     position: relative;
-    /* top: 30px; */
+    bottom: 20px;
+    right: 2px;
+    /* left: 14px; */
+    width: 250px;
+    height: 350px;
+    background-color: var(--background-color);
+}
+
+/* .start {
+    top: 50px;
     bottom: 20px;
     left: 14px;
     width: 250px;
     height: 350px;
     background-color: var(--background-color);
-}
+} */
 
 @keyframes fadeIn {
     from {
@@ -410,6 +432,7 @@
     margin-left: auto;
     position: relative;
     bottom: 50px;
+    right: 15px;
     cursor: pointer;
     border-radius: 5px;
     padding-top: 5px;

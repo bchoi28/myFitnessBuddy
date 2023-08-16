@@ -1,19 +1,41 @@
 /*!********************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/muscleMap.css ***!
   \********************************************************************************************************/
+/* .muscle-map {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    grid-gap: 5px;
+    position: relative;
+    bottom: 20px;
+    left: 14px;
+    width: 250px;
+    height: 350px;
+    background-color: var(--background-color);
+} */
+
 .muscle-map {
     display: grid;
     grid-template-columns: repeat(11, 1fr);
     grid-template-rows: repeat(15, 1fr);
     grid-gap: 5px;
     position: relative;
-    /* top: 30px; */
+    bottom: 20px;
+    right: 2px;
+    /* left: 14px; */
+    width: 250px;
+    height: 350px;
+    background-color: var(--background-color);
+}
+
+/* .start {
+    top: 50px;
     bottom: 20px;
     left: 14px;
     width: 250px;
     height: 350px;
     background-color: var(--background-color);
-}
+} */
 
 @keyframes fadeIn {
     from {
@@ -413,6 +435,7 @@
     margin-left: auto;
     position: relative;
     bottom: 50px;
+    right: 15px;
     cursor: pointer;
     border-radius: 5px;
     padding-top: 5px;
@@ -441,7 +464,7 @@
     position: relative;
     /* top: 30px; */
     bottom: 20px;
-    left: 14px;
+    right: 2px;
     width: 250px;
     height: 350px;
     background-color: var(--background-color);
@@ -701,7 +724,7 @@
     /* border: 1px solid var(--cornflower-blue);
     box-shadow: 0px 0 10px rgba(25, 25, 112, 0.2); */
     position: relative;
-    bottom: 30px;
+    bottom: 10px;
 }
 
 .my-exercises {
@@ -1014,7 +1037,13 @@ body {
 
 .buddy {
   color: var(--tangerine);
-  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.modal-buddy {
+  color: var(--tangerine);
+  font-weight: 900;
+  font-size: 15px;
 }
 
 .containers {
@@ -1031,6 +1060,13 @@ body {
 .body-container {
   display: flex;
   flex-direction: column;
+  position: relative;
+  top: 80px;
+}
+
+.start {
+  top: 20px;
+  left: 14px;
 }
 
 .right {
@@ -1056,6 +1092,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  left: 5px;
   bottom: 5px;
   justify-content: center;
 }
@@ -1078,17 +1115,36 @@ body {
 
 #buddy-modal {
   position: absolute;
-  left: 45%;
-  top: 15%;
+  left: 470px;
+  top: 150px;
   text-align: center;
   height: 350px;
   width: 350px;
   z-index: 1000;
-  background-image: url(/assets/images/bubble.png);
-  background-size: cover;
+  background-color: var(--block-color);
+  border: 1px solid var(--branding-color);
+  border-radius: 12.8px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: space-between;
+  font-size: 14px;
 }
 
 .modal-text {
   position: relative;
-  top: 100px;
+}
+
+.modal-text-last {
+  position: relative;
+}
+
+.modal-flip-text {
+  color: var(--tangerine);
+  font-weight: 900;
+  letter-spacing: 1px;
+  padding: 1px 7px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px rgba(25, 25, 112, 0.2), 0 1px 2px rgba(25, 25, 112, 0.2);
 }

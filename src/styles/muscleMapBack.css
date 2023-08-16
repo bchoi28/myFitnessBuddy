@@ -6,7 +6,7 @@
     position: relative;
     /* top: 30px; */
     bottom: 20px;
-    left: 14px;
+    right: 2px;
     width: 250px;
     height: 350px;
     background-color: var(--background-color);

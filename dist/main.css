@@ -984,7 +984,21 @@ body {
   text-align: center;
 }
 
-.nav-icon:hover {
+.nexus {
+  position: relative;
+  top: 1px;
+  height: 23px;
+  width: 23px;
+  border-radius: none;
+  padding: 5px;
+  border: 0.5px solid white;
+  border-radius: 5px;
+  background-color: var(--background-color);
+  margin-left: 2px;
+}
+
+.nav-icon:hover,
+.nexus:hover {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
 

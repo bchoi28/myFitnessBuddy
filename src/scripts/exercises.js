@@ -25,7 +25,6 @@ const exercises = {
 const generateExercise = async (muscleBlock, carouselInstance) => {
 
     const exercisesByMuscleBlock = exercises[muscleBlock.classList[0]];
-    debugger
     // keep assigning an exercise until it's NOT in storedExercises
     let exercise;
     do {
@@ -54,7 +53,6 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     loadingIndicator.classList.add('loading');
     loadingIndicator.innerText = "Fetching GIF...";
     gifContainer.appendChild(loadingIndicator);
-    debugger
     const exerciseTitleContainer = document.querySelector('.exercise-title-container');
     if (exerciseTitleContainer.firstChild) {
         exerciseTitleContainer.removeChild(exerciseTitleContainer.firstChild);
@@ -107,7 +105,6 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     });
 
     enduranceButton.addEventListener('click', () => {
-        debugger
         toggleActiveButton(enduranceButton);
         displayRecommendedRepRange('endurance');
         exercise.goal = 'endurance';
@@ -245,7 +242,6 @@ const displayExerciseInfo = (exercise) => {
     const goalButtons = document.querySelectorAll('.goal-button');
     goalButtons.forEach(button => button.classList.remove('active'));
     const button = document.querySelector(`.goal-button[data-goal="${exercise.goal}"]`);
-    debugger
     if (button) {
         button.classList.add('active');
         displayRecommendedRepRange(exercise.goal);

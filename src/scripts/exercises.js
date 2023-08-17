@@ -284,13 +284,14 @@ const displayExerciseInfo = (exercise) => {
 //     }
 // };
 
+
 const fetchGif = async (exerciseName) => {
     const encodedName = encodeURIComponent(exerciseName);
     const url = `https://exercisedb.p.rapidapi.com/exercises/name/${encodedName}`;
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '3af8ef8f2dmshc6efeb993784441p1a7439jsn93b2667827e7',
+            'X-RapidAPI-Key': '91cf2fc490mshc6c99117d33a2a2p1011c0jsnf2d0274cc698',
             'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
         }
     };

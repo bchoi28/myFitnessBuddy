@@ -24,6 +24,10 @@ With myFitnessBuddy, users are able to:
 
 ![myFitnessBuddy_wireframe](myFitnessBuddy_wireframe.png)
 
+## App Demo
+
+
+
 ## Technologies Used
 
 * Languages: JavaScript, HTML5, CSS3
@@ -37,7 +41,6 @@ With myFitnessBuddy, users are able to:
 - Primary/secondary musculature re: displayed exercise highlighted on Buddy
 
 ## About Me
-
 
 <p align="left">
   <a href="https://linkedin.com/in/brandonchoi28">

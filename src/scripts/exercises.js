@@ -32,7 +32,6 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
         exercise = exercisesByMuscleBlock[randomIndex];
     } while (carouselInstance.storedExercises.includes(exercise));
 
-
     // check if anything exists on the R side
     const instructionsContainer = document.querySelector('.instructions-container');
     while (instructionsContainer.firstChild) {
@@ -53,11 +52,12 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     loadingIndicator.classList.add('loading');
     loadingIndicator.innerText = "Fetching GIF...";
     gifContainer.appendChild(loadingIndicator);
+    debugger
+
     const exerciseTitleContainer = document.querySelector('.exercise-title-container');
     if (exerciseTitleContainer.firstChild) {
         exerciseTitleContainer.removeChild(exerciseTitleContainer.firstChild);
     }
-
     // create/append exerciseInfo
     const primaryMusclesTitle = document.createElement('div');
     primaryMusclesTitle.classList.add('primary-muscles-title');
@@ -114,23 +114,10 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     const buttonsContainer = document.createElement('div');
     buttonsContainer.classList.add('goal-buttons-container');
     buttonsContainer.append(strengthButton, sizeButton, enduranceButton);
+    const repRangeContainer = document.createElement('div');
+    repRangeContainer.classList.add('rep-range');
+    repRangeContainer.innerText = 'Choose a goal';
 
-    const exerciseInfo = document.createElement('div');
-    exerciseInfo.classList.add('exercise-info');
-    exerciseInfo.append(primaryMusclesTitle, primaryMuscles, secondaryMusclesTitle, secondaryMuscles, buttonsContainer);
-    exerciseInfoContainer.appendChild(exerciseInfo);
-
-    // create/append gif
-    const gif = document.createElement('img');
-    gif.classList.add('gif');
-    gif.alt = exercise.name;
-
-    const gifImage = await fetchGif(exercise.gifName);
-    gif.src = gifImage;
-    loadingIndicator.remove();
-    gifContainer.appendChild(gif);
-
-    exercise.gifUrl = gifImage;
 
     const exerciseSteps = document.createElement('ul');
     exerciseSteps.classList.add('exercise-steps');
@@ -148,21 +135,40 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
 
     instructionsContainer.appendChild(exerciseSteps);
 
+    const exerciseInfo = document.createElement('div');
+    exerciseInfo.classList.add('exercise-info');
+    exerciseInfo.append(primaryMusclesTitle, primaryMuscles, secondaryMusclesTitle, secondaryMuscles, buttonsContainer, repRangeContainer);
+    exerciseInfoContainer.appendChild(exerciseInfo);
+
+    // create/append gif
+    const gifImage = await fetchGif(exercise.gifName);
+    const gif = document.createElement('img');
+    gif.classList.add('gif');
+    gif.alt = exercise.name;
+
+    // const gifImage = await fetchGif(exercise.gifName);
+    gif.src = gifImage;
+    gifContainer.appendChild(gif);
+    debugger
+    loadingIndicator.remove();
+
+    exercise.gifUrl = gifImage;
     carouselInstance.addExerciseToCarousel(exercise);
 }
 
 const displayRecommendedRepRange = (workoutType) => {
     let repRangeContainer = document.querySelector('.rep-range');
 
-    if (!repRangeContainer) {
-        repRangeContainer = document.createElement('div');
-        repRangeContainer.classList.add('rep-range');
+    // if (!repRangeContainer) {
+    //     repRangeContainer = document.createElement('div');
+    //     repRangeContainer.classList.add('rep-range');
 
-        const exerciseInfo = document.querySelector('.exercise-info');
-        exerciseInfo.appendChild(repRangeContainer);
-    } else {
-        repRangeContainer.innerText = '';
-    }
+    //     const exerciseInfo = document.querySelector('.exercise-info');
+    //     exerciseInfo.appendChild(repRangeContainer);
+    // } else {
+    //     // repRangeContainer.innerText = '';
+    //     repRangeContainer.innerText = 'Choose a goal';
+    // }
 
     let repRange;
     if (workoutType === 'strength') {
@@ -248,7 +254,7 @@ const displayExerciseInfo = (exercise) => {
     } else {
         const repRangeElement = document.querySelector('.rep-range');
         if (repRangeElement) {
-            repRangeElement.innerText = '';
+            repRangeElement.innerText = 'Choose a goal';
         }
     }
 

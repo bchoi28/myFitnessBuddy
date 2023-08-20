@@ -246,7 +246,7 @@ class MuscleMap {
 
     addEventListeners() {
         const buddyModal = document.getElementById('buddy-modal');
-
+        const rightSide = document.querySelector('.right');
         const muscleBlocks = Array.from(document.querySelectorAll(
             '.muscle-map div:not(.head, .eyes, .mouth, .left-hand, .right-hand, .left-foot, .right-foot, .abs div, .chest, .left-chest, .right-chest), .muscle-map-back div:not(.head-2, .left-hand, .right-hand, .left-foot, .right-foot)')
         );
@@ -255,6 +255,7 @@ class MuscleMap {
                 if (!this.firstClickDone) {
                     this.container.classList.add('start');
                     buddyModal.id = 'hidden';
+                    rightSide.style.display = 'flex';
                     this.firstClickDone = true;
                 }
                 this.handleClickGenerateExercise(muscleBlock);
@@ -267,6 +268,7 @@ class MuscleMap {
             if (!this.firstClickDone) {
                 this.container.classList.add('start');
                 buddyModal.id = 'hidden';
+                rightSide.style.display = 'flex';
                 this.firstClickDone = true;
             }
             this.handleClickGenerateExercise(chest);

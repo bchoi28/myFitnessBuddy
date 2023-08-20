@@ -102,8 +102,8 @@
 
 .gif-container {
     /* border: 3px solid var(--cornflower-blue); */
-    margin-top: 15px;
-    margin-left: 40px;
+    margin-top: 17px;
+    margin-left: 23px;
     border-radius: 15%;
     width: 250px;
     display: flex;
@@ -116,8 +116,7 @@
     padding: 10px;
     border-radius: 15%;
     border: var(--cornflower-blue);
-    background-color: var(--block-color);
-    color: var(--branding-color);
+    color: var(--midnight-blue);
     box-shadow: 5px 3px 20px rgba(25, 25, 112, 0.2)
 }
 
@@ -126,12 +125,17 @@
     max-height: 100%;
     border-radius: 15%;
     /* border: 2px solid var(--cornflower-blue); */
-    box-shadow: 5px 3px 20px rgba(25, 25, 112, 0.2)
+    box-shadow: 5px 3px 20px rgba(25, 25, 112, 0.2);
+    animation: fadeInGif 2s;
 }
 
 @keyframes fadeInGif {
     0% {
-        opacity: 0;
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.75
     }
 
     100% {

@@ -33,6 +33,22 @@ body {
     height: 100vh;
     width: 100vw;
     margin: 0;
+    // padding: 10px;
+}
+
+.page-container {
+    padding: 1%;
+    padding-top: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.containers {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px 5px 0px;
+    margin-top: 5vh;
+    // width: 1080px;
 }
 
 .nav-bar {
@@ -97,7 +113,6 @@ body {
 
 .buddy {
     color: var(--tangerine);
-
     letter-spacing: 1px;
 }
 
@@ -106,12 +121,6 @@ body {
     font-weight: 900;
     font-size: 15px;
     // letter-spacing: 1px;
-}
-
-.containers {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 40px 20px 0px 50px;
 }
 
 .left {
@@ -123,8 +132,10 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
+    // top: 80px;
+    // left: 15px;
     top: 80px;
-    left: 15px;
+    right: 45px;
 }
 
 .start {
@@ -133,11 +144,10 @@ body {
 }
 
 .right {
-    display: flex;
+    // display: flex;
     flex-direction: column;
-    // width: 60%;
-    // min-width: 600px;
-    align-self: flex-start;
+    margin-left: 30px;
+    display: none;
 }
 
 @keyframes pulse {
@@ -180,10 +190,9 @@ body {
 }
 
 #buddy-modal {
-    position: absolute;
-    // left: 540px;
-    left: 45%;
-    top: 144px;
+    position: relative;
+    top: 38px;
+    right: 5px;
     text-align: center;
     height: 355px;
     width: 360px;

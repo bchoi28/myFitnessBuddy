@@ -22,7 +22,7 @@ With myFitnessBuddy, users are able to:
 
 ## Main Wireframe
 
-![myFitnessBuddy_wireframe](myFitnessBuddy_wireframe.png)
+![myFitnessBuddy_wireframe](/assets/images/wireframe.png)
 
 ## App Demo
 

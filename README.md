@@ -20,6 +20,52 @@ With myFitnessBuddy, users are able to:
 
 ## App Demo
 
+```javascript
+// carousel.js
+  render() {
+    // ...
+
+    // Add a single eventListener to the carouselNav instead of each newNavItem.
+    this.carouselNav.addEventListener('click', (e) => {
+      const clickedNavItem = e.target;
+      if (clickedNavItem.tagName === 'A') {
+          const exerciseName = clickedNavItem.dataset.exerciseName;
+          const updatedExercise = this.storedExercises.find(exercise => exercise.name === exerciseName);
+          displayExerciseInfo(updatedExercise);
+      
+          this.deactivateNavItems();
+          clickedNavItem.classList.add('active');
+      }
+    });
+
+    // ...
+  };
+
+  addExerciseToCarousel(exercise) {
+    // ...
+
+    closeButton.addEventListener('click', () => {
+      this.deactivateNavItems();
+      
+      // Find the next carousel item in the DOM. If there isn't one, fallback to the previous item.
+      let nextActiveCarouselItem = carouselItem.nextElementSibling || carouselItem.previousElementSibling;
+      const nextExercise = this.removeExerciseFromCarousel(carouselItem);
+      removeExerciseFromInfoContainer(nextExercise);
+      
+      if (nextActiveCarouselItem) {
+          const nextActiveCarouselItemId = nextActiveCarouselItem.id.split("-")[2];
+          // Find the corresponding navigation item using the extracted ID.
+          const nextActiveNavItem = this.carouselNav.querySelector(`a[href="#carousel-item-${nextActiveCarouselItemId}"]`);
+          if (nextActiveNavItem) {
+              nextActiveNavItem.classList.add('active');
+          }
+      }
+    });
+
+    // ...
+  }
+
+```
 
 
 

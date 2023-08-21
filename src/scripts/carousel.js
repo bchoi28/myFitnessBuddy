@@ -94,19 +94,13 @@ class Carousel {
         // });
 
         closeButton.addEventListener('click', () => {
+            this.deactivateNavItems();
+
             let nextActiveCarouselItem = carouselItem.nextElementSibling || carouselItem.previousElementSibling;
-
-            const allCarouselItems = this.carouselSlides.querySelectorAll('.carousel-item');
-            allCarouselItems.forEach(item => item.classList.remove('active'));
-
-            const allNavItems = this.carouselNav.querySelectorAll('a');
-            allNavItems.forEach(item => item.classList.remove('active'));
-
             const nextExercise = this.removeExerciseFromCarousel(carouselItem);
             removeExerciseFromInfoContainer(nextExercise);
 
             if (nextActiveCarouselItem) {
-                nextActiveCarouselItem.classList.add('active');
                 const nextActiveCarouselItemId = nextActiveCarouselItem.id.split("-")[2];
                 const nextActiveNavItem = this.carouselNav.querySelector(`a[href="#carousel-item-${nextActiveCarouselItemId}"]`);
                 if (nextActiveNavItem) {
@@ -166,7 +160,7 @@ class Carousel {
 
     // reset active navItem
     deactivateNavItems() {
-        const activeNavItem = document.querySelector('.carousel-nav a.active');
+        const activeNavItem = this.carouselNav.querySelector('.carousel-nav a.active');
         if (activeNavItem) activeNavItem.classList.remove('active');
     }
 

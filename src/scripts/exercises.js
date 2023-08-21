@@ -52,7 +52,6 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     loadingIndicator.classList.add('loading');
     loadingIndicator.innerText = "Fetching GIF...";
     gifContainer.appendChild(loadingIndicator);
-    debugger
 
     const exerciseTitleContainer = document.querySelector('.exercise-title-container');
     if (exerciseTitleContainer.firstChild) {

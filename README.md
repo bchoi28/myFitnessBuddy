@@ -20,6 +20,8 @@ With myFitnessBuddy, users are able to:
 
 ## App Demo
 
+![demo](/assets/images/myFitnessBuddy_demo.gif)
+
 ```javascript
 // carousel.js
   render() {

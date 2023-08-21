@@ -80,6 +80,8 @@
     top: 25px;
     position: relative;
     color: var(--branding-color);
+    text-align: center;
+    padding: 0px 5px;
 }
 
 .carousel-item-type {

@@ -107,8 +107,8 @@ export const chestExercises = [
     // },
     {
         type: 'CHEST',
-        name: 'Cable Crossover',
-        gifName: 'cable standing fly',
+        name: 'Cable Low Fly',
+        gifName: 'cable low fly',
         primaryMuscles: ['Pectoralis Major'],
         secondaryMuscles: ['Anterior Deltoids', 'Triceps'],
         steps: [

@@ -208,7 +208,7 @@
 .left-tricep {
     grid-column: 2 / 4;
     grid-row: 5 / 7;
-    border-radius: 25%;
+    border-radius: 30%;
     position: relative;
     top: 8px;
     right: 6px;
@@ -217,7 +217,7 @@
 .left-forearm {
     grid-column: 2 / 4;
     grid-row: 7 / 9;
-    border-radius: 15%;
+    border-radius: 27%;
     width: 75%;
     justify-self: center;
     position: relative;
@@ -252,7 +252,7 @@
 .right-tricep {
     grid-column: 8 / 10;
     grid-row: 5 / 7;
-    border-radius: 25%;
+    border-radius: 30%;
     position: relative;
     top: 8px;
     left: 6px;
@@ -261,7 +261,7 @@
 .right-forearm {
     grid-column: 8 / 10;
     grid-row: 7 / 9;
-    border-radius: 15%;
+    border-radius: 27%;
     width: 75%;
     justify-self: center;
     position: relative;
@@ -342,7 +342,7 @@
 .left-calf {
     grid-column: 4 / 6;
     grid-row: 13 / 15;
-    border-radius: 20%;
+    border-radius: 27%;
     width: 75%;
     position: relative;
     bottom: 4px;
@@ -374,12 +374,12 @@
 .right-calf {
     grid-column: 6 / 8;
     grid-row: 13 / 15;
-    border-radius: 20%;
+    border-radius: 27%;
     width: 75%;
     justify-self: center;
     bottom: 4px;
     position: relative;
-    left: 4px;
+    left: 5px;
 }
 
 .right-foot {
@@ -390,7 +390,7 @@
     justify-self: center;
     position: relative;
     bottom: 6px;
-    left: 4px;
+    left: 5px;
     background-color: var(--block-color);
     box-shadow: 0 0 5px var(--cornflower-blue);
 }

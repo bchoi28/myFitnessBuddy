@@ -64,7 +64,7 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
 
     const primaryMuscles = document.createElement('div');
     primaryMuscles.classList.add('primary-muscles');
-    primaryMuscles.innerText = `${exercise.primaryMuscles.join(" ")}`;
+    primaryMuscles.innerText = `${exercise.primaryMuscles.join(", ")}`;
 
     const secondaryMusclesTitle = document.createElement('div');
     secondaryMusclesTitle.classList.add('secondary-muscles-title');
@@ -117,7 +117,6 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     repRangeContainer.classList.add('rep-range');
     repRangeContainer.innerText = 'Choose a goal';
 
-
     const exerciseSteps = document.createElement('ul');
     exerciseSteps.classList.add('exercise-steps');
     exercise.steps.forEach((step) => {
@@ -141,6 +140,9 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
 
     // create/append gif
     const gifImage = await fetchGif(exercise.gifName);
+
+    // exercise.gifUrl = gifImage;
+    // carouselInstance.addExerciseToCarousel(exercise);
     const gif = document.createElement('img');
     gif.classList.add('gif');
     gif.alt = exercise.name;
@@ -234,9 +236,9 @@ const displayExerciseInfo = (exercise) => {
     instructionsContainer.appendChild(exerciseSteps);
 
     const primaryMuscles = document.querySelector('.primary-muscles');
-    primaryMuscles.innerText = `${exercise.primaryMuscles.join(" ")}`;
+    primaryMuscles.innerText = `${exercise.primaryMuscles.join(", ")}`;
     const secondaryMuscles = document.querySelector('.secondary-muscles');
-    secondaryMuscles.innerText = `${exercise.secondaryMuscles.join(" ")}`;
+    secondaryMuscles.innerText = `${exercise.secondaryMuscles.join(", ")}`;
 
     const gifContainer = document.querySelector('.gif-container');
     if (gifContainer.firstChild) {

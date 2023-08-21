@@ -14,12 +14,6 @@ With myFitnessBuddy, users are able to:
 - Click a goal for that exercise which displays the recommended rep range for that goal.
 - Select and deselect up to 4 exercises which are stored in a carousel.
 
-## Technologies
-
-* Languages: JavaScript, HTML5, CSS3
-* API: [ExerciseDB](https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb) (for fetching GIFs)
-* Hosting: GitHub
-
 ## Main Wireframe
 
 ![myFitnessBuddy_wireframe](/assets/images/wireframe.png)
@@ -28,7 +22,9 @@ With myFitnessBuddy, users are able to:
 
 
 
-## Technologies Used
+
+
+## Technologies
 
 * Languages: JavaScript, HTML5, CSS3
 * API: [ExerciseDB](https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb) (for fetching GIFs)

@@ -102,7 +102,6 @@ class MuscleMap {
         const rightFoot = document.createElement('div');
         rightFoot.classList.add('right-foot');
 
-
         muscleMap.appendChild(cap);
         muscleMap.appendChild(head);
         muscleMap.appendChild(eyes);

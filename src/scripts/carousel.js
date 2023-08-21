@@ -15,6 +15,19 @@ class Carousel {
         carouselNav.classList.add("carousel-nav");
         this.carouselNav = carouselNav;
 
+        // add a single eventListener to the carouselNav instead of each newNavItem
+        this.carouselNav.addEventListener('click', (e) => {
+            const clickedNavItem = e.target;
+            if (clickedNavItem.tagName === 'A') {
+                const exerciseName = clickedNavItem.dataset.exerciseName;
+                const updatedExercise = this.storedExercises.find(exercise => exercise.name === exerciseName);
+                displayExerciseInfo(updatedExercise);
+
+                this.deactivateNavItems();
+                clickedNavItem.classList.add('active');
+            }
+        });
+
         const carouselSlides = document.createElement("div");
         carouselSlides.classList.add("carousel-slides");
         this.carouselSlides = carouselSlides;
@@ -61,8 +74,8 @@ class Carousel {
 
         const numItems = document.querySelectorAll(".carousel-item").length;
         const newNavItem = document.createElement("a");
-        const navItems = Array.from(document.querySelectorAll('.carousel-nav a'));
-        navItems.forEach((navItem) => navItem.classList.remove('active'));
+
+        this.deactivateNavItems();
         newNavItem.classList.add('active');
 
         newNavItem.href = `#carousel-item-${numItems}`;
@@ -70,16 +83,15 @@ class Carousel {
         newNavItem.dataset.exerciseName = exercise.name;
         this.carouselNav.appendChild(newNavItem);
 
-        newNavItem.addEventListener('click', (event) => {
-            const exerciseName = event.target.dataset.exerciseName;
-            const updatedExercise = this.storedExercises.find(exercise => exercise.name === exerciseName);
-            if (updatedExercise) {
-                displayExerciseInfo(updatedExercise);
-            }
-            const navItems = Array.from(document.querySelectorAll('.carousel-nav a'));
-            navItems.forEach((navItem) => navItem.classList.remove('active'));
-            event.target.classList.add('active');
-        });
+        // newNavItem.addEventListener('click', (event) => {
+        //     const exerciseName = event.target.dataset.exerciseName;
+        //     const updatedExercise = this.storedExercises.find(exercise => exercise.name === exerciseName);
+        //     if (updatedExercise) {
+        //         displayExerciseInfo(updatedExercise);
+        //     }
+        //     this.deactivateNavItems();
+        //     event.target.classList.add('active');
+        // });
 
         closeButton.addEventListener('click', () => {
             let nextActiveCarouselItem = carouselItem.nextElementSibling || carouselItem.previousElementSibling;
@@ -150,6 +162,12 @@ class Carousel {
                 activeNavItem.classList.add('active');
             }
         }
+    }
+
+    // reset active navItem
+    deactivateNavItems() {
+        const activeNavItem = document.querySelector('.carousel-nav a.active');
+        if (activeNavItem) activeNavItem.classList.remove('active');
     }
 
     updateStoredExercise(updatedExercise) {

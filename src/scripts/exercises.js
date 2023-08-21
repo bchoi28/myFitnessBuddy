@@ -149,7 +149,6 @@ const generateExercise = async (muscleBlock, carouselInstance) => {
     // const gifImage = await fetchGif(exercise.gifName);
     gif.src = gifImage;
     gifContainer.appendChild(gif);
-    debugger
     loadingIndicator.remove();
 
     exercise.gifUrl = gifImage;

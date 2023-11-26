@@ -23,7 +23,7 @@
     .left-foot,
     .right-foot, .abs, .chest, .back, .left-glute, .right-glute) {
     background-color: var(--block-color);
-    border: 2px solid var(--cornflower-blue);
+    border: 1px solid var(--cornflower-blue);
     cursor: pointer;
     box-shadow: 0 0 4px var(--cornflower-blue);
     transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;

@@ -73,6 +73,7 @@
     /* border: 0.5px solid var(--cornflower-blue); */
     margin: 10px;
     box-shadow: 0 0 2px rgba(25, 25, 112, 0.2);
+}
 
 .carousel-item-title {
     margin: auto;
